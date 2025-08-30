@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Freddie Rick Labuanan — Full‑Stack Developer</title>
+    <meta name="description" content="Portfolio of Freddie Rick Labuanan — Full‑Stack Developer specializing in microservices, IoT, logistics, and modern web apps."/>
+
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+            },
+            keyframes: {
+              floaty: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-8px)' }
+              },
+              fadeUp: {
+                '0%': { opacity: 0, transform: 'translateY(10px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              floaty: 'floaty 6s ease-in-out infinite',
+              fadeUp: 'fadeUp .7s ease-out both'
+            },
+            boxShadow: {
+              glow: '0 0 0 2px rgb(59 130 246 / 0.15), 0 10px 30px -10px rgb(59 130 246 / 0.35)'
+            }
+          }
+        }
+      };
+    </script>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* Smooth gradient background */
+      .bg-grid {
+        background-image: radial-gradient(rgba(99,102,241,.18) 1px, transparent 1px);
+        background-size: 16px 16px;
+        mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+      }
+      .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+      .reveal.in { opacity: 1; transform: translateY(0); }
+      @media (prefers-reduced-motion: reduce) { .reveal, .animate-floaty, .animate-fadeUp { animation: none !important; transition: none !important; } }
+    </style>
+  </head>
+
+  <body class="font-body antialiased bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <!-- Theme init -->
+    <script>
+      (function() {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) document.documentElement.classList.add('dark');
+      })();
+    </script>
+
+    <!-- Top Nav -->
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-950/50 border-b border-slate-200/60 dark:border-slate-800/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="flex h-14 items-center justify-between">
+          <a href="#home" class="group inline-flex items-center gap-2">
+            <span class="relative inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-sky-500 to-cyan-400 text-white shadow-glow ring-1 ring-white/10">
+              <!-- simple FR monogram -->
+              <span class="font-black">FR</span>
+            </span>
+            <span class="font-display text-sm font-semibold tracking-tight">Freddie Rick Labuanan</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400">Projects</a>
+            <a href="#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400">Skills</a>
+            <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <button id="theme-toggle" aria-label="Toggle theme" class="rounded-xl border border-slate-200 dark:border-slate-700 px-3 py-2 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-900">
+              <span class="inline-flex items-center gap-1"><i data-lucide="moon-star" class="h-4 w-4"></i><span class="hidden sm:inline">Theme</span></span>
+            </button>
+            <a href="#contact" class="hidden sm:inline-flex items-center gap-1 rounded-xl bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow hover:shadow-lg hover:-translate-y-0.5 transition">
+              <i data-lucide="send" class="h-4 w-4"></i> Hire Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="relative overflow-hidden">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-0 bg-gradient-to-b from-indigo-50 via-white to-white dark:from-indigo-950/30 dark:via-slate-950 dark:to-slate-950"></div>
+        <div class="absolute inset-x-0 top-0 h-64 bg-grid"></div>
+        <svg class="absolute -top-12 -right-24 w-[36rem] opacity-60 animate-floaty" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g transform="translate(300,300)">
+            <path d="M120,-150C160,-120,190,-80,198,-33C206,14,192,67,166,112C140,157,102,195,55,209C7,224,-50,216,-101,195C-153,174,-199,140,-225,94C-250,48,-255,-11,-232,-60C-209,-110,-158,-150,-110,-180C-62,-210,-31,-230,7,-241C45,-251,90,-252,120,-150Z" fill="url(#g)"/>
+          </g>
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24">
+        <div class="grid md:grid-cols-5 gap-10 items-center">
+          <div class="md:col-span-3">
+            <p class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 px-3 py-1 text-[11px] text-slate-600 dark:text-slate-300 shadow">
+              <i data-lucide="sparkles" class="h-3.5 w-3.5"></i> Full‑Stack Developer · Microservices · IoT · Cloud
+            </p>
+            <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
+              Building reliable, scalable systems that ship.
+            </h1>
+            <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl">
+              I design and deliver enterprise‑grade platforms across finance, logistics, IoT, and agri‑tech — with a security‑first mindset and measurable business impact.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <a href="#projects" class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:shadow-lg hover:-translate-y-0.5 transition"><i data-lucide="folder-kanban" class="h-4 w-4"></i> View Projects</a>
+              <a href="./assets/resume.pdf" class="inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition"><i data-lucide="file-text" class="h-4 w-4"></i> Download Résumé</a>
+            </div>
+          </div>
+
+          <div class="md:col-span-2">
+            <!-- Profile Card -->
+            <div class="flex flex-col items-center text-center reveal">
+              
+              <!-- Big Photo -->
+              <div class="relative">
+                <img 
+                  src="./assets/avatar.png" 
+                  alt="Freddie Rick Labuanan" 
+                  class="h-56 w-56 rounded-2xl object-cover"
+                />
+                
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-4 right-4 bg-indigo-600 text-white rounded-xl p-3 shadow-lg">
+                  <i data-lucide="sparkles" class="h-5 w-5"></i>
+                </div>
+              </div>
+              
+              <!-- Stats -->
+              <div class="mt-8 grid grid-cols-3 gap-4 w-full">
+                
+                <!-- Experience -->
+                <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm bg-white/70 dark:bg-slate-900/50">
+                  <i data-lucide="briefcase" class="h-5 w-5 mx-auto text-indigo-600 dark:text-indigo-400"></i>
+                  <div class="mt-2 text-sm font-semibold text-slate-900 dark:text-white">5+ Years</div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Experience</p>
+                </div>
+          
+                <!-- Location -->
+                <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm bg-white/70 dark:bg-slate-900/50">
+                  <i data-lucide="map-pin" class="h-5 w-5 mx-auto text-indigo-600 dark:text-indigo-400"></i>
+                  <div class="mt-2 text-sm font-semibold text-slate-900 dark:text-white">Philippines</div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Location</p>
+                </div>
+          
+                <!-- Specialty -->
+                <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm bg-white/70 dark:bg-slate-900/50">
+                  <i data-lucide="code" class="h-5 w-5 mx-auto text-indigo-600 dark:text-indigo-400"></i>
+                  <div class="mt-2 text-sm font-semibold text-slate-900 dark:text-white">Full-Stack</div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Specialty</p>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="flex items-end justify-between">
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Featured Projects</h2>
+          <a href="#contact" class="hidden sm:inline text-sm hover:text-indigo-600 dark:hover:text-indigo-400">Let’s collaborate →</a>
+        </div>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="project-grid">
+
+          <!-- Purchasing Support System -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                <div class="flex transition-transform duration-500" id="carousel-purchasing">
+                    <img src="./assets/carousel/purchasing/login.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 1">
+                    <img src="./assets/carousel/purchasing/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 2">
+                </div>
+
+                <button onclick="prevSlide('carousel-purchasing')" 
+                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ‹
+                </button>
+                <button onclick="nextSlide('carousel-purchasing')" 
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ›
+                </button>
+            </div>
+
+            <div class="p-6">
+                <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold">Purchasing Support System</h3>
+                <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-1 text-amber-700 dark:text-amber-300">
+                    <i data-lucide="shopping-cart" class="h-3.5 w-3.5"></i> Procurement
+                </span>
+                </div>
+                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Role-based procurement workflow with multi-level approvals, tracking, and audit features.</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Next.js</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Tailwind CSS</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                </div>
+            </div>
+            </article>
+
+          <!-- IoT‑Enabled Production Monitoring -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                <div class="flex transition-transform duration-500" id="carousel-iot">
+                    <img src="./assets/carousel/iot/login.png" class="w-full object-cover flex-shrink-0" alt="IoT System Screenshot 1">
+                    <img src="./assets/carousel/iot/dashboard.png" class="w-full object-cover flex-shrink-0" alt="IoT System Screenshot 2">
+                </div>
+
+                <button onclick="prevSlide('carousel-iot')" 
+                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ‹
+                </button>
+                <button onclick="nextSlide('carousel-iot')" 
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ›
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">IoT‑Enabled Production Monitoring</h3>
+                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-cyan-50 dark:bg-cyan-950/40 px-2 py-1 text-cyan-700 dark:text-cyan-300"><i data-lucide="cpu" class="h-3.5 w-3.5"></i> Manufacturing</span>
+                </div>
+                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Real‑time dashboards, device control, and microservices for weigh‑scale based production lines.</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Next.js</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Tailwind</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ChartJS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Redis</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">C#.NET</span>
+                </div>
+            </div>
+          </article>
+
+          <!-- Cassava Farm Health Monitoring -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                <div class="flex transition-transform duration-500" id="carousel-demeters">
+                    <img src="./assets/carousel/demeters/portal.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 1">
+                    <img src="./assets/carousel/demeters/login.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 2">
+                    <img src="./assets/carousel/demeters/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 3">
+                    <img src="./assets/carousel/demeters/chat.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 4">
+                </div>
+
+                <button onclick="prevSlide('carousel-demeters')" 
+                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ‹
+                </button>
+                <button onclick="nextSlide('carousel-demeters')" 
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ›
+                </button>
+            </div>
+
+            <div class="p-6">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">Cassava Farm Health Monitoring & Geospatial Mapping</h3>
+                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 text-emerald-700 dark:text-emerald-300"><i data-lucide="leaf" class="h-3.5 w-3.5"></i> Agri‑Tech</span>
+                </div>
+                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Drone‑assisted surveys, disease detection, ArcGIS mapping, and expert collaboration for CPD prevention.</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ArcGIS JS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ChartJS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+                </div>
+              </article>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <h2 class="text-1xl sm:text-2xl font-extrabold tracking-tight">More Projects</h2>
+        </div>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="more-project-grid">
+          <!-- Modular Logistics Ops -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                <div class="flex transition-transform duration-500" id="carousel-logistics">
+                    <img src="./assets/carousel/logistic/login.png" class="w-full object-cover flex-shrink-0" alt="Logistics System Screenshot 1">
+                </div>
+
+                <button onclick="prevSlide('carousel-logistics')" 
+                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ‹
+                </button>
+                <button onclick="nextSlide('carousel-logistics')" 
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ›
+                </button>
+            </div>
+
+            <div class="p-6">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">Modular Logistics Operations</h3>
+                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-fuchsia-50 dark:bg-fuchsia-950/40 px-2 py-1 text-fuchsia-700 dark:text-fuchsia-300"><i data-lucide="truck" class="h-3.5 w-3.5"></i> Enterprise</span>
+                </div>
+                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Microservices hub for logistics, inventory, workforce, and offline‑first mobile apps.</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ReactJS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">React Native</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Firebase</span>
+                </div>
+            </div>
+          </article>
+
+          <!-- Monitoring, Survey & Communication Platform -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                <div class="flex transition-transform duration-500" id="carousel-survey">
+                    <img src="./assets/carousel/survey/login.png" class="w-full object-cover flex-shrink-0" alt="Survey System Screenshot 1">
+                </div>
+
+                <button onclick="prevSlide('carousel-survey')" 
+                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ‹
+                </button>
+                <button onclick="nextSlide('carousel-survey')" 
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ›
+                </button>
+            </div>
+
+            <div class="p-6">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">Monitoring, Survey & Communication Platform</h3>
+                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-1 text-indigo-700 dark:text-indigo-300"><i data-lucide="messages-square" class="h-3.5 w-3.5"></i> OFW Connect</span>
+                </div>
+                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Cross‑platform system enabling agencies and OFWs to run surveys and chat in real‑time with push notifications and automated employee sync.</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AngularJS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">React Native</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Firestore</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Firebase</span>
+                </div>
+            </div>
+          </article>
+
+          <!-- SWIM Irrigation -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                <div class="flex transition-transform duration-500" id="carousel-swim">
+                    <img src="./assets/carousel/swim/portal.png" class="w-full object-cover flex-shrink-0" alt="Swim System Screenshot 1">
+                    <img src="./assets/carousel/swim/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Swim System Screenshot 2">
+                </div>
+
+                <button onclick="prevSlide('carousel-swim')" 
+                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ‹
+                </button>
+                <button onclick="nextSlide('carousel-swim')" 
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    ›
+                </button>
+            </div>
+
+            <div class="p-6">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-lg font-semibold">SWIM — Smart Water Infrastructure</h3>
+                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 text-emerald-700 dark:text-emerald-300"><i data-lucide="leaf" class="h-3.5 w-3.5"></i> Agri‑Tech</span>
+                </div>
+                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">IoT‑integrated irrigation management with ArcGIS mapping, OTA firmware updates, and analytics.</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ArcGIS JS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ChartJS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+                </div>
+            </div>
+          </article>
+
+          <div class="extra-projects hidden contents">
+            <!-- MLM -->
+            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+                <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                    <div class="flex transition-transform duration-500" id="carousel-mlm">
+                        <img src="./assets/carousel/mlm/dashboard.png" class="w-full object-cover flex-shrink-0" alt="MLM System Screenshot 1">
+                        <img src="./assets/carousel/mlm/genealogy.png" class="w-full object-cover flex-shrink-0" alt="MLM System Screenshot 2">
+                    </div>
+
+                    <button onclick="prevSlide('carousel-mlm')" 
+                        class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        ‹
+                    </button>
+                    <button onclick="nextSlide('carousel-mlm')" 
+                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        ›
+                    </button>
+                </div>
+
+                <div class="p-6">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-lg font-semibold">Binary MLM Management System</h3>
+                      <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-purple-50 dark:bg-purple-950/40 px-2 py-1 text-purple-700 dark:text-purple-300">
+                        <i data-lucide="users" class="h-3.5 w-3.5"></i> MLM Platform
+                      </span>
+                    </div>
+                    <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Real‑time downline tree, auto commission tracking, and payout workflows for modern binary MLM networks.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+                    </div>
+                </div>
+            </article>
+  
+            <!-- CareFlow -->
+            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+                <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                    <div class="flex transition-transform duration-500" id="carousel-triage">
+                        <img src="./assets/carousel/triage/login.png" class="w-full object-cover flex-shrink-0" alt="Triage System Screenshot 1">
+                        <img src="./assets/carousel/triage/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Triage System Screenshot 2">
+                    </div>
+
+                    <button onclick="prevSlide('carousel-triage')" 
+                        class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        ‹
+                    </button>
+                    <button onclick="nextSlide('carousel-triage')" 
+                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        ›
+                    </button>
+                </div>
+
+                <div class="p-6">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-lg font-semibold">CareFlow</h3>
+                      <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-rose-50 dark:bg-rose-950/40 px-2 py-1 text-rose-700 dark:text-rose-300">
+                        <i data-lucide="stethoscope" class="h-3.5 w-3.5"></i> Healthcare
+                      </span>
+                    </div>
+                    <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Outpatient healthcare app with role‑based triage, queueing, diagnosis records, and appointment scheduling.</p>
+                    <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">SMTP</span>
+                    </div>
+                </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <button id="toggle-projects" class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:shadow-lg hover:-translate-y-0.5 transition">
+            View All Projects →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Skills & Expertise</h2>
+        <p class="text-slate-600 dark:text-slate-300">
+          Technologies and tools I use to bring ideas to life
+        </p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          
+          <!-- Core -->
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6 bg-white/70 dark:bg-slate-900/50 reveal">
+            <h3 class="font-semibold inline-flex items-center gap-2 mb-4">
+              <i data-lucide="code-2" class="h-5 w-5"></i> Core
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-php-plain colored text-lg"></i> PHP
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-javascript-plain colored text-lg"></i> JavaScript
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-csharp-plain colored text-lg"></i> C#.NET
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="colored text-lg"></i> REST API
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="colored text-lg"></i> Microservices
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="colored text-lg"></i> Cloud-computing
+              </span>
+            </div>
+          </div>
+          
+          <!-- Web & Mobile -->
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6 bg-white/70 dark:bg-slate-900/50 reveal">
+            <h3 class="font-semibold inline-flex items-center gap-2 mb-4">
+              <i data-lucide="layout" class="h-5 w-5"></i> Web & Mobile
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-laravel-plain colored text-lg"></i> Laravel
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-codeigniter-plain colored text-lg"></i> CodeIgniter
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-nodejs-plain colored text-lg"></i> Node.js
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-typescript-plain colored text-lg"></i> TypeScript
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-react-original colored text-lg"></i> React
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-nextjs-original-wordmark colored"></i> Next.js
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-reactnative-original"></i> React Native
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-tailwindcss-plain colored text-lg"></i> Tailwind CSS
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-bootstrap-plain colored text-lg"></i> Bootstrap
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-jquery-plain colored text-lg"></i> jQuery
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-socketio-original colored text-lg"></i> WebSockets
+              </span>
+            </div>
+          </div>
+          
+          <!-- Databases -->
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6 bg-white/70 dark:bg-slate-900/50 reveal">
+            <h3 class="font-semibold inline-flex items-center gap-2 mb-4">
+              <i data-lucide="database" class="h-5 w-5"></i> Databases
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-mysql-plain colored text-lg"></i> MySQL
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-postgresql-plain colored text-lg"></i> PostgreSQL
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-mongodb-plain colored text-lg"></i> MongoDB
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-sqlite-plain colored text-lg"></i> SQLite
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-google-plain colored text-lg"></i> Firestore
+              </span>
+            </div>
+          </div>
+          
+          <!-- DevOps & Infra -->
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6 bg-white/70 dark:bg-slate-900/50 reveal">
+            <h3 class="font-semibold inline-flex items-center gap-2 mb-4">
+              <i data-lucide="server" class="h-5 w-5"></i> DevOps & Infra
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-linux-plain colored text-lg"></i> Linux
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-nginx-original colored text-lg"></i> Nginx
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-apache-plain colored text-lg"></i> Apache
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-windows-plain colored text-lg"></i> Microsoft IIS
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-git-plain colored text-lg"></i> Git (GitLab, GitHub, Bitbucket)
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-firebase-plain colored text-lg"></i> Firebase
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-docker-plain colored text-lg"></i> Docker
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-git-plain colored text-lg"></i> CI/CD
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-amazonwebservices-plain colored text-lg"></i> AWS
+              </span>
+              <span class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-full px-3 py-1 text-sm text-slate-700 dark:text-slate-300">
+                <i class="devicon-cloudflare-plain colored text-lg"></i> Cloudflare
+              </span>
+            </div>
+          </div>
+          
+          <!-- Tools & Methods -->
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6 bg-white/70 dark:bg-slate-900/50 reveal">
+            <h3 class="font-semibold inline-flex items-center gap-2 mb-4">
+              <i data-lucide="kanban" class="h-5 w-5"></i> Tools & Methods
+            </h3>
+            <div class="flex flex-wrap gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
+                Jira
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
+                Trello
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
+                Redmine
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
+                Agile (Scrum/Kanban)
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
+                Figma
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
+                Moqups
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
+                Draw.io
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 sm:py-24 bg-gradient-to-b from-transparent to-indigo-50/60 dark:to-indigo-950/20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-8 md:p-12 shadow-lg">
+          <div class="grid gap-8 md:grid-cols-2 items-center">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Let’s build something great</h2>
+              <p class="mt-3 text-slate-600 dark:text-slate-300">Open to full‑time roles and select freelance engagements. Prefer cloud‑native backends, real‑time dashboards, and problems that matter.</p>
+              <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                <a href="mailto:frl082998@gmail.com" class="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 font-semibold text-white shadow hover:shadow-lg hover:-translate-y-0.5 transition"><i data-lucide="mail" class="h-4 w-4"></i> Email Me</a>
+                <a href="#" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 px-4 py-2 font-semibold hover:bg-slate-50 dark:hover:bg-slate-900 transition"><i data-lucide="phone" class="h-4 w-4"></i> +63 961‑511‑7558</a>
+                <a href="https://www.linkedin.com/in/freddie-rick-labuanan-66b329259" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 px-4 py-2 font-semibold hover:bg-slate-50 dark:hover:bg-slate-900 transition"><i data-lucide="linkedin" class="h-4 w-4"></i> LinkedIn</a>
+                <a href="https://github.com/FreL082998" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 px-4 py-2 font-semibold hover:bg-slate-50 dark:hover:bg-slate-900 transition"><i data-lucide="github" class="h-4 w-4"></i> GitHub</a>
+              </div>
+            </div>
+            <form class="grid gap-4" action="https://api.formizee.com/v1/f/enp_cqFeihXBTMtP5aNkMzPzRoT88SP" method="POST">
+              <div>
+                <label for="name" class="block text-xs font-semibold">Name</label>
+                <input id="name" name="name" required class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-950/30 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-500"/>
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-semibold">Email</label>
+                <input id="email" type="email" name="email" required class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-950/30 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-500"/>
+              </div>
+              <div>
+                <label for="message" class="block text-xs font-semibold">Message</label>
+                <textarea id="message" name="message" rows="4" required class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-950/30 px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                <input type="text" name="_gotcha" style="display:none" autocomplete="off">
+              </div>
+              <button class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 dark:bg-white px-4 py-2 font-semibold text-white dark:text-slate-900 shadow hover:shadow-lg hover:-translate-y-0.5 transition">
+                <i data-lucide="send" class="h-4 w-4"></i> Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-sm text-slate-500 dark:text-slate-400">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="flex items-center justify-center gap-4">
+          <a href="#home" class="inline-flex items-center gap-2"><i data-lucide="chevron-up" class="h-4 w-4"></i> Back to top</a>
+        </div>
+        <p class="mt-4">Copyright © <span id="year"></span> Freddie Rick Labuanan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Icon hydrate
+      window.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+      });
+
+      // Theme toggle
+      const toggle = document.getElementById('theme-toggle');
+      toggle?.addEventListener('click', () => {
+        const root = document.documentElement;
+        const willDark = !root.classList.contains('dark');
+        root.classList.toggle('dark', willDark);
+        localStorage.setItem('theme', willDark ? 'dark' : 'light');
+        // swap icon
+        toggle.querySelector('i')?.setAttribute('data-lucide', willDark ? 'sun' : 'moon-star');
+        lucide.createIcons();
+      });
+
+      // Reveal on scroll
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+      const toggleButton = document.getElementById('toggle-projects');
+      const extraProjects = document.querySelector('.extra-projects');
+
+      let expanded = false;
+
+      toggleButton.addEventListener('click', () => {
+        expanded = !expanded;
+        extraProjects.classList.toggle('hidden');
+
+        toggleButton.innerHTML = expanded ? 'Hide Projects ↑' : 'View All Projects →';
+      });
+
+      const positions = {};
+
+        function nextSlide(id) {
+            const el = document.getElementById(id);
+            const slides = el.children.length;
+            positions[id] = (positions[id] ?? 0) + 1;
+            if (positions[id] >= slides) positions[id] = 0;
+            el.style.transform = `translateX(-${positions[id] * 100}%)`;
+        }
+
+        function prevSlide(id) {
+            const el = document.getElementById(id);
+            const slides = el.children.length;
+            positions[id] = (positions[id] ?? 0) - 1;
+            if (positions[id] < 0) positions[id] = slides - 1;
+            el.style.transform = `translateX(-${positions[id] * 100}%)`;
+        }
+    </script>
+  </body>
+</html>
