@@ -185,133 +185,113 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="py-16 sm:py-24">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
-        <div class="flex items-end justify-between">
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Featured Projects</h2>
-          <a href="#contact" class="hidden sm:inline text-sm hover:text-indigo-600 dark:hover:text-indigo-400">Let’s collaborate →</a>
-        </div>
+  <section id="projects" class="py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <!-- Section Header -->
+      <div class="flex items-end justify-between">
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Featured Projects</h2>
+        <a href="#contact" class="hidden sm:inline text-sm hover:text-indigo-600 dark:hover:text-indigo-400">Let’s collaborate →</a>
+      </div>
 
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="project-grid">
+      <!-- Featured Projects Grid -->
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="project-grid">
+        
+        <!-- Purchasing Support System -->
+        <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <div class="relative w-full h-48 overflow-hidden rounded-xl">
+            <div class="flex transition-transform duration-500" id="carousel-purchasing">
+              <img src="./assets/carousel/purchasing/login.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 1">
+              <img src="./assets/carousel/purchasing/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 2">
+            </div>
+            <button onclick="prevSlide('carousel-purchasing')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
+            <button onclick="nextSlide('carousel-purchasing')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Purchasing Support System</h3>
+              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-1 text-amber-700 dark:text-amber-300">
+                <i data-lucide="shopping-cart" class="h-3.5 w-3.5"></i> Procurement
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Role-based procurement workflow with multi-level approvals, tracking, and audit features.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Next.js</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Tailwind CSS</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+            </div>
+          </div>
+        </article>
 
-          <!-- Purchasing Support System -->
+        <!-- IoT-Enabled Production Monitoring -->
+        <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <div class="relative w-full h-48 overflow-hidden rounded-xl">
+            <div class="flex transition-transform duration-500" id="carousel-iot">
+              <img src="./assets/carousel/iot/login.png" class="w-full object-cover flex-shrink-0" alt="IoT System Screenshot 1">
+              <img src="./assets/carousel/iot/dashboard.png" class="w-full object-cover flex-shrink-0" alt="IoT System Screenshot 2">
+            </div>
+            <button onclick="prevSlide('carousel-iot')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
+            <button onclick="nextSlide('carousel-iot')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">IoT-Enabled Production Monitoring</h3>
+              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-cyan-50 dark:bg-cyan-950/40 px-2 py-1 text-cyan-700 dark:text-cyan-300"><i data-lucide="cpu" class="h-3.5 w-3.5"></i> Manufacturing</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Real-time dashboards, device control, and microservices for weigh-scale based production lines.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Next.js</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Tailwind</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ChartJS</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Redis</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">C#.NET</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cassava Farm Health Monitoring -->
+        <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <div class="relative w-full h-48 overflow-hidden rounded-xl">
+            <div class="flex transition-transform duration-500" id="carousel-demeters">
+              <img src="./assets/carousel/demeters/portal.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 1">
+              <img src="./assets/carousel/demeters/login.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 2">
+              <img src="./assets/carousel/demeters/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 3">
+              <img src="./assets/carousel/demeters/chat.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 4">
+            </div>
+            <button onclick="prevSlide('carousel-demeters')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
+            <button onclick="nextSlide('carousel-demeters')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Cassava Farm Health Monitoring & Geospatial Mapping</h3>
+              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 text-emerald-700 dark:text-emerald-300"><i data-lucide="leaf" class="h-3.5 w-3.5"></i> Agri-Tech</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Drone-assisted surveys, disease detection, ArcGIS mapping, and expert collaboration for CPD prevention.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ArcGIS JS</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ChartJS</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+            </div>
+          </div>
+        </article>
+
+      </div> <!-- end #project-grid -->
+
+      <!-- More Projects -->
+      <div class="mt-8 text-center">
+        <h2 class="text-1xl sm:text-2xl font-extrabold tracking-tight">More Projects</h2>
+      </div>
+
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="more-project-grid">
+        <!-- Modular Logistics Ops -->
           <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
-            <div class="relative w-full h-48 overflow-hidden rounded-xl">
-                <div class="flex transition-transform duration-500" id="carousel-purchasing">
-                    <img src="./assets/carousel/purchasing/login.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 1">
-                    <img src="./assets/carousel/purchasing/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 2">
-                </div>
-
-                <button onclick="prevSlide('carousel-purchasing')" 
-                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ‹
-                </button>
-                <button onclick="nextSlide('carousel-purchasing')" 
-                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ›
-                </button>
-            </div>
-
-            <div class="p-6">
-                <div class="flex items-center justify-between">
-                <h3 class="text-lg font-semibold">Purchasing Support System</h3>
-                <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-1 text-amber-700 dark:text-amber-300">
-                    <i data-lucide="shopping-cart" class="h-3.5 w-3.5"></i> Procurement
-                </span>
-                </div>
-                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Role-based procurement workflow with multi-level approvals, tracking, and audit features.</p>
-                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
-                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
-                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Next.js</span>
-                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Tailwind CSS</span>
-                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
-                </div>
-            </div>
-            </article>
-
-          <!-- IoT‑Enabled Production Monitoring -->
-          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
-            <div class="relative w-full h-48 overflow-hidden rounded-xl">
-                <div class="flex transition-transform duration-500" id="carousel-iot">
-                    <img src="./assets/carousel/iot/login.png" class="w-full object-cover flex-shrink-0" alt="IoT System Screenshot 1">
-                    <img src="./assets/carousel/iot/dashboard.png" class="w-full object-cover flex-shrink-0" alt="IoT System Screenshot 2">
-                </div>
-
-                <button onclick="prevSlide('carousel-iot')" 
-                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ‹
-                </button>
-                <button onclick="nextSlide('carousel-iot')" 
-                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ›
-                </button>
-            </div>
-            
-            <div class="p-6">
-                <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold">IoT‑Enabled Production Monitoring</h3>
-                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-cyan-50 dark:bg-cyan-950/40 px-2 py-1 text-cyan-700 dark:text-cyan-300"><i data-lucide="cpu" class="h-3.5 w-3.5"></i> Manufacturing</span>
-                </div>
-                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Real‑time dashboards, device control, and microservices for weigh‑scale based production lines.</p>
-                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Next.js</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Tailwind</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ChartJS</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Redis</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">C#.NET</span>
-                </div>
-            </div>
-          </article>
-
-          <!-- Cassava Farm Health Monitoring -->
-          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
-            <div class="relative w-full h-48 overflow-hidden rounded-xl">
-                <div class="flex transition-transform duration-500" id="carousel-demeters">
-                    <img src="./assets/carousel/demeters/portal.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 1">
-                    <img src="./assets/carousel/demeters/login.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 2">
-                    <img src="./assets/carousel/demeters/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 3">
-                    <img src="./assets/carousel/demeters/chat.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 4">
-                </div>
-
-                <button onclick="prevSlide('carousel-demeters')" 
-                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ‹
-                </button>
-                <button onclick="nextSlide('carousel-demeters')" 
-                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ›
-                </button>
-            </div>
-
-            <div class="p-6">
-                <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold">Cassava Farm Health Monitoring & Geospatial Mapping</h3>
-                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 text-emerald-700 dark:text-emerald-300"><i data-lucide="leaf" class="h-3.5 w-3.5"></i> Agri‑Tech</span>
-                </div>
-                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Drone‑assisted surveys, disease detection, ArcGIS mapping, and expert collaboration for CPD prevention.</p>
-                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ArcGIS JS</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ChartJS</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
-                </div>
-              </article>
-            </div>
-        </div>
-
-        <div class="mt-8 text-center">
-          <h2 class="text-1xl sm:text-2xl font-extrabold tracking-tight">More Projects</h2>
-        </div>
-
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="more-project-grid">
-          <!-- Modular Logistics Ops -->
-          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
             <div class="relative w-full h-48 overflow-hidden rounded-xl">
                 <div class="flex transition-transform duration-500" id="carousel-logistics">
                     <img src="./assets/carousel/logistic/login.png" class="w-full object-cover flex-shrink-0" alt="Logistics System Screenshot 1">
@@ -346,7 +326,7 @@
           </article>
 
           <!-- Monitoring, Survey & Communication Platform -->
-          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
             <div class="relative w-full h-48 overflow-hidden rounded-xl">
                 <div class="flex transition-transform duration-500" id="carousel-survey">
                     <img src="./assets/carousel/survey/login.png" class="w-full object-cover flex-shrink-0" alt="Survey System Screenshot 1">
@@ -380,7 +360,7 @@
           </article>
 
           <!-- SWIM Irrigation -->
-          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
             <div class="relative w-full h-48 overflow-hidden rounded-xl">
                 <div class="flex transition-transform duration-500" id="carousel-swim">
                     <img src="./assets/carousel/swim/portal.png" class="w-full object-cover flex-shrink-0" alt="Swim System Screenshot 1">
@@ -417,7 +397,7 @@
 
           <div class="extra-projects hidden contents">
             <!-- MLM -->
-            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
                 <div class="relative w-full h-48 overflow-hidden rounded-xl">
                     <div class="flex transition-transform duration-500" id="carousel-mlm">
                         <img src="./assets/carousel/mlm/dashboard.png" class="w-full object-cover flex-shrink-0" alt="MLM System Screenshot 1">
@@ -453,7 +433,7 @@
             </article>
   
             <!-- CareFlow -->
-            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 p-6 hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
                 <div class="relative w-full h-48 overflow-hidden rounded-xl">
                     <div class="flex transition-transform duration-500" id="carousel-triage">
                         <img src="./assets/carousel/triage/login.png" class="w-full object-cover flex-shrink-0" alt="Triage System Screenshot 1">
@@ -489,15 +469,16 @@
                 </div>
             </article>
           </div>
-        </div>
-
-        <div class="mt-6 text-center">
-          <button id="toggle-projects" class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:shadow-lg hover:-translate-y-0.5 transition">
-            View All Projects →
-          </button>
-        </div>
       </div>
-    </section>
+
+      <!-- Toggle Button -->
+      <div class="mt-6 text-center">
+        <button id="toggle-projects" class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:shadow-lg hover:-translate-y-0.5 transition">
+          View All Projects →
+        </button>
+      </div>
+    </div>
+  </section>
 
     <!-- Skills -->
     <section id="skills" class="py-16 sm:py-24">
