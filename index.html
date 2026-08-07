@@ -244,7 +244,7 @@
         <div class="grid md:grid-cols-5 gap-10 items-center">
           <div class="md:col-span-3">
             <p class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 px-3 py-1 text-[11px] text-slate-600 dark:text-slate-300 shadow">
-              <i data-lucide="sparkles" class="h-3.5 w-3.5"></i> Full Stack Developer / Programmer Analyst | PHP, Laravel, React, TypeScript | Business Process Automation
+              <i data-lucide="sparkles" class="h-3.5 w-3.5"></i> Senior Full-Stack Software Engineer
             </p>
             <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
               Building and modernizing reliable software for growing businesses.
@@ -254,7 +254,7 @@
             </p>
             <div class="mt-6 flex flex-wrap items-center gap-3">
               <a href="#projects" class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:shadow-lg hover:-translate-y-0.5 transition"><i data-lucide="folder-kanban" class="h-4 w-4"></i> View Projects</a>
-              <a href="./assets/resume.pdf" class="inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition"><i data-lucide="file-text" class="h-4 w-4"></i> Download Résumé</a>
+              <!-- <a href="./assets/resume.pdf" class="inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition"><i data-lucide="file-text" class="h-4 w-4"></i> Download Résumé</a> -->
             </div>
           </div>
 
@@ -296,7 +296,7 @@
                 <!-- Specialty -->
                 <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm bg-white/70 dark:bg-slate-900/50">
                   <i data-lucide="code" class="h-5 w-5 mx-auto text-indigo-600 dark:text-indigo-400"></i>
-                  <div class="mt-2 text-sm font-semibold text-slate-900 dark:text-white">Full Stack</div>
+                  <div class="mt-2 text-sm font-semibold text-slate-900 dark:text-white">Full-Stack</div>
                   <p class="text-xs text-slate-500 dark:text-slate-400">Specialty</p>
                 </div>
           
@@ -318,7 +318,41 @@
 
       <!-- Featured Projects Grid -->
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="project-grid">
-        
+        <!-- Aviation -->
+        <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <div class="relative w-full h-48 overflow-hidden rounded-xl">
+            <div class="flex transition-transform duration-500" id="carousel-aviation">
+              <img src="./assets/carousel/aviation/login.png" class="w-full object-cover flex-shrink-0" alt="Aviation Screenshot 1">
+              <img src="./assets/carousel/aviation/register.png" class="w-full object-cover flex-shrink-0" alt="Aviation Screenshot 2">
+              <img src="./assets/carousel/aviation/admin-dashboard.png" class="w-full object-cover flex-shrink-0" alt="Aviation Screenshot 3">
+              <img src="./assets/carousel/aviation/customer-dashboard.png" class="w-full object-cover flex-shrink-0" alt="Aviation Screenshot 4">
+            </div>
+            <button onclick="prevSlide('carousel-aviation')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
+            <button onclick="nextSlide('carousel-aviation')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Aviation Maintenance and Operations SaaS Platform</h3>
+              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-1 text-indigo-700 dark:text-indigo-300">
+                <i data-lucide="hand-coins" class="h-3.5 w-3.5"></i> Aviation
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">A comprehensive aviation SaaS platform that supports aircraft maintenance tracking, customer operations, billing, compliance, authentication, reporting, and administrative workflows.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Blade</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Docker</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">OAuth</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">OpenAI</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
+            </div>
+            <button type="button" onclick="openStudyModal('aviation')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
+              <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
+            </button>
+          </div>
+        </article>
         <!-- Lending System -->
         <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
           <div class="relative w-full h-48 overflow-hidden rounded-xl">
@@ -332,7 +366,7 @@
           <div class="p-6">
             <div class="flex items-center justify-between">
               <h3 class="text-lg font-semibold">Digital Loan Origination and Approval Platform</h3>
-              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-1 text-amber-700 dark:text-amber-300">
+              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-rose-50 dark:bg-rose-950/40 px-2 py-1 text-rose-700 dark:text-rose-300">
                 <i data-lucide="hand-coins" class="h-3.5 w-3.5"></i> Lending
               </span>
             </div>
@@ -347,46 +381,11 @@
               <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Docker</span>
               <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
             </div>
-            <button type="button" onclick="openStudyModal('lending')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 px-4 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50">
+            <button type="button" onclick="openStudyModal('lending')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
               <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
             </button>
           </div>
         </article>
-        
-        <!-- Purchasing Support System -->
-        <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
-          <div class="relative w-full h-48 overflow-hidden rounded-xl">
-            <div class="flex transition-transform duration-500" id="carousel-purchasing">
-              <!-- <img src="./assets/carousel/purchasing/login.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 1"> -->
-              <img src="./assets/carousel/purchasing/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 2">
-            </div>
-            <button onclick="prevSlide('carousel-purchasing')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
-            <button onclick="nextSlide('carousel-purchasing')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">Purchasing Support System</h3>
-              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-1 text-amber-700 dark:text-amber-300">
-                <i data-lucide="shopping-cart" class="h-3.5 w-3.5"></i> Procurement
-              </span>
-            </div>
-            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Role-based procurement workflow with multi-level approvals, tracking, and audit features.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
-              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
-              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
-              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Next.js</span>
-              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">TypeScript</span>
-              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Tailwind CSS</span>
-              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
-              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Docker</span>
-              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
-            </div>
-            <button type="button" onclick="openStudyModal('purchasing')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 px-4 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50">
-              <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
-            </button>
-          </div>
-        </article>
-
         <!-- IoT-Enabled Production Monitoring -->
         <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
           <div class="relative w-full h-48 overflow-hidden rounded-xl">
@@ -417,12 +416,11 @@
               <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
               <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Microservices</span>
             </div>
-            <button type="button" onclick="openStudyModal('iot')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 px-4 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50">
+            <button type="button" onclick="openStudyModal('iot')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
               <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
             </button>
           </div>
         </article>
-
       </div> <!-- end #project-grid -->
 
       <!-- More Projects -->
@@ -431,55 +429,123 @@
       </div>
 
       <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="more-project-grid">
+        <!-- DAR -->
+        <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <div class="relative w-full h-48 overflow-hidden rounded-xl">
+            <div class="flex transition-transform duration-500" id="carousel-dar">
+              <img src="./assets/carousel/dar/login.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 1">
+              <img src="./assets/carousel/dar/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 2">
+            </div>
+            <button onclick="prevSlide('carousel-dar')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
+            <button onclick="nextSlide('carousel-dar')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Digital Aircraft Records (DAR) Platform</h3>
+              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-1 text-indigo-700 dark:text-indigo-300">
+                <i data-lucide="shopping-cart" class="h-3.5 w-3.5"></i> Aviation
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">DAR is a digital aircraft-records management and archiving platform within the Aviation Maintenance Platform ecosystem.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Vue.js</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Docker</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
+            </div>
+            <button type="button" onclick="openStudyModal('dar')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
+              <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
+            </button>
+          </div>
+        </article>
+
+        <!-- Purchasing Support System -->
+        <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <div class="relative w-full h-48 overflow-hidden rounded-xl">
+            <div class="flex transition-transform duration-500" id="carousel-purchasing">
+              <!-- <img src="./assets/carousel/purchasing/login.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 1"> -->
+              <img src="./assets/carousel/purchasing/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Purchasing System Screenshot 2">
+            </div>
+            <button onclick="prevSlide('carousel-purchasing')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
+            <button onclick="nextSlide('carousel-purchasing')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Purchasing Support System</h3>
+              <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-amber-50 dark:bg-amber-950/40 px-2 py-1 text-amber-700 dark:text-amber-300">
+                <i data-lucide="shopping-cart" class="h-3.5 w-3.5"></i> Procurement
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Role-based procurement workflow with multi-level approvals, tracking, and audit features.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Next.js</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">TypeScript</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Tailwind CSS</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Docker</span>
+              <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
+            </div>
+            <button type="button" onclick="openStudyModal('purchasing')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
+              <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
+            </button>
+          </div>
+        </article>
+        
         <!-- Modular Logistics Ops -->
-          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
-            <div class="relative w-full h-48 overflow-hidden rounded-xl">
-                <div class="flex transition-transform duration-500" id="carousel-logistics">
-                    <img src="./assets/carousel/logistic/login.png" class="w-full object-cover flex-shrink-0" alt="Logistics System Screenshot 1">
-                </div>
+        <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <div class="relative w-full h-48 overflow-hidden rounded-xl">
+              <div class="flex transition-transform duration-500" id="carousel-logistics">
+                  <img src="./assets/carousel/logistic/login.png" class="w-full object-cover flex-shrink-0" alt="Logistics System Screenshot 1">
+              </div>
 
-                <button onclick="prevSlide('carousel-logistics')" 
-                    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ‹
-                </button>
-                <button onclick="nextSlide('carousel-logistics')" 
-                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ›
-                </button>
-            </div>
+              <button onclick="prevSlide('carousel-logistics')" 
+                  class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  ‹
+              </button>
+              <button onclick="nextSlide('carousel-logistics')" 
+                  class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  ›
+              </button>
+          </div>
 
-            <div class="p-6">
-                <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold">Modular Logistics Operations</h3>
-                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-fuchsia-50 dark:bg-fuchsia-950/40 px-2 py-1 text-fuchsia-700 dark:text-fuchsia-300"><i data-lucide="truck" class="h-3.5 w-3.5"></i> Enterprise</span>
-                </div>
-                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Microservices hub for logistics, inventory, workforce, and offline‑first mobile apps.</p>
-                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Blade</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ReactJS</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">TypeScript</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">React Native</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">JavaScript</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">SQLite</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MongoDB</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Node.js</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Firebase</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Android</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">iOS</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Microservices</span>
-                </div>
-                <button type="button" onclick="openStudyModal('logistic')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 px-4 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50">
-                  <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
-                </button>
-            </div>
-          </article>
+          <div class="p-6">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold">Modular Logistics Operations</h3>
+                <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-fuchsia-50 dark:bg-fuchsia-950/40 px-2 py-1 text-fuchsia-700 dark:text-fuchsia-300"><i data-lucide="truck" class="h-3.5 w-3.5"></i> Enterprise</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Microservices hub for logistics, inventory, workforce, and offline‑first mobile apps.</p>
+              <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Laravel</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Blade</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ReactJS</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">TypeScript</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">React Native</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">JavaScript</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">SQLite</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MongoDB</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Node.js</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Firebase</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Android</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">iOS</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Microservices</span>
+              </div>
+              <button type="button" onclick="openStudyModal('logistic')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
+                <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
+              </button>
+          </div>
+        </article>
 
+        <div class="extra-projects hidden contents">
           <!-- Monitoring, Survey & Communication Platform -->
           <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
             <div class="relative w-full h-48 overflow-hidden rounded-xl">
@@ -521,12 +587,11 @@
                   <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Android</span>
                   <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">iOS</span>
                 </div>
-                <button type="button" onclick="openStudyModal('survey')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 px-4 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50">
+                <button type="button" onclick="openStudyModal('survey')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
                   <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
                 </button>
             </div>
           </article>
-
           <!-- SWIM Irrigation -->
           <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
             <div class="relative w-full h-48 overflow-hidden rounded-xl">
@@ -566,123 +631,118 @@
                 </div>
             </div>
           </article>
-
-          <div class="extra-projects hidden contents">
-
-            <!-- Cassava Farm Health Monitoring -->
-            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+          <!-- Cassava Farm Health Monitoring -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+            <div class="relative w-full h-48 overflow-hidden rounded-xl">
+              <div class="flex transition-transform duration-500" id="carousel-demeters">
+                <img src="./assets/carousel/demeters/portal.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 1">
+                <img src="./assets/carousel/demeters/login.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 2">
+                <img src="./assets/carousel/demeters/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 3">
+                <img src="./assets/carousel/demeters/chat.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 4">
+              </div>
+              <button onclick="prevSlide('carousel-demeters')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
+              <button onclick="nextSlide('carousel-demeters')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold">Cassava Farm Health Monitoring & Geospatial Mapping</h3>
+                <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 text-emerald-700 dark:text-emerald-300"><i data-lucide="leaf" class="h-3.5 w-3.5"></i> Agri-Tech</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Drone-assisted surveys, disease detection, ArcGIS mapping, and expert collaboration for CPD prevention.</p>
+              <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ArcGIS</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">JavaScript</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Node.js</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
+                <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
+              </div>
+            </div>
+          </article>
+          <!-- MLM -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
               <div class="relative w-full h-48 overflow-hidden rounded-xl">
-                <div class="flex transition-transform duration-500" id="carousel-demeters">
-                  <img src="./assets/carousel/demeters/portal.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 1">
-                  <img src="./assets/carousel/demeters/login.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 2">
-                  <img src="./assets/carousel/demeters/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 3">
-                  <img src="./assets/carousel/demeters/chat.png" class="w-full object-cover flex-shrink-0" alt="Demeters System Screenshot 4">
-                </div>
-                <button onclick="prevSlide('carousel-demeters')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">‹</button>
-                <button onclick="nextSlide('carousel-demeters')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">›</button>
+                  <div class="flex transition-transform duration-500" id="carousel-mlm">
+                      <img src="./assets/carousel/mlm/dashboard.png" class="w-full object-cover flex-shrink-0" alt="MLM System Screenshot 1">
+                      <img src="./assets/carousel/mlm/genealogy.png" class="w-full object-cover flex-shrink-0" alt="MLM System Screenshot 2">
+                  </div>
+
+                  <button onclick="prevSlide('carousel-mlm')" 
+                      class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      ‹
+                  </button>
+                  <button onclick="nextSlide('carousel-mlm')" 
+                      class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      ›
+                  </button>
               </div>
+
               <div class="p-6">
-                <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold">Cassava Farm Health Monitoring & Geospatial Mapping</h3>
-                  <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 text-emerald-700 dark:text-emerald-300"><i data-lucide="leaf" class="h-3.5 w-3.5"></i> Agri-Tech</span>
-                </div>
-                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Drone-assisted surveys, disease detection, ArcGIS mapping, and expert collaboration for CPD prevention.</p>
-                <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">ArcGIS</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">JavaScript</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Node.js</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
-                </div>
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold">Binary MLM Management System</h3>
+                    <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-purple-50 dark:bg-purple-950/40 px-2 py-1 text-purple-700 dark:text-purple-300">
+                      <i data-lucide="users" class="h-3.5 w-3.5"></i> MLM Platform
+                    </span>
+                  </div>
+                  <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Real‑time downline tree, auto commission tracking, and payout workflows for modern binary MLM networks.</p>
+                  <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">JavaScript</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">LAMP</span>
+                  </div>
               </div>
-            </article>
-        
-            <!-- MLM -->
-            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
-                <div class="relative w-full h-48 overflow-hidden rounded-xl">
-                    <div class="flex transition-transform duration-500" id="carousel-mlm">
-                        <img src="./assets/carousel/mlm/dashboard.png" class="w-full object-cover flex-shrink-0" alt="MLM System Screenshot 1">
-                        <img src="./assets/carousel/mlm/genealogy.png" class="w-full object-cover flex-shrink-0" alt="MLM System Screenshot 2">
-                    </div>
+          </article>
+          <!-- CareFlow -->
+          <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
+              <div class="relative w-full h-48 overflow-hidden rounded-xl">
+                  <div class="flex transition-transform duration-500" id="carousel-triage">
+                      <img src="./assets/carousel/triage/login.png" class="w-full object-cover flex-shrink-0" alt="Triage System Screenshot 1">
+                      <img src="./assets/carousel/triage/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Triage System Screenshot 2">
+                  </div>
 
-                    <button onclick="prevSlide('carousel-mlm')" 
-                        class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        ‹
-                    </button>
-                    <button onclick="nextSlide('carousel-mlm')" 
-                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        ›
-                    </button>
-                </div>
+                  <button onclick="prevSlide('carousel-triage')" 
+                      class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      ‹
+                  </button>
+                  <button onclick="nextSlide('carousel-triage')" 
+                      class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      ›
+                  </button>
+              </div>
 
-                <div class="p-6">
-                    <div class="flex items-center justify-between">
-                      <h3 class="text-lg font-semibold">Binary MLM Management System</h3>
-                      <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-purple-50 dark:bg-purple-950/40 px-2 py-1 text-purple-700 dark:text-purple-300">
-                        <i data-lucide="users" class="h-3.5 w-3.5"></i> MLM Platform
-                      </span>
-                    </div>
-                    <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Real‑time downline tree, auto commission tracking, and payout workflows for modern binary MLM networks.</p>
-                    <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">JavaScript</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">LAMP</span>
-                    </div>
-                </div>
-            </article>
-  
-            <!-- CareFlow -->
-            <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
-                <div class="relative w-full h-48 overflow-hidden rounded-xl">
-                    <div class="flex transition-transform duration-500" id="carousel-triage">
-                        <img src="./assets/carousel/triage/login.png" class="w-full object-cover flex-shrink-0" alt="Triage System Screenshot 1">
-                        <img src="./assets/carousel/triage/dashboard.png" class="w-full object-cover flex-shrink-0" alt="Triage System Screenshot 2">
-                    </div>
-
-                    <button onclick="prevSlide('carousel-triage')" 
-                        class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        ‹
-                    </button>
-                    <button onclick="nextSlide('carousel-triage')" 
-                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        ›
-                    </button>
-                </div>
-
-                <div class="p-6">
-                    <div class="flex items-center justify-between">
-                      <h3 class="text-lg font-semibold">CareFlow</h3>
-                      <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-rose-50 dark:bg-rose-950/40 px-2 py-1 text-rose-700 dark:text-rose-300">
-                        <i data-lucide="stethoscope" class="h-3.5 w-3.5"></i> Healthcare
-                      </span>
-                    </div>
-                    <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Outpatient healthcare app with role‑based triage, queueing, diagnosis records, and appointment scheduling.</p>
-                    <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">JavaScript</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">SMTP</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
-                      <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">LAMP</span>
-                    </div>
-                </div>
-            </article>
-          </div>
+              <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold">CareFlow</h3>
+                    <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-rose-50 dark:bg-rose-950/40 px-2 py-1 text-rose-700 dark:text-rose-300">
+                      <i data-lucide="stethoscope" class="h-3.5 w-3.5"></i> Healthcare
+                    </span>
+                  </div>
+                  <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Outpatient healthcare app with role‑based triage, queueing, diagnosis records, and appointment scheduling.</p>
+                  <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Bootstrap</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">JavaScript</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">jQuery</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">MySQL</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">SMTP</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
+                    <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">LAMP</span>
+                  </div>
+              </div>
+          </article>
+        </div>
       </div>
 
       <!-- Toggle Button -->
@@ -1055,6 +1115,8 @@
         });
 
         const caseStudies = {
+          aviation: { file: './assets/study/aviation.md' },
+          dar: { file: './assets/study/dar.md' },
           lending: { file: './assets/study/lending.md' },
           purchasing: { file: './assets/study/purchasing.md' },
           logistic: { file: './assets/study/logistic.md' },
