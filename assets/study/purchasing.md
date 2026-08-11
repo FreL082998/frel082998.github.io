@@ -7,289 +7,561 @@
 
 ## Project Overview
 
-The Purchasing Support System is an enterprise-grade, role-based procurement platform designed to digitize and streamline the company’s purchase request and purchase order processes.
+The Purchasing Support System is an enterprise procurement platform designed to digitize the company's purchase request and purchase order processes.
 
-The platform serves requesting employees, procurement officers, department leaders, finance approvers, and other authorized personnel involved in purchasing activities.
+Before the system was introduced, employees relied heavily on paper forms and manual follow-ups to request purchases and obtain approvals.
 
-Employees submit purchase requests through the system, which are then reviewed by procurement officers and canvassed across available suppliers. Based on the total purchase amount, each request is automatically routed through the appropriate approval hierarchy.
+The platform replaced that process with a centralized workflow where employees, procurement officers, managers, finance approvers, and executives can manage purchasing activities from one system.
 
-Depending on the configured approval bracket, a request may require approval from:
+Employees can submit purchase requests, procurement officers can review supplier quotations, and the system automatically determines which approvals are required based on the purchase amount and organizational rules.
 
-* The requester’s immediate manager
-* Division manager
-* Department manager
-* Other designated executives
-* Chief Financial Officer
+Once a request is fully approved, the procurement team can generate a purchase order and send the approved information to the company's existing ERP system.
 
-The system automatically notifies each approver and routes the request through the required approval sequence. Approvers can review, approve, or reject requests directly from the platform.
+### Business Value
 
-Once a purchase request has completed the approval process, the procurement officer can generate a purchase order. Approved purchase order records are then transmitted to the company’s existing enterprise resource planning system.
+The platform helps the organization:
+
+* Replace paper-based purchasing workflows
+* Reduce manual follow-ups between procurement and approvers
+* Apply purchasing policies consistently
+* Improve visibility into pending and completed requests
+* Reduce duplicate data entry
+* Maintain a clearer approval history
+* Connect procurement activities with the existing ERP system
+
+At a high level:
+
+```text
+Employee Submits Purchase Request
+            ↓
+Procurement Reviews Request
+            ↓
+Supplier Canvassing
+            ↓
+System Determines Required Approvals
+            ↓
+Managers / Executives Review
+            ↓
+Purchase Request Approved
+            ↓
+Purchase Order Created
+            ↓
+Approved Data Sent to ERP
+```
+
+---
 
 ## The Challenge
 
-The organization’s purchasing workflow relied heavily on paper-based forms and manual coordination.
+The organization's purchasing process relied heavily on printed forms and manual coordination.
 
-Employees completed purchase request forms using printed documents. Procurement officers manually tracked each request and contacted the appropriate managers or executives to obtain approvals.
+Employees completed paper purchase requests, while procurement officers manually tracked each request and contacted managers or executives for approval.
 
-This process created several operational challenges:
+Approval requirements also changed depending on the value of the purchase.
 
-* Purchase requests were difficult to track
-* Approval processing depended on manual follow-ups
-* Paper documents could be delayed, misplaced, or incomplete
-* Approval requirements varied depending on the purchase amount
-* Procurement officers had limited visibility into pending approvals
-* Purchase order details had to be manually entered into the ERP system
-* Manual data entry increased the risk of duplicate or incorrect records
-* Reporting and audit-trail generation required additional effort
+For example, a request could require approval from:
 
-The organization needed a centralized system that could enforce purchasing policies, automate approval routing, and integrate approved transactions with its existing ERP platform.
+* The requester's immediate manager
+* Division management
+* Department management
+* Other designated executives
+* The Chief Financial Officer
 
-## The Solution
+This created several operational challenges:
 
-The Purchasing Support System replaced the manual, paper-based workflow with a centralized digital procurement platform.
+* Requests were difficult to track
+* Approvals depended on manual follow-ups
+* Paper documents could be delayed or misplaced
+* Different purchase amounts required different approval paths
+* Procurement teams had limited visibility into pending approvals
+* Purchase-order information had to be entered again into the ERP system
+* Manual data entry increased the risk of errors or duplicated records
+* Audit and reporting activities required additional effort
 
-The solution provided a structured process covering the complete purchasing lifecycle:
+The organization needed a system that could automatically apply procurement policies instead of relying on employees to remember and coordinate each approval step manually.
 
-1. An employee creates and submits a purchase request.
-2. A procurement officer reviews the request.
-3. Supplier canvassing and quotation details are recorded.
-4. The system determines the required approval route based on the total amount.
-5. Approvers receive automatic email notifications.
-6. The request is routed sequentially through the configured approval hierarchy.
-7. Approvers review, approve, or reject the request.
-8. The procurement officer creates the purchase order.
-9. The approved purchase order is transmitted to the existing ERP system.
+---
 
-The platform introduced role-based access control to ensure that users could only view and perform actions relevant to their responsibilities.
+## What We Built
 
-Its configurable approval workflow allowed the organization to apply different approval levels based on financial thresholds, organizational hierarchy, and procurement policies.
+The Purchasing Support System replaced the manual process with a structured digital workflow covering the complete purchasing lifecycle.
 
-## System Workflow
+The process follows:
 
-```text
-Employee Creates Purchase Request
-                ↓
-Procurement Officer Reviews Request
-                ↓
-Supplier Canvassing and Evaluation
-                ↓
-System Determines Approval Bracket
-                ↓
-Manager and Executive Approval Sequence
-                ↓
-Purchase Request Approved
-                ↓
-Procurement Officer Creates Purchase Order
-                ↓
-Purchase Order Sent to ERP System
-```
+1. An employee creates a purchase request.
+2. Procurement reviews the request.
+3. Supplier quotations and canvassing information are recorded.
+4. The system evaluates the total purchase amount.
+5. The correct approval path is selected automatically.
+6. Required approvers are notified.
+7. The request moves through the approval hierarchy in sequence.
+8. Each approver can approve or reject the request.
+9. Procurement creates a purchase order after final approval.
+10. Approved purchase-order information is transmitted to the existing ERP system.
+
+The platform also uses role-based access so users only see the information and actions relevant to their responsibilities.
+
+---
+
+## Who Uses the Platform
+
+The platform supports several groups across the procurement process.
+
+### Requesting Employees
+
+Employees can:
+
+* Create purchase requests
+* Add requested items
+* Submit requests
+* Review current status
+* View approval history
+
+### Procurement Officers
+
+Procurement personnel can:
+
+* Review submitted requests
+* Record supplier quotations
+* Manage canvassing information
+* Monitor approval progress
+* Generate purchase orders
+* Send approved purchasing data to the ERP system
+
+### Managers and Executives
+
+Approvers can:
+
+* Review assigned requests
+* View purchase information
+* Approve or reject requests
+* Review prior approval activity
+
+### Finance and Administrative Users
+
+Authorized personnel can oversee purchasing activity according to their assigned responsibilities.
+
+---
 
 ## My Role
 
-As the Technical Lead and Full-Stack Developer, I led the architecture, design, development, testing, deployment, and production support of the entire procurement system.
+As the Technical Lead and Full-Stack Developer, I led the technical delivery of the procurement platform from architecture through production support.
 
-I was responsible for converting business requirements and purchasing policies into a scalable technical solution while guiding the development team throughout the project lifecycle.
+I was responsible for translating purchasing policies and business workflows into a maintainable technical solution while also guiding the development team.
 
-## My Contributions
+My responsibilities included:
 
-### System Architecture and Technical Leadership
+* Solution architecture
+* Technical design
+* Business requirements analysis
+* Approval-workflow design
+* Role-based access design
+* Backend development
+* Frontend development
+* Development standards
+* Technical mentoring
+* Code and implementation guidance
+* Automated testing
+* CI/CD architecture
+* Deployment
+* User Acceptance Testing
+* Production release
+* Ongoing support and maintenance
 
-Led the technical architecture and design of the complete procurement platform.
+My role combined hands-on engineering with technical leadership across the full project lifecycle.
+
+---
+
+## My Key Contributions
+
+### 1. Led the System Architecture and Technical Direction
+
+I designed the overall architecture for the procurement platform and translated business purchasing rules into technical components.
 
 My responsibilities included:
 
 * Defining the overall application architecture
-* Translating procurement workflows into technical components
-* Designing the role-based access and approval-routing mechanisms
+* Designing approval and access-control mechanisms
+* Translating procurement policies into system rules
 * Establishing frontend and backend development standards
-* Reviewing technical designs and implementation approaches
-* Mentoring developers on architecture, code organization, and engineering best practices
-* Coordinating technical decisions across the development lifecycle
+* Reviewing implementation approaches
+* Guiding code organization
+* Mentoring developers
+* Coordinating technical decisions throughout the project
 
-### Purchase Request Module
+### Why It Mattered
 
-Designed and developed the full-stack Purchase Request module.
+The approval process was one of the most important parts of the system.
 
-The module enabled employees and procurement officers to:
+The architecture needed to support current purchasing policies while remaining maintainable if approval requirements changed later.
 
-* Create and update purchase requests
-* Add requested items and purchasing details
+---
+
+### 2. Designed and Developed the Purchase Request Module
+
+I designed and developed the full-stack module used to manage purchase requests.
+
+The module allows employees and procurement officers to:
+
+* Create purchase requests
+* Update request information
+* Add requested items
 * Submit requests for review
 * Record supplier canvassing information
-* Track the request’s current approval status
+* Track approval status
 * Review approval and rejection history
-* Manage supporting information throughout the procurement process
+* Maintain supporting information throughout the process
 
-I implemented both the backend services using Laravel and PHP and the frontend interfaces using Next.js, TypeScript, and Tailwind CSS.
+I developed:
 
-### Purchase Order Module
+* Backend services using Laravel and PHP
+* Frontend interfaces using Next.js, TypeScript, and Tailwind CSS
 
-Designed and developed the Purchase Order module for approved procurement requests.
+### Why It Mattered
 
-The module allowed procurement officers to:
+This module replaced the paper request form with a centralized digital record.
+
+Users could see where a request was in the process instead of depending on physical documents and manual follow-ups.
+
+---
+
+### 3. Designed and Developed the Purchase Order Module
+
+After a purchase request completed the required approval process, procurement personnel needed a structured way to create the final purchase order.
+
+I developed a module that allowed procurement officers to:
 
 * Convert approved purchase requests into purchase orders
-* Maintain purchase order records
-* Validate purchasing and supplier information
-* Track the status of generated purchase orders
-* Prepare approved purchasing data for transmission to the existing ERP system
+* Maintain purchase-order records
+* Validate supplier and purchasing information
+* Track purchase-order status
+* Prepare approved information for transmission to the ERP system
 
-### Automated Approval Workflow
+### Why It Mattered
 
-Designed and implemented the approval-routing logic based on purchase amount brackets and organizational hierarchy.
+The purchase-order workflow connected the internal approval process to the organization's established enterprise systems.
 
-The workflow automatically:
+This reduced the need to manually recreate approved purchasing information.
 
-* Identified the required approvers
-* Routed requests in the correct sequence
-* Enforced the configured approval hierarchy
-* Prevented users from bypassing required approval stages
-* Recorded approval and rejection activities
-* Updated the request status after each action
-* Continued routing until all required approvals were completed
+---
 
-I applied the **Strategy Pattern** to separate approval-routing rules and make the workflow easier to maintain and extend.
+### 4. Designed the Automated Approval Workflow
 
-The implementation followed **SOLID principles** to improve modularity, testability, and long-term maintainability.
+One of my main contributions was designing and implementing the logic that automatically determines which users must approve a purchase request.
 
-### Email Notification Service
+Approval requirements are based on:
 
-Designed and developed the email notification service used throughout the approval process.
+* Purchase amount
+* Financial thresholds
+* Organizational hierarchy
+* Configured procurement rules
 
-Notifications were automatically sent when:
+The system automatically:
 
-* A purchase request was submitted
-* An approval action was required
-* A request was approved
-* A request was rejected
-* The request moved to the next approver
-* The complete approval workflow was finished
+* Identifies required approvers
+* Determines the correct approval sequence
+* Routes requests to each approver
+* Prevents required stages from being bypassed
+* Records approvals and rejections
+* Updates request status
+* Continues routing until all approvals are completed
 
-This reduced the need for procurement officers to manually contact approvers and follow up on pending requests.
+Conceptually:
 
-### Test-Driven Development and Quality Assurance
+```text
+Purchase Request
+      ↓
+Evaluate Purchase Amount
+      ↓
+Select Approval Rules
+      ↓
+Determine Required Approvers
+      ↓
+Route to Approver 1
+      ↓
+Route to Approver 2
+      ↓
+Continue Until Complete
+      ↓
+Final Approval
+```
 
-Introduced and applied a Test-Driven Development approach across key system components.
+### Why It Mattered
 
-I developed automated tests covering:
+Procurement officers no longer needed to manually determine who should approve every request.
 
-* Unit testing
-* Regression testing
-* Smoke testing
-* System integration testing
-* Business-rule validation
-* Approval workflow scenarios
-* Backend service behavior
-* Frontend component behavior
+The system applied purchasing policies consistently and automatically.
 
-The backend test suite was developed using **PHPUnit**, while frontend tests were implemented using **Jest**.
+---
 
-Automated testing helped validate complex approval scenarios, reduce regression risks, and improve deployment confidence.
+### 5. Designed the Approval Logic for Maintainability
 
-### Continuous Integration and Deployment
+Approval rules can change as financial policies and organizational structures evolve.
 
-Designed and developed the CI/CD process for automated application deployment.
+I used the **Strategy Pattern** to separate different approval-routing rules rather than placing all approval logic into one tightly coupled component.
 
-The deployment pipeline used:
+The system was also designed using **SOLID principles** to encourage:
 
-* AWS CodeBuild for building and validating the application
-* AWS CodeDeploy for automated deployment
-* Docker for consistent application environments
-* Automated testing as part of the delivery workflow
-
-The pipeline reduced manual deployment steps and helped ensure that releases were repeatable and consistent across environments.
-
-### Deployment and User Acceptance Testing
-
-Led the system deployment and supported User Acceptance Testing.
-
-My responsibilities included:
-
-* Preparing the application for deployment
-* Coordinating environment configuration
-* Deploying frontend and backend components
-* Supporting business users during UAT
-* Investigating defects and workflow issues
-* Implementing required corrections
-* Validating fixes before production release
-
-### Production Maintenance and Support
-
-Provided ongoing maintenance and production support after deployment.
-
-This included:
-
-* Investigating issues reported by users
-* Resolving procurement workflow defects
-* Fixing approval-routing and notification concerns
-* Diagnosing frontend and backend problems
-* Supporting integration issues with the ERP system
-* Implementing production fixes and preventive improvements
-* Monitoring application behavior following releases
-
-## Technical Approach
-
-### Role-Based Access Control
-
-Access was assigned according to each user’s responsibilities, including requester, procurement officer, approver, administrator, and finance-related roles.
-
-This ensured that users could only access authorized information and perform permitted actions.
-
-### Configurable Approval Routing
-
-Approval requirements were determined by the purchase amount and configured organizational rules.
-
-The workflow supported multiple approval levels and sequential routing without requiring procurement officers to manually identify and contact every approver.
-
-### Strategy Pattern
-
-The Strategy Pattern was used to isolate approval-routing behavior and business rules.
-
-This made it easier to support different approval brackets and modify approval requirements without tightly coupling the rules to the rest of the application.
-
-### SOLID Principles
-
-The application was designed using SOLID principles to promote:
-
-* Clear separation of responsibilities
+* Clear responsibilities
 * Loosely coupled components
 * Reusable services
-* Easier automated testing
+* Easier testing
 * Maintainable business logic
 * Extensible approval workflows
 
+### Why It Mattered
+
+The technical design made it easier to modify individual approval rules without changing unrelated parts of the application.
+
+This was especially important because purchasing rules could vary depending on financial thresholds and organizational requirements.
+
+---
+
+### 6. Built Automated Approval Notifications
+
+I designed and developed an email-notification service supporting the approval workflow.
+
+Notifications are sent when:
+
+* A purchase request is submitted
+* An approver needs to take action
+* A request is approved
+* A request is rejected
+* The workflow moves to another approver
+* The complete approval process finishes
+
+### Why It Mattered
+
+This reduced the need for procurement officers to manually contact managers and executives to remind them about pending requests.
+
+Users were automatically informed when their participation was required.
+
+---
+
+### 7. Implemented Role-Based Access Control
+
+Different users have different responsibilities within procurement.
+
+The platform assigns permissions based on roles such as:
+
+* Requester
+* Procurement officer
+* Approver
+* Administrator
+* Finance-related roles
+
+### Why It Mattered
+
+Employees only have access to the information and actions appropriate to their responsibilities.
+
+This also helps protect purchasing information and prevents unauthorized workflow actions.
+
+---
+
+### 8. Introduced Automated Testing
+
+Because approval workflows contain many possible combinations of users, thresholds, and statuses, regression risk was an important concern.
+
+I introduced and applied a Test-Driven Development approach across key components.
+
+Testing covered:
+
+* Unit tests
+* Regression tests
+* Smoke tests
+* Integration tests
+* Business-rule validation
+* Approval scenarios
+* Backend services
+* Frontend components
+
+The backend tests used **PHPUnit**, while frontend tests used **Jest**.
+
+### Why It Mattered
+
+Automated testing gave the team greater confidence when modifying complex approval logic.
+
+It also helped identify regressions before application changes reached production.
+
+---
+
+### 9. Designed the CI/CD Deployment Pipeline
+
+I designed and implemented the application's automated build and deployment process.
+
+The pipeline used:
+
+* AWS CodeBuild
+* AWS CodeDeploy
+* Docker
+* Automated testing
+
+The delivery process could:
+
+* Build the application
+* Validate changes
+* Execute tests
+* Prepare deployment artifacts
+* Deploy application updates consistently
+
+### Why It Mattered
+
+This reduced manual deployment work and helped make releases more repeatable across environments.
+
+---
+
+### 10. Integrated the Platform with the Existing ERP System
+
+Approved purchase-order information needed to reach the organization's established ERP platform.
+
+The procurement system prepared and transmitted approved purchasing data to that system.
+
+### Why It Mattered
+
+Without integration, procurement personnel would need to manually re-enter information that had already been captured and approved.
+
+The integration reduced duplicate data entry and connected the new procurement workflow with existing financial and operational processes.
+
+---
+
+### 11. Led User Acceptance Testing and Production Deployment
+
+I led deployment activities and supported business users during User Acceptance Testing.
+
+My responsibilities included:
+
+* Preparing releases
+* Coordinating environment configuration
+* Deploying frontend and backend components
+* Supporting business users during UAT
+* Investigating reported workflow issues
+* Implementing required corrections
+* Validating fixes
+* Supporting production release
+
+### Why It Mattered
+
+The application needed to correctly represent real procurement policies, not simply pass technical tests.
+
+UAT allowed business users to validate the actual purchasing and approval workflows before production release.
+
+---
+
+### 12. Supported the Platform After Production Release
+
+I continued supporting the platform after deployment.
+
+Production support included:
+
+* Investigating user-reported issues
+* Resolving procurement workflow defects
+* Fixing approval-routing issues
+* Fixing notification issues
+* Diagnosing frontend problems
+* Diagnosing backend problems
+* Supporting ERP integration issues
+* Implementing production fixes
+* Adding preventive improvements
+* Monitoring application behavior after releases
+
+### Why It Mattered
+
+Procurement systems support real business transactions, so reliability after deployment was just as important as initial development.
+
+---
+
+## Technical Approach
+
+For technical readers, the system was designed around configurable workflows, modular services, automated testing, and enterprise integration.
+
+### Role-Based Access
+
+Access is determined by each user's responsibilities in the purchasing process.
+
+This keeps requester, procurement, approval, administrative, and finance-related capabilities separated.
+
+### Configurable Approval Routing
+
+The application determines required approvals based on purchase amount and organizational rules.
+
+Sequential routing ensures required approval levels are completed in the correct order.
+
+### Strategy Pattern
+
+Approval strategies isolate different routing behaviors.
+
+This makes it easier to change approval requirements without tightly coupling those rules to unrelated application components.
+
+### SOLID Design
+
+The application's architecture emphasizes:
+
+* Separation of responsibilities
+* Modular business logic
+* Reusable services
+* Testability
+* Maintainability
+* Extensibility
+
+### Automated Testing
+
+PHPUnit and Jest support automated validation across backend and frontend functionality.
+
+### CI/CD
+
+Docker, AWS CodeBuild, and AWS CodeDeploy support repeatable application builds and releases.
+
 ### ERP Integration
 
-Approved purchase order data was prepared and transmitted to the company’s existing ERP system.
+Approved purchase-order data is transmitted to the company's existing ERP platform.
 
-This reduced duplicate data entry and connected the newly developed procurement workflow with the organization’s established financial and operational processes.
+---
 
 ## Key Results
 
+The system transformed purchasing from a paper-heavy workflow into a structured enterprise application.
+
+Key outcomes included:
+
 * Digitized the complete purchase request and purchase order workflow
-* Replaced paper-based purchasing forms with a centralized enterprise platform
-* Automated approval routing based on financial thresholds and organizational hierarchy
-* Reduced manual coordination between procurement officers and approvers
-* Introduced automatic email notifications for approval-related activities
-* Improved visibility into request and approval statuses
-* Reduced duplicate data entry through ERP integration
-* Established automated testing using PHPUnit and Jest
-* Implemented a repeatable CI/CD deployment pipeline using AWS CodeBuild and CodeDeploy
-* Improved maintainability by applying SOLID principles and the Strategy Pattern
+* Replaced paper-based purchasing forms
+* Automated approval routing based on financial thresholds
+* Applied organizational approval hierarchy automatically
+* Reduced manual coordination between procurement teams and approvers
+* Introduced automated approval notifications
+* Improved visibility into current request status
+* Preserved approval and rejection history
+* Reduced duplicate ERP data entry
+* Integrated approved purchase orders with the existing ERP platform
+* Introduced automated backend and frontend testing
+* Established CI/CD using AWS CodeBuild and CodeDeploy
+* Improved maintainability using SOLID principles and the Strategy Pattern
 * Led the project from architecture and development through UAT, deployment, and production support
+
+---
 
 ## Skills Demonstrated
 
-**Technical Leadership:** Architecture planning, technical decision-making, code review, mentoring, and development standards
+**Technical Leadership**
+Architecture planning, technical decision-making, developer mentoring, development standards, implementation guidance, and end-to-end project leadership
 
-**Full-Stack Development:** Laravel, PHP, Next.js, TypeScript, Tailwind CSS, and MySQL
+**Procurement and Enterprise Workflows**
+Purchase requests, supplier canvassing, financial approval routing, purchase orders, ERP integration, and enterprise procurement processes
 
-**Software Architecture:** Role-based systems, approval workflow engines, modular services, and enterprise integrations
+**Full-Stack Development**
+Laravel, PHP, Next.js, TypeScript, Tailwind CSS, MySQL, and frontend-backend development
 
-**Engineering Practices:** Test-Driven Development, SOLID principles, Strategy Pattern, automated testing, and maintainable code design
+**Workflow Engineering**
+Sequential approvals, financial thresholds, organizational hierarchy, status management, notifications, and configurable business rules
 
-**Cloud and DevOps:** Docker, AWS CodeBuild, AWS CodeDeploy, CI/CD pipelines, and production deployment
+**Software Architecture**
+Role-based systems, modular services, approval workflow engines, Strategy Pattern, SOLID principles, and enterprise integration
 
-**Quality Assurance:** Unit, regression, smoke, integration, and User Acceptance Testing
+**Quality Engineering**
+Test-Driven Development, PHPUnit, Jest, unit testing, regression testing, smoke testing, integration testing, and business-rule validation
 
-**Production Operations:** Troubleshooting, maintenance, customer support, defect resolution, and release validation
+**Cloud and DevOps**
+Docker, AWS CodeBuild, AWS CodeDeploy, CI/CD pipelines, automated testing, and production deployment
+
+**Production Operations**
+UAT, troubleshooting, defect resolution, ERP integration support, deployment validation, maintenance, and production support

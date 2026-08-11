@@ -7,217 +7,327 @@
 
 ## Project Overview
 
-DAR is a digital aircraft-records management and archiving platform within the Aviation Maintenance Platform ecosystem.
+DAR is a digital aircraft-records management and archiving platform within the broader Aviation Maintenance Platform ecosystem.
 
-The platform provides aviation organizations with a centralized location for storing, organizing, accessing, archiving, and managing aircraft-related documentation.
+It gives aviation organizations a centralized place to store, organize, retrieve, archive, and manage aircraft-related documentation used in maintenance, operational, and regulatory activities.
 
-DAR enables authorized users to:
+Authorized users can:
 
 * Upload digital aircraft records
-* Organize aircraft documents
-* Access maintenance-related documentation
-* Archive historical aircraft records
-* Delete records through authorized workflows
-* Maintain documentation needed for regulatory activities
-* Retrieve records for operational and compliance reviews
+* Organize documents by aircraft and related information
+* Access maintenance and operational documentation
+* Archive historical records
+* Remove records through controlled workflows
+* Retrieve documentation for inspections and compliance reviews
+* Maintain records needed by operational and regulatory teams
 
-**Business Value:** DAR makes aircraft documentation easier to organize and access while improving the availability of records required for aircraft maintenance, operational activities, and regulatory compliance.
+### Business Value
 
-## Primary User Personas
+Aircraft documentation must remain accessible, organized, and reliable throughout the life of an aircraft.
 
-* Aircraft operators, fleet managers, and pilots
+DAR helps aviation organizations reduce reliance on fragmented document storage, improve access to historical records, and make important documentation easier to retrieve during maintenance activities, operational reviews, and regulatory inspections.
+
+---
+
+## The Challenge
+
+DAR was already supporting important document-management workflows, but parts of its technical foundation needed modernization.
+
+The main challenge was improving the platform's reliability and maintainability without disrupting access to aircraft records.
+
+Key issues included:
+
+* Dependence on an older PHP runtime
+* Outdated application dependencies
+* Differences between developer environments
+* Complex and inconsistent deployment processes
+* Limited centralized application logging
+* Difficulty diagnosing production errors
+* Limited visibility into application behavior after deployment
+* Incomplete technical and onboarding documentation
+* Repetitive development and maintenance tasks
+* Need for more consistent AI-assisted engineering practices
+
+Because the platform stores documentation used in aviation operations and compliance activities, deployment and runtime problems could affect more than just developer productivity. They could also make important records harder to access when users needed them.
+
+---
+
+## What We Improved
+
+I contributed to a modernization initiative focused on strengthening the platform's technical foundation rather than changing its core document-management purpose.
+
+The work included:
+
+* Migrating the application to PHP 8.2
+* Modernizing outdated dependencies
+* Improving AWS deployment workflows
+* Centralizing application logs
+* Strengthening deployment automation
+* Standardizing local development with Docker
+* Improving technical and onboarding documentation
+* Automating recurring engineering activities
+* Introducing consistent AI-assisted engineering standards
+
+The goal was to make the application easier to develop, deploy, monitor, and support in production.
+
+---
+
+## Who Uses the Platform
+
+DAR supports several types of aviation users, including:
+
+* Aircraft operators and fleet managers
+* Pilots
 * Maintenance technicians
 * OEM partners and authorized service centers
 * Site and organization administrators
 * Regulatory and compliance auditors
 
-## The Challenge
+These users rely on the system for different purposes, but all depend on accurate and accessible aircraft documentation.
 
-The platform required modernization to maintain compatibility with current runtime environments and improve deployment reliability.
+---
 
-Engineering and operational challenges included:
+## How the Record Workflow Works
 
-* Legacy PHP runtime dependencies
-* Outdated application packages
-* Inconsistent local development environments
-* Deployment-process complexity
-* Limited centralized application logging
-* Difficulty diagnosing production errors
-* Limited operational visibility
-* Need for improved technical documentation
-* Manual and repetitive development processes
-* Need for consistent AI-assisted engineering standards
-
-## The Solution
-
-I led and contributed to modernization initiatives covering application runtime upgrades, cloud deployment, centralized logging, local development, documentation, and engineering automation.
-
-The solution included:
-
-* Migrating the application to PHP 8.2
-* Modernizing runtime dependencies
-* Improving AWS Elastic Beanstalk deployments
-* Centralizing application logs in Amazon CloudWatch
-* Hardening deployment automation
-* Creating a Docker-based local development environment
-* Improving technical and onboarding documentation
-* Automating recurring development workflows
-* Introducing AI-assisted engineering standards
-
-## Document Management Workflow
+At a high level, the platform follows a straightforward document lifecycle:
 
 ```text
 Authorized User Uploads Aircraft Record
                     ↓
 Application Processes the Document
                     ↓
-Record Is Associated with Aircraft Information
+Record Is Linked to Aircraft Information
                     ↓
 Document Becomes Available to Authorized Users
                     ↓
-Record Can Be Accessed, Archived, or Deleted
+Record Can Be Accessed, Archived, or Removed
                     ↓
 Operational and Compliance Teams Review Records
 ```
 
+The technical modernization work had to preserve this workflow while improving the reliability of the systems supporting it.
+
+---
+
 ## My Role
 
-I contributed across platform modernization, cloud deployment, observability, local development, technical documentation, and developer-experience improvements.
+As a full-stack developer, I worked primarily on the technical modernization and operational reliability of the platform.
 
 My responsibilities included:
 
 * PHP runtime migration
 * Dependency modernization
-* Deployment-process improvement
-* AWS Elastic Beanstalk configuration
+* AWS deployment improvements
+* Elastic Beanstalk configuration
 * Amazon CloudWatch logging
 * Deployment automation
-* Docker development-environment creation
+* Docker-based development environments
 * Technical and onboarding documentation
 * Development-workflow automation
-* Operational troubleshooting
+* Production troubleshooting
 * AI-assisted engineering standards
 
-## My Contributions
+My contribution focused on making the platform easier to maintain, more predictable to deploy, and easier to diagnose when problems occurred.
 
-### Platform Upgrades and Reliability
+---
 
-Led modernization efforts focused on application maintainability, runtime compatibility, deployment consistency, and operational reliability.
+## My Key Contributions
 
-The work included:
+### 1. Modernized the Application Runtime
+
+One of the main initiatives was moving the application to PHP 8.2 and updating the surrounding dependencies.
+
+This required more than changing the runtime version because existing code, packages, configuration, and hosted environments also needed to remain compatible.
+
+My work included:
 
 * Migrating the application to PHP 8.2
 * Updating application dependencies
 * Resolving runtime incompatibilities
 * Replacing deprecated behavior
 * Updating environment configurations
-* Testing document-management workflows
+* Testing document-management workflows after the migration
 * Validating compatibility across hosted environments
 
-### Cloud Deployment Engineering
+### Why It Mattered
 
-Improved application deployment workflows on AWS Elastic Beanstalk.
+The upgrade reduced reliance on outdated runtime components and gave the application a more current foundation for future maintenance and development.
 
-The deployment work included:
+---
 
-* Updating deployment configurations
-* Improving environment consistency
-* Hardening automated deployment steps
-* Reducing deployment-related errors
-* Improving release repeatability
-* Strengthening deployment troubleshooting processes
+### 2. Improved Cloud Deployment Reliability
 
-### Logging and Observability
+DAR was deployed using AWS Elastic Beanstalk, and part of my work focused on making application releases more predictable and easier to troubleshoot.
 
-Centralized application logging through Amazon CloudWatch.
+I improved:
 
-This enabled the engineering team to:
+* Deployment configuration
+* Environment consistency
+* Automated deployment steps
+* Release repeatability
+* Deployment troubleshooting
+* Handling of deployment-related issues
 
-* Review application errors centrally
+### Why It Mattered
+
+A more consistent deployment process reduces the risk that application changes behave differently between environments or fail because of configuration differences.
+
+For a system used to access important aircraft documentation, reliable releases are an important part of maintaining service availability.
+
+---
+
+### 3. Introduced Centralized Application Logging
+
+Diagnosing production problems was more difficult when application logs were distributed across individual servers or environments.
+
+I helped centralize application logging through Amazon CloudWatch.
+
+This allowed the engineering team to:
+
+* Review application errors from one location
 * Investigate deployment failures
-* Diagnose runtime issues
+* Diagnose runtime problems
 * Trace application behavior
-* Improve production troubleshooting
-* Reduce dependency on direct server access
+* Troubleshoot production issues more efficiently
+* Reduce the need for direct server access
 * Improve operational visibility
 
-### Docker-Based Development Environment
+### Why It Mattered
 
-Built and improved a Docker-based local development environment.
+Centralized logging made production issues easier to investigate and reduced the amount of time needed to understand what was happening inside the application.
 
-The environment standardized:
+Instead of relying heavily on direct server access, engineers could inspect application and deployment behavior through a centralized monitoring service.
+
+---
+
+### 4. Standardized Local Development with Docker
+
+Developers previously had greater risk of encountering differences in runtime versions, dependencies, databases, or supporting services between their machines.
+
+I built and improved a Docker-based development environment that standardized:
 
 * PHP runtime versions
 * Application dependencies
 * Database configuration
 * Supporting services
-* Developer setup procedures
-* Local environment behavior
+* Local setup procedures
+* Application behavior during development
 
-This reduced differences between developer machines and made project onboarding more consistent.
+### Why It Mattered
 
-### Documentation and Developer Experience
+A standardized environment reduces the common problem of software behaving differently from one developer machine to another.
 
-Improved development documentation and automated recurring engineering activities.
+It also makes onboarding easier because new developers can start from a defined environment rather than manually reproducing the application's infrastructure.
 
-The work included:
+---
 
-* Local-environment documentation
-* Deployment instructions
-* Troubleshooting references
-* Development-workflow documentation
+### 5. Improved Documentation and Developer Experience
+
+Technical reliability also depends on developers having clear instructions for working with the application.
+
+I improved documentation covering:
+
+* Local environment setup
+* Deployment procedures
+* Troubleshooting
+* Development workflows
 * Engineering standards
 * AI-assisted development guidance
-* Reusable automation processes
 
-## Technical Highlights
+I also created reusable processes for recurring engineering activities.
 
-### Runtime Modernization
+### Why It Mattered
 
-Migrating to PHP 8.2 improved compatibility with supported language features and modern application dependencies.
+Better documentation reduces reliance on knowledge held by individual developers and makes common development and operational tasks easier to repeat consistently.
 
-### Cloud Deployment Consistency
+---
 
-AWS Elastic Beanstalk deployment improvements created a more repeatable and maintainable deployment process.
+### 6. Introduced AI-Assisted Engineering Standards
 
-### Centralized Observability
+I also contributed to structured AI-assisted development practices for recurring engineering and documentation work.
 
-Amazon CloudWatch provided a centralized location for diagnosing application, runtime, and deployment problems.
+This included:
 
-### Containerized Development
+* Reusable engineering workflows
+* Documentation guidance
+* Documentation-generation support
+* Process automation
+* Development standards for AI-assisted work
 
-Docker reduced differences between local environments and made developer onboarding more consistent.
+### Why It Mattered
 
-### AI-Assisted Development Standards
+The goal was not simply to introduce AI tools, but to use them in a repeatable way that supported documentation quality, engineering consistency, and reduced repetitive work.
 
-Structured AI-assisted engineering practices helped improve documentation quality and reduce repetitive development work.
+---
+
+## Technical Approach
+
+For technical readers, the modernization focused on improving the systems surrounding the core Laravel application.
+
+### Runtime
+
+The application was upgraded to PHP 8.2, requiring dependency updates, deprecated-code remediation, configuration changes, and regression testing.
+
+### Cloud Deployment
+
+AWS Elastic Beanstalk continued to host the application, while deployment configurations and automation were improved to create more consistent releases.
+
+### Observability
+
+Amazon CloudWatch was used to centralize application and deployment logs, giving the engineering team better visibility into runtime and production problems.
+
+### Development Environment
+
+Docker standardized the local application runtime, database, dependencies, and supporting services.
+
+### Engineering Workflow
+
+Documentation and automation were improved so that development, deployment, troubleshooting, and AI-assisted engineering activities could be performed more consistently.
+
+---
 
 ## Key Results
+
+The modernization improved the technical foundation supporting DAR's aircraft-record workflows.
+
+Key outcomes included:
 
 * Migrated the platform to PHP 8.2
 * Modernized application dependencies
 * Improved AWS Elastic Beanstalk deployment workflows
-* Hardened deployment automation
+* Strengthened deployment automation
+* Improved release consistency
 * Centralized application logging through Amazon CloudWatch
 * Improved production troubleshooting
 * Increased operational visibility
-* Built a consistent Docker-based development environment
-* Improved technical and onboarding documentation
+* Reduced dependence on direct server access for diagnostics
+* Built a standardized Docker-based development environment
+* Improved developer onboarding
+* Improved technical and troubleshooting documentation
 * Automated recurring development activities
-* Introduced AI-assisted engineering standards
+* Introduced consistent AI-assisted engineering practices
+
+---
 
 ## Skills Demonstrated
 
-**Aviation Software:** Digital aircraft records, document management, archiving workflows, and regulatory-document access
+**Aviation Software**
+Digital aircraft records, document management, archiving workflows, maintenance-document access, and regulatory-document support
 
-**Backend Development:** Laravel, PHP, MySQL, runtime upgrades, and dependency modernization
+**Backend Development**
+Laravel, PHP, MySQL, runtime upgrades, dependency modernization, and application maintenance
 
-**Cloud Engineering:** AWS Elastic Beanstalk, Amazon CloudWatch, hosted-environment configuration, and deployment troubleshooting
+**Cloud Engineering**
+AWS Elastic Beanstalk, Amazon CloudWatch, hosted-environment configuration, deployment diagnostics, and production support
 
-**DevOps:** Docker, CI/CD, deployment automation, local-environment standardization, and release consistency
+**DevOps**
+Docker, CI/CD, deployment automation, environment standardization, and release consistency
 
-**Observability:** Centralized application logging, production diagnostics, and operational monitoring
+**Observability**
+Centralized application logging, production diagnostics, deployment troubleshooting, and operational visibility
 
-**Developer Experience:** Development environments, onboarding documentation, workflow automation, and engineering standards
+**Developer Experience**
+Local development environments, onboarding documentation, troubleshooting guides, reusable workflows, and engineering standards
 
-**AI-Assisted Engineering:** Documentation guidance, reusable workflows, and development-process automation
+**AI-Assisted Engineering**
+Structured AI workflows, documentation support, development guidance, and repetitive-process automation

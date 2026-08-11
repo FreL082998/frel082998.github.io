@@ -7,156 +7,220 @@
 
 ## Project Overview
 
-The Modular Logistics Operations Platform is an enterprise system that supports multiple logistics, workforce, sales, inventory, ordering, and delivery operations through a collection of mobile and web applications.
+This is an enterprise logistics platform that supports day-to-day operations across workforce management, inventory, sales, ordering, delivery, and back-office administration.
 
-The platform serves different employee groups, including:
+Instead of relying on a single application, the platform is made up of multiple mobile and web systems designed for different operational teams.
+
+It supports users such as:
 
 * Human resources personnel
-* Back-office users
-* Delivery teams
+* Back-office employees
 * Inventory teams
-* Sales personnel
-* Customer service representatives
-* Field-based employees
+* Sales representatives
+* Delivery personnel
+* Customer service teams
+* Other field-based employees
 
-Each operational area is supported by a dedicated application or service, including:
+The platform includes applications for:
 
-* Daily time record management
+* Attendance and daily time records
 * Leave filing and approval
-* Inventory management
-* Sales operations
+* Inventory operations
+* Sales activities
 * Delivery management
 * Customer ordering
-* Back-office administration
+* Administrative and back-office workflows
 
-The platform follows a microservices architecture, with separate backend services supporting the different mobile and web applications.
+It also integrates with the organization's existing CRM and ERP systems so customer, product, inventory, sales, and operational information can move between systems.
 
-It also integrates with the organization’s existing CRM and ERP ecosystem to centralize operational data and synchronize information across systems.
+### Business Value
+
+The platform gives different operational teams dedicated tools while allowing them to work within a connected enterprise ecosystem.
+
+Modernization efforts improved the platform's ability to:
+
+* Support a growing number of applications
+* Isolate high-volume operations from unrelated systems
+* Reduce duplicated organizational data
+* Support field employees with unreliable internet connectivity
+* Improve security across mobile and web applications
+* Integrate with existing enterprise systems
+* Maintain and deploy services independently
+
+---
 
 ## The Challenge
 
-The original platform hosted multiple backend applications and services on a shared server.
+As the number of business applications increased, the platform's original architecture became more difficult to scale and maintain.
 
-Whenever a new business service was introduced, it was deployed to the same environment. As the number of applications and users increased, the shared infrastructure created performance, scalability, security, and maintainability concerns.
+Several backend applications were hosted together on the same server.
 
-### Shared Server Limitations
+This created a situation where resource-heavy activity in one application could affect other unrelated systems.
 
-Multiple mobile and web applications depended on the same server resources.
+At the same time, field employees frequently worked in locations where internet connectivity was unreliable or completely unavailable.
 
-Applications that performed large database queries or processed high transaction volumes could affect the performance of unrelated services. This increased the risk of slow response times, interrupted transactions, and reduced system availability.
+The organization faced four major challenges.
 
-### Limited Field Connectivity
+### Shared Infrastructure
 
-Many employees worked in delivery locations and field environments with unreliable or unavailable mobile reception.
+Multiple mobile and web applications competed for the same server resources.
 
-Because the applications depended on an active internet connection, field users could not consistently access data or complete operational tasks when connectivity was unavailable.
+Large database queries or high transaction volumes from one application could affect the performance and availability of other systems.
 
-This particularly affected delivery-related workflows that needed to operate continuously while employees were on the road.
+### Unreliable Field Connectivity
 
-### Security Vulnerabilities
+Delivery and other field-based employees depended on mobile applications while working on the road.
 
-The first Vulnerability Assessment and Penetration Testing exercise identified more than 100 security findings across the mobile and web applications.
+When connectivity was unavailable, users could not reliably access information or complete important transactions.
 
-The findings covered multiple systems and required extensive remediation to improve the platform’s security posture.
+### Security Findings
 
-### Master-Data Duplication
+A Vulnerability Assessment and Penetration Testing exercise identified more than 100 findings across the platform's mobile and web applications.
 
-Each newly deployed service required copies of existing master data to be seeded into its own database.
+These required substantial remediation across multiple systems.
 
-This created several concerns:
+### Duplicated Master Data
 
-* Duplicate records across services
-* Inconsistent master-data values
-* Additional deployment steps
-* Difficult synchronization between systems
-* Increased maintenance effort
-* Greater risk of outdated reference data
+Each new service required copies of existing organizational reference data to be added to its own database.
 
-The platform needed a centralized and reliable way for existing and future services to access shared organizational data.
+This created:
 
-## The Solution
+* Duplicate records
+* Inconsistent values
+* Additional deployment work
+* Synchronization problems
+* Higher maintenance effort
+* Risk of outdated information
 
-The platform was transformed from a shared-server implementation into a modular microservices-based architecture.
+The platform needed a more modular architecture that could support future services while improving reliability, field usability, data consistency, and security.
 
-Backend services were separated according to their business capabilities, reducing dependencies between applications and improving the ability to deploy, maintain, and scale services independently.
+---
 
-The solution introduced:
+## What We Improved
 
-* Dedicated backend services for operational applications
-* Centralized master-data management
-* Offline-first functionality for field-based mobile users
-* Local mobile data storage and synchronization
-* Security remediation across mobile and web applications
-* Integration with existing CRM and ERP systems
-* Cloud-hosted infrastructure
-* Independent deployment and service maintenance
+The platform was gradually transformed from a shared-server environment into a more modular architecture.
 
-## Platform Modules
+Backend services were separated according to business responsibilities so applications could be maintained and deployed more independently.
+
+The modernization included:
+
+* Separating backend services by business capability
+* Creating a centralized source of shared organizational data
+* Introducing offline functionality for field users
+* Adding local mobile storage and synchronization
+* Remediating security vulnerabilities
+* Integrating with existing CRM and ERP systems
+* Supporting independently deployed services
+* Improving production support and maintainability
+
+---
+
+## Platform Areas
 
 ### Workforce and HR Operations
 
-Mobile and web applications supported employee-related processes such as:
+Applications supported employee workflows including:
 
 * Daily time records
-* Attendance monitoring
+* Attendance
 * Leave filing
 * Leave-request tracking
-* Employee information access
+* Employee information
 
 ### Inventory Operations
 
-Inventory personnel used dedicated applications to:
+Inventory users could:
 
-* Review inventory information
-* Monitor available stock
-* Record inventory-related transactions
-* Access product and reference data
+* Review available inventory
+* Access product information
+* Record inventory transactions
+* Retrieve shared reference data
 
 ### Sales Operations
 
-Sales users accessed applications for:
+Sales personnel could:
 
-* Recording sales activity
-* Retrieving customer information
-* Reviewing product data
-* Supporting field-based transactions
+* Record sales activities
+* Access customer information
+* Review product data
+* Perform field-based transactions
 
 ### Delivery Operations
 
-Delivery teams used mobile applications to:
+Delivery teams could:
 
-* Review assigned deliveries
-* Access customer and order details
+* View assigned deliveries
+* Access customer and order information
 * Update delivery statuses
-* Record delivery transactions
-* Continue working during connectivity interruptions
-* Synchronize completed activities when connectivity returned
+* Record completed activities
+* Continue working without continuous connectivity
+* Synchronize transactions when connectivity returned
 
 ### Ordering Operations
 
-Customer service and ordering personnel used dedicated applications to:
+Ordering and customer-service personnel could:
 
 * Create and manage orders
-* Retrieve customer records
+* Retrieve customer information
 * Access product and inventory data
-* Submit transactions to the appropriate backend service
+* Submit transactions to the appropriate backend services
 
 ### Back-Office Management
 
-Back-office users accessed centralized web applications for:
+Administrative users could:
 
-* Application administration
-* User and access management
-* Operational monitoring
-* Reference-data management
-* Transaction review
-* System configuration
+* Manage users and access
+* Monitor operations
+* Maintain reference information
+* Review transactions
+* Configure applications and services
 
-## Architecture Modernization
+---
 
-### Previous Architecture
+## My Role
 
-```text
+As a Support Full-Stack Developer, I contributed across platform modernization, mobile architecture, backend services, security, enterprise integration, and production support.
+
+My responsibilities included:
+
+* Supporting the migration toward microservices
+* Developing backend services
+* Designing offline-first mobile architecture
+* Implementing offline mobile functionality
+* Building local persistence and synchronization processes
+* Developing centralized master-data services
+* Remediating security vulnerabilities
+* Supporting CRM and ERP integrations
+* Troubleshooting production issues
+* Maintaining mobile and web applications
+* Supporting testing and deployment activities
+
+My work focused heavily on making the platform more reliable for both enterprise systems and field users.
+
+---
+
+## My Key Contributions
+
+### 1. Supported the Migration from Shared Infrastructure to Modular Services
+
+The original environment hosted multiple backend systems together.
+
+As usage increased, a high-volume operation in one application could consume resources needed by other applications.
+
+I participated in separating backend responsibilities into dedicated services.
+
+My work included:
+
+* Reviewing existing dependencies
+* Separating business capabilities into dedicated services
+* Updating applications to communicate with the correct backend
+* Supporting data migration and integration activities
+* Troubleshooting issues during migration
+* Validating migrated applications before release
+
+The architecture evolved from:
+
+```text id="lg01"
 Multiple Mobile and Web Applications
                  ↓
           Shared Backend Server
@@ -164,11 +228,9 @@ Multiple Mobile and Web Applications
           Shared Data Resources
 ```
 
-In the original architecture, applications competed for the same server resources. A high-volume operation in one system could affect the performance of other applications hosted in the same environment.
+toward:
 
-### Migrated Architecture
-
-```text
+```text id="lg02"
 Mobile and Web Applications
         │
         ├── HR and Attendance Service
@@ -177,141 +239,186 @@ Mobile and Web Applications
         ├── Delivery Service
         ├── Ordering Service
         └── Centralized Master-Data Service
-                         │
-                         ▼
-              CRM and ERP Integration
+                        │
+                        ↓
+                CRM and ERP Systems
 ```
 
-The migrated architecture separated backend responsibilities into independent services.
+### Why It Mattered
 
-This reduced direct dependencies between applications and allowed each operational service to be maintained and deployed according to its own requirements.
+Separating services reduced the chance that activity in one operational area would directly affect unrelated applications.
 
-## Centralized Master-Data Service
+It also made individual services easier to maintain, troubleshoot, and deploy independently.
 
-I developed a centralized backend service responsible for managing and distributing shared master data.
+---
 
-Instead of copying the same reference data into every newly created service, applications retrieved the required information from a common source.
+### 2. Designed and Developed a Centralized Master-Data Service
 
-The service managed data used across multiple operational systems, such as:
+Previously, new applications often required copies of shared reference data to be inserted into their own databases.
 
-* Employee reference data
-* Customer information
-* Product information
+This created repeated data, synchronization problems, and additional maintenance work.
+
+I designed and developed a centralized backend service that provided shared information to multiple applications.
+
+The service handled organizational data such as:
+
+* Employees
+* Customers
+* Products
 * Inventory references
-* Location records
-* Organizational data
+* Locations
+* Organizational structures
 * Other shared operational records
 
-This architecture helped reduce database duplication and simplified the onboarding of new services.
+### Why It Mattered
 
-### Benefits
+Instead of every application maintaining its own copy of the same information, services could retrieve common data from a centralized source.
 
-* Created a single source of truth for shared data
-* Reduced repeated database seeding
-* Improved data consistency between applications
-* Simplified the development of new services
-* Reduced master-data maintenance effort
-* Improved integration with existing enterprise systems
+This helped:
 
-## Offline-First Mobile Architecture
+* Reduce duplicate data
+* Improve consistency
+* Reduce repeated database seeding
+* Simplify creation of new services
+* Reduce maintenance work
+* Improve integration with enterprise systems
 
-Field users frequently operated in locations with weak or unavailable internet connectivity.
+---
 
-To address this, I led the architecture and design of offline functionality across the mobile applications.
+### 3. Led the Offline-First Mobile Architecture
 
-The offline-first approach allowed mobile users to continue performing essential tasks without an active connection.
+Field connectivity was one of the most important operational challenges.
 
-### Offline Workflow
+Employees such as delivery personnel often worked in locations with weak or unavailable mobile reception.
 
-```text
+I led the architectural design of offline functionality so users could continue performing important tasks without an active internet connection.
+
+The workflow was designed as:
+
+```text id="lg03"
 User Opens Mobile Application
-             ↓
-Application Loads Locally Stored Data
-             ↓
+            ↓
+Application Loads Local Data
+            ↓
 User Completes Field Transaction
-             ↓
-Transaction Saved to Local Database
-             ↓
-Connectivity Becomes Available
-             ↓
+            ↓
+Transaction Stored on Device
+            ↓
+Connectivity Returns
+            ↓
 Pending Transactions Synchronized
-             ↓
-Server Confirms Successful Processing
+            ↓
+Server Confirms Processing
 ```
 
-### Local Data Storage
+I defined the approach for:
 
-SQLite was used to store information directly on supported mobile devices.
+* Local data storage
+* Offline transaction handling
+* Synchronization
+* Connectivity-state management
+* Duplicate-transaction prevention
+* Recovery from failed synchronization attempts
 
-Depending on the application, locally available information included:
+### Why It Mattered
 
-* Assigned operational tasks
+Field operations no longer needed to stop simply because mobile connectivity was unavailable.
+
+Users could continue working and synchronize their completed transactions later.
+
+---
+
+### 4. Implemented Local Mobile Storage and Synchronization
+
+SQLite was used to store operational information directly on supported mobile devices.
+
+Depending on the application, this included:
+
+* Assigned tasks
 * Delivery information
 * Customer records
 * Product references
 * Pending transactions
 * Synchronization statuses
-* Previously retrieved data
+* Previously retrieved information
 
-### Synchronization
-
-Transactions completed while offline were queued locally and submitted when the device regained connectivity.
+Transactions created while offline were stored locally and submitted once connectivity returned.
 
 The synchronization process was designed to:
 
-* Identify pending transactions
-* Send locally created records to the backend
-* Prevent completed transactions from being submitted repeatedly
+* Detect pending transactions
+* Send locally created records to backend services
+* Prevent already completed transactions from being submitted repeatedly
 * Update synchronization statuses
-* Preserve information during network interruptions
-* Refresh local data after successful server processing
+* Preserve data during network interruptions
+* Refresh local information after successful processing
 
-## Delivery Mobile Application
+### Why It Mattered
 
-I developed the offline functionality for the delivery team’s mobile application.
+Offline functionality is only useful if locally created transactions can later reach the central system reliably.
 
-The feature enabled delivery personnel to continue working in locations without reliable mobile reception.
+The synchronization process helped reduce the risk of lost or duplicated transactions.
 
-The application allowed users to:
+---
 
-* Access assigned delivery information
-* Review customer and order details
+### 5. Built Offline Functionality for the Delivery Application
+
+I developed the offline capabilities used by the delivery team's mobile application.
+
+Delivery personnel could:
+
+* Access assigned deliveries
+* Review customer information
+* Review order details
 * Record delivery activities
 * Update delivery statuses
 * Save transactions locally
-* Continue using essential features while offline
-* Synchronize completed records when connectivity returned
+* Continue using essential features without internet access
+* Synchronize completed transactions when connectivity returned
 
-This reduced disruptions to field operations and limited the need for delivery personnel to wait for a stable internet connection before completing their tasks.
+### Why It Mattered
 
-## Security Remediation
+Delivery teams operate in real-world environments where mobile reception cannot always be guaranteed.
 
-The initial Vulnerability Assessment and Penetration Testing report identified more than 100 findings across the platform’s mobile and web applications.
+This functionality reduced disruption and allowed employees to continue working instead of waiting for a stable connection.
 
-I remediated approximately **95% of the identified security issues**.
+---
 
-The remaining findings involved recommendations that were outside the approved remediation scope and were formally accepted by the organization.
+### 6. Remediated Approximately 95% of Identified Security Findings
 
-My security work included:
+A platform-wide security assessment identified more than 100 findings across the mobile and web applications.
 
-* Reviewing vulnerability findings
+I remediated approximately **95% of the identified security issues within the approved project scope**.
+
+My work included:
+
+* Reviewing vulnerability reports
 * Identifying affected applications and services
 * Correcting insecure backend implementations
 * Strengthening input validation
-* Improving authentication and authorization behavior
-* Addressing insecure application configurations
-* Fixing exposed or improperly handled data
+* Improving authentication behavior
+* Improving authorization controls
+* Fixing insecure application configuration
+* Addressing exposed or improperly handled data
 * Updating vulnerable implementation patterns
-* Supporting regression testing after remediation
+* Supporting regression testing
 * Coordinating validation of resolved findings
 
-The remediation significantly improved the overall security posture of the platform.
+The remaining findings involved recommendations outside the approved remediation scope and were formally accepted by the organization.
 
-## CRM and ERP Integration
+### Why It Mattered
 
-The platform integrated with the organization’s existing CRM and ERP systems to centralize operational information.
+The work significantly improved the security posture of a platform used across multiple operational applications.
 
-The integration supported the exchange of data related to:
+It also required reviewing vulnerabilities across a broad system rather than addressing security within only one application.
+
+---
+
+### 7. Supported CRM and ERP Integration
+
+The logistics platform needed to work with the organization's existing enterprise systems rather than operate as an isolated group of applications.
+
+I supported integrations that exchanged information involving:
 
 * Customers
 * Products
@@ -321,141 +428,136 @@ The integration supported the exchange of data related to:
 * Delivery transactions
 * Organizational master data
 
-This allowed the modular applications to operate within the organization’s existing enterprise ecosystem without requiring users to maintain the same information manually across multiple platforms.
+### Why It Mattered
 
-## My Role
+The integrations reduced the need for users to manually maintain the same information across multiple platforms.
 
-As a Support Full-Stack Developer, I contributed to the modernization, security, reliability, and field usability of the entire platform.
+They also allowed the logistics applications to operate as part of the broader enterprise technology ecosystem.
 
-My responsibilities included:
+---
 
-* Supporting the migration to microservices
-* Developing backend services
-* Designing offline-first mobile architecture
-* Implementing offline mobile functionality
-* Developing local data-storage and synchronization processes
-* Remediating security vulnerabilities
-* Supporting CRM and ERP integrations
-* Troubleshooting production issues
-* Maintaining mobile and web applications
-* Supporting testing and deployment activities
+### 8. Maintained Multiple Production Applications
 
-## My Contributions
+I also supported the platform after applications were deployed.
 
-### Microservices Migration
+Production issues could occur across mobile applications, backend services, synchronization processes, integrations, or data flows.
 
-Participated in migrating backend applications from a shared server into a microservices-based architecture.
-
-My work included:
-
-* Reviewing existing backend dependencies
-* Separating business capabilities into dedicated services
-* Updating applications to communicate with the appropriate backend
-* Supporting data migration and integration activities
-* Troubleshooting issues introduced during migration
-* Helping validate migrated applications before release
-
-### Centralized Master-Data Service
-
-Designed and developed a backend service that became the centralized source of master data for existing and future applications.
-
-This service reduced the need to seed duplicate reference data into every service database.
-
-### Offline Architecture Leadership
-
-Led the architectural design of offline functionality for mobile applications used by field employees.
-
-I defined the approach for:
-
-* Local data persistence
-* Offline transaction handling
-* Synchronization
-* Connectivity-state management
-* Conflict prevention
-* Recovery from failed synchronization attempts
-
-### Delivery Application Offline Features
-
-Developed the offline capabilities of the delivery team’s mobile application.
-
-This allowed delivery personnel to access required information and complete operational tasks even when mobile reception was unavailable.
-
-### Security Remediation
-
-Resolved approximately 95% of the vulnerability findings identified across the platform’s mobile and web applications.
-
-This involved investigating issues, implementing corrections, validating affected workflows, and supporting the security retesting process.
-
-### Maintenance and Production Support
-
-Maintained and supported the platform by investigating issues reported by mobile and web application users.
-
-My production-support work included:
+My support work included:
 
 * Diagnosing backend-service errors
 * Resolving mobile synchronization issues
-* Investigating missing or duplicated transactions
-* Fixing data-retrieval and performance concerns
+* Investigating missing transactions
+* Investigating duplicated transactions
+* Fixing data-retrieval issues
+* Addressing performance concerns
 * Supporting security-related corrections
-* Troubleshooting integration failures
+* Troubleshooting enterprise integration failures
 * Implementing production fixes
-* Validating applications after deployment
+* Validating applications after deployments
 
-## Technical Highlights
+### Why It Mattered
 
-### Microservices Architecture
+Supporting a distributed logistics platform requires understanding how multiple applications and services interact.
 
-Backend services were separated by business capability, reducing the impact of high-volume activity on unrelated applications.
+An issue visible in a mobile application could originate from local storage, synchronization, backend processing, enterprise integration, or shared data.
 
-### Offline-First Mobile Applications
+---
 
-Mobile applications used local storage and synchronization processes to support field operations in areas without stable connectivity.
+## Technical Approach
 
-### Centralized Master Data
+For technical readers, the platform combined microservices, mobile applications, web applications, local device storage, enterprise integrations, and cloud-hosted infrastructure.
 
-A dedicated service provided consistent shared data to multiple applications and reduced database redundancy.
+### Microservices
 
-### Cross-Platform Mobile Development
+Backend services were separated according to business capability.
 
-React Native supported mobile applications across Android and iOS devices.
+This reduced dependencies between operational applications and limited the impact of resource-intensive activity on unrelated systems.
 
-### Multi-Frontend Ecosystem
+### Mobile Applications
 
-The platform included mobile applications and web interfaces built using React, Angular, and React Native.
+React Native supported applications running across Android and iOS devices.
+
+### Offline-First Architecture
+
+SQLite provided local persistence for field applications.
+
+Transactions could be created locally and synchronized with backend services when connectivity returned.
+
+### Frontend Applications
+
+The broader platform used multiple frontend technologies, including:
+
+* React
+* Angular
+* React Native
+
+### Data
+
+The platform used technologies including:
+
+* MySQL
+* SQLite
+* Firebase
+* Firestore
+
+depending on the needs of individual applications.
 
 ### Enterprise Integration
 
-CRM and ERP integrations connected the modular logistics services with the organization’s existing enterprise platforms.
+CRM and ERP integrations connected operational services with existing organizational systems.
 
-### Security Hardening
+### Infrastructure
 
-More than 100 vulnerability findings were reviewed, with approximately 95% remediated within the approved project scope.
+Applications and backend services were hosted using AWS infrastructure.
+
+---
 
 ## Key Results
 
-* Supported the migration from a shared server to a microservices-based architecture
+The modernization improved the platform's architecture, field usability, security, and enterprise integration.
+
+Key outcomes included:
+
+* Supported migration from a shared-server architecture to modular backend services
 * Reduced dependencies between operational applications
-* Improved system scalability and service isolation
-* Developed a centralized source for shared master data
-* Reduced duplicate master-data seeding across services
+* Improved service isolation and scalability
+* Developed a centralized source of shared master data
+* Reduced duplicate reference-data seeding
+* Improved consistency across shared organizational information
 * Led the offline architecture for field-user mobile applications
-* Enabled delivery personnel to work without continuous internet connectivity
-* Implemented local data storage and transaction synchronization
-* Remediated approximately 95% of identified security vulnerabilities
-* Improved the platform’s overall security posture
-* Supported CRM and ERP data integration
+* Enabled delivery personnel to work without continuous internet access
+* Implemented local mobile data storage
+* Implemented automatic transaction synchronization
+* Reduced the risk of duplicate offline transactions
+* Remediated approximately **95% of identified security vulnerabilities within scope**
+* Improved the platform's overall security posture
+* Supported CRM and ERP integrations
 * Maintained and supported multiple production mobile and web applications
+
+---
 
 ## Skills Demonstrated
 
-**Full-Stack Development:** Laravel, PHP, React, Angular, React Native, MySQL, SQLite, Firebase, and Firestore
+**Logistics and Enterprise Systems**
+Delivery operations, workforce management, inventory, sales, ordering, back-office workflows, CRM integration, and ERP integration
 
-**Mobile Engineering:** Android and iOS applications, offline-first design, local persistence, synchronization, and connectivity handling
+**Mobile Engineering**
+React Native, Android, iOS, offline-first design, local storage, synchronization, and connectivity handling
 
-**Software Architecture:** Microservices, centralized master-data services, service separation, and enterprise integrations
+**Full-Stack Development**
+Laravel, PHP, React, Angular, React Native, MySQL, SQLite, Firebase, and Firestore
 
-**Application Security:** Vulnerability remediation, secure coding, validation, authentication, authorization, security regression support, and OWASP
+**Software Architecture**
+Microservices, service separation, centralized master-data services, offline architecture, and enterprise integrations
 
-**Cloud and Infrastructure:** AWS-hosted applications, distributed services, mobile backends, and production support
+**Offline and Synchronization Engineering**
+Local persistence, offline transactions, synchronization, retry handling, conflict prevention, and recovery
 
-**Enterprise Systems:** Logistics operations, inventory, sales, delivery, ordering, workforce management, CRM integration, and ERP integration
+**Application Security**
+Vulnerability remediation, secure coding, input validation, authentication, authorization, security regression support, and OWASP-aligned practices
+
+**Production Support**
+Backend troubleshooting, mobile synchronization debugging, transaction investigation, performance troubleshooting, deployment validation, and production fixes
+
+**Cloud and Infrastructure**
+AWS-hosted applications, distributed backend services, mobile backends, and enterprise production environments

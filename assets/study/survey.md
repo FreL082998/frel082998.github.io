@@ -7,168 +7,305 @@
 
 ## Project Overview
 
-The Monitoring, Survey, and Communication Platform is a cross-platform application designed to centralize communication between overseas workers and their assigned agency handlers.
+This is a cross-platform communication and engagement platform designed to connect overseas workers with their assigned agency handlers through an official web and mobile system.
 
-The platform enables overseas workers to communicate directly with agency personnel, receive important announcements, and participate in surveys through an Android or iOS mobile application.
+Before the platform was introduced, workers and agency personnel relied heavily on consumer messaging applications and separate online form tools for communication and surveys.
 
-Agency handlers use the system to:
+The platform brought those activities into one controlled system.
 
-* Communicate with assigned overseas workers
-* Create and distribute announcements
-* Create and manage surveys
-* Monitor responses
-* Address worker concerns
-* Access synchronized worker information
-
-Agency handlers can use both the web and mobile applications. The mobile experience is primarily designed for communication, while administrative features such as survey and announcement management are available through the web application.
-
-The platform integrates with an external enterprise system that serves as the source of worker and organizational master data.
-
-## Application Architecture
-
-The system follows a monolithic application structure stored in a single repository, while maintaining separate directories and components for:
-
-* Laravel backend services
-* Angular web application
-* React Native mobile application
-
-Although the applications share one repository, the backend, web frontend, and mobile application are maintained as distinct parts of the system.
-
-The platform includes:
-
-* Android and iOS mobile applications
-* A web-based agency management portal
-* Real-time communication features
-* Push notifications
-* Survey management
-* Announcement distribution
-* Third-party master-data integration
-* Cloud-hosted backend services
-
-## The Challenge
-
-Before the platform was introduced, agency handlers and overseas workers relied primarily on consumer messaging applications for communication.
-
-Surveys were created using external online forms, and agency handlers manually distributed survey links to workers through individual or group messages.
-
-This fragmented process created several operational challenges:
-
-* Worker concerns were mixed with personal conversations
-* Communication history was difficult to monitor centrally
-* Important messages could be missed in external messaging applications
-* Agency handlers had limited visibility into unresolved concerns
-* Survey creation and distribution required multiple applications
-* Survey links had to be manually shared with workers
-* Announcements were not managed through a centralized channel
-* Worker information was stored in a separate external system
-* The organization depended on third-party consumer tools for official communication
-
-The agency needed a centralized platform where official communication, surveys, announcements, and worker concerns could be managed through one controlled system.
-
-## The Solution
-
-The platform consolidated communication, survey management, and announcement distribution into a single web and mobile ecosystem.
-
-Overseas workers could use the mobile application to:
+Overseas workers can use the mobile application to:
 
 * Communicate with their assigned agency handler
 * Raise work-related or personal concerns
 * Receive official announcements
 * Receive push notifications
 * Participate in surveys
-* Review communication history
+* Review their communication history
 
-Agency handlers could use the platform to:
+Agency handlers can use the web and mobile applications to:
 
-* Communicate directly with assigned workers
+* Communicate with assigned workers
 * Respond to worker concerns
-* Create surveys
-* Distribute surveys to selected users
+* Create and distribute surveys
 * Publish announcements
-* Send notifications to mobile devices
-* Monitor responses and worker engagement
+* Send notifications
+* Monitor responses and engagement
 * Access synchronized worker information
 
-The solution reduced reliance on external messaging applications and online form tools while giving the agency a more centralized and manageable communication channel.
+### Business Value
 
-## Platform Workflow
+The platform gives the organization a dedicated channel for official worker communication instead of depending heavily on personal messaging applications and external survey tools.
 
-```text
+It helps centralize:
+
+* Worker concerns
+* Agency responses
+* Official announcements
+* Surveys
+* Push notifications
+* Communication history
+* Worker information
+
+This gives both workers and agency personnel a more structured and manageable way to stay connected.
+
+---
+
+## The Challenge
+
+Before the platform was introduced, communication and engagement activities were spread across several external tools.
+
+Agency handlers primarily communicated with overseas workers through consumer messaging applications.
+
+Surveys were created using separate online form services, and links were manually sent through individual or group conversations.
+
+This created several operational problems:
+
+* Official concerns were mixed with personal conversations
+* Communication history was difficult to monitor centrally
+* Important messages could be missed
+* Agency handlers had limited visibility into unresolved concerns
+* Surveys required several separate tools
+* Survey links had to be distributed manually
+* Announcements did not have a centralized official channel
+* Worker information was stored in a separate enterprise system
+* The organization depended on third-party consumer tools for important communication
+
+The organization needed one platform where official communication, announcements, surveys, and worker concerns could be managed more consistently.
+
+---
+
+## What the Platform Does
+
+The platform combines mobile communication with web-based administration.
+
+For announcements and surveys, the workflow follows:
+
+```text id="ofw01"
 Agency Handler Creates Announcement or Survey
-                        ↓
-Platform Identifies Intended Recipients
-                        ↓
-Push Notification Sent to Mobile Devices
-                        ↓
-Overseas Worker Opens the Mobile Application
-                        ↓
+                    ↓
+Platform Identifies Recipients
+                    ↓
+Push Notification Sent
+                    ↓
+Worker Opens Mobile Application
+                    ↓
 Worker Reads Announcement or Completes Survey
-                        ↓
-Response Stored in the Central Platform
-                        ↓
+                    ↓
+Response Stored in the Platform
+                    ↓
 Agency Handler Reviews Results or Follows Up
 ```
 
-For direct communication:
+For worker concerns:
 
-```text
+```text id="ofw02"
 Overseas Worker Sends a Concern
-                 ↓
-Assigned Agency Handler Receives the Message
-                 ↓
+              ↓
+Assigned Agency Handler Receives It
+              ↓
 Handler Reviews and Responds
-                 ↓
-Conversation Remains Available in the Platform
+              ↓
+Conversation Remains Available
+in the Platform
 ```
 
-## Core Features
+This keeps communication and engagement history within the organization's application rather than distributing it across unrelated external services.
 
-### Worker–Agency Communication
+---
 
-The in-app communication feature enabled overseas workers to send concerns directly to their assigned agency handlers.
+## Who Uses the Platform
 
-This created a dedicated communication channel for official worker support and reduced dependence on personal messaging accounts.
+### Overseas Workers
 
-The feature supported:
+Workers primarily use the mobile application to:
 
-* Direct worker-to-handler communication
+* Contact their agency handler
+* Raise concerns
+* Read announcements
+* Receive notifications
+* Complete surveys
+* Review conversations
+
+### Agency Handlers
+
+Handlers use the mobile application for communication and the web portal for broader administrative tasks such as:
+
+* Managing conversations
+* Creating surveys
+* Reviewing responses
+* Publishing announcements
+* Monitoring worker engagement
+* Accessing synchronized worker records
+
+---
+
+## My Role
+
+As a Full-Stack Developer, I worked across the backend, web application, mobile application, integrations, deployment, performance, production support, and release operations.
+
+My responsibilities included:
+
+* Application maintenance
+* Production troubleshooting
+* Backend development
+* Web development
+* Mobile development
+* Performance optimization
+* User-interface improvements
+* Third-party system integration
+* AWS deployment
+* Android and iOS release support
+* App Store and Play Store compliance
+* Production issue investigation
+* Stakeholder collaboration
+* Feature development
+* Testing and release support
+
+My work involved both improving the product and keeping a live multi-platform application reliable for real users.
+
+---
+
+## My Key Contributions
+
+### 1. Maintained and Supported the Production Platform
+
+I supported the live application across its mobile, web, backend, database, cloud, and integration components.
+
+My work included:
+
+* Reproducing reported issues
+* Reviewing application logs
+* Diagnosing backend defects
+* Diagnosing frontend issues
+* Investigating mobile-specific problems
+* Fixing data-retrieval issues
+* Resolving communication problems
+* Resolving notification concerns
+* Validating production fixes
+* Monitoring behavior after deployment
+* Supporting users across web, Android, and iOS
+
+### Why It Mattered
+
+A problem reported by a worker or agency handler could originate from several different parts of the system.
+
+Supporting the platform required tracing issues across the complete application stack rather than treating the web, mobile, and backend applications as isolated systems.
+
+---
+
+### 2. Improved Application Performance by Approximately 60%
+
+Several frequently used platform features previously required roughly **4 to 5 seconds** to load.
+
+I investigated performance bottlenecks across the frontend, backend, and data-retrieval layers.
+
+My optimization work included:
+
+* Reviewing slow API requests
+* Improving backend query execution
+* Reducing unnecessary data retrieval
+* Optimizing frontend rendering
+* Improving application state handling
+* Removing avoidable processing
+* Testing performance under production-like conditions
+
+After the improvements, key loading times were reduced to approximately **1 to 2 seconds**.
+
+This represented an estimated **60% improvement in application loading performance**.
+
+### Why It Mattered
+
+For users who depend on the platform regularly for communication, surveys, and official information, waiting several seconds for frequently used features creates unnecessary friction.
+
+Reducing loading time made common workflows faster and more responsive across the application.
+
+---
+
+### 3. Revamped the User Experience
+
+I redesigned and improved key areas of the application interface to make workflows easier to understand and use.
+
+The improvements focused on:
+
+* Clearer navigation
+* Better information hierarchy
+* More understandable actions
+* Improved mobile usability
+* More consistent visual presentation
+* Better loading and processing feedback
+* Reduced friction in commonly used workflows
+
+### Why It Mattered
+
+The platform serves users with varying levels of technical familiarity.
+
+Making actions clearer and reducing interface friction helped make the application easier to use for both overseas workers and agency personnel.
+
+---
+
+### 4. Supported Worker–Agency Communication
+
+The platform provides a dedicated communication channel between overseas workers and their assigned handlers.
+
+The communication experience includes:
+
+* Direct worker-to-handler conversations
 * Conversation history
 * Concern follow-up
-* Mobile access for both workers and handlers
+* Mobile access
 * Centralized communication records
 
-### Survey Management
+### Why It Mattered
 
-Agency handlers could create and distribute surveys directly through the platform.
+Official concerns no longer needed to remain mixed with personal conversations inside consumer messaging applications.
 
-Workers received mobile notifications when a new survey became available and could submit their responses through the application.
+The platform provided a dedicated communication history that could be accessed within the organization’s own system.
 
-This replaced the fragmented process of creating forms externally and manually distributing links through messaging applications.
+---
 
-### Announcement Management
+### 5. Supported Centralized Survey Management
 
-Agency handlers could publish official announcements to overseas workers.
+Agency personnel can create and distribute surveys directly through the platform.
 
-Push notifications informed users when new information was available, helping the agency communicate important updates more efficiently.
+Workers receive notifications when surveys become available and can submit responses using the mobile application.
 
-### Push Notifications
+### Why It Mattered
 
-The platform used mobile push notifications to notify workers about:
+Previously, surveys required an external form service plus separate manual distribution through messaging applications.
 
-* New announcements
-* Available surveys
-* Communication updates
-* Other important agency information
+Centralizing this process reduced the number of tools involved and made survey distribution easier to manage.
 
-This improved the visibility of time-sensitive information without requiring users to check the application continuously.
+---
 
-### Third-Party Master-Data Integration
+### 6. Supported Official Announcement Distribution
 
-The platform integrated with an external enterprise system where worker master data was maintained.
+Agency handlers can publish official announcements directly through the platform.
 
-This allowed the application to retrieve authoritative information without requiring agency personnel to recreate and maintain the same records manually.
+Workers receive push notifications when new information becomes available.
 
-Integrated information supported:
+### Why It Mattered
+
+Important organizational messages have a dedicated channel instead of depending entirely on external chat applications where they may be mixed with other conversations.
+
+---
+
+### 7. Implemented and Supported Master-Data Integration
+
+Worker information was maintained in an external enterprise system.
+
+I implemented and supported the integration used to retrieve this information into the platform.
+
+My work included:
+
+* Retrieving worker records
+* Retrieving organizational records
+* Mapping external data to internal structures
+* Validating incoming information
+* Handling integration errors
+* Supporting changes in external data formats
+* Troubleshooting synchronization and retrieval issues
+
+The integration supported information such as:
 
 * Worker profiles
 * Agency assignments
@@ -176,208 +313,209 @@ Integrated information supported:
 * Organizational references
 * Other required master data
 
-## My Role
+### Why It Mattered
 
-As a Full-Stack Developer, I was responsible for maintaining, improving, deploying, and supporting the platform across its backend, web, and mobile applications.
+Agency personnel did not need to manually recreate worker information already maintained elsewhere.
 
-My work involved both production support and active product development, including application optimization, user-interface improvements, integration work, deployment, mobile-store compliance, and stakeholder coordination.
+The integration helped keep application data aligned with the organization's existing source of record.
 
-## My Contributions
+---
 
-### Production Maintenance and Support
+### 8. Deployed Backend Updates to AWS
 
-Maintained and supported the production applications by investigating concerns reported by overseas workers, production support and active product development, including application optimization, user-interface improvements, integration work, deployment, mobile-store compliance, and stakeholder coordination agency handlers, and other users.
-
-My responsibilities included:
-
-* Reproducing reported issues
-* Reviewing application logs
-* Diagnosing backend and frontend defects
-* Investigating mobile-specific problems
-* Fixing data-retrieval issues
-* Resolving communication and notification concerns
-* Validating production fixes
-* Monitoring application behavior after deployment
-* Supporting users across web, Android, and iOS platforms
-
-### Application Performance Optimization
-
-Investigated performance bottlenecks affecting the platform’s core features.
-
-Before optimization, several frequently used features required approximately four to five seconds to load. Through frontend, backend, and data-retrieval improvements, I reduced loading time to approximately one to two seconds.
-
-This represented an estimated **60% improvement in application loading performance**.
-
-The optimization work included:
-
-* Reviewing slow API requests
-* Improving backend query execution
-* Reducing unnecessary data retrieval
-* Optimizing frontend rendering behavior
-* Improving application state handling
-* Removing avoidable processing
-* Validating performance across production-like scenarios
-
-### User-Interface Revamp
-
-Revamped key parts of the application interface to make the system more intuitive, interactive, and user-friendly.
-
-The improvements focused on:
-
-* Clearer navigation
-* Better information hierarchy
-* More understandable user actions
-* Improved mobile usability
-* More consistent visual presentation
-* Better feedback during loading and processing
-* Reduced friction in frequently used workflows
-
-### Third-Party System Integration
-
-Implemented and supported the integration with the external system used as the source of master data.
-
-My work included:
-
-* Retrieving worker and organizational records
-* Mapping external data to application structures
-* Handling integration errors
-* Validating incoming information
-* Supporting changes in external data formats
-* Troubleshooting synchronization and retrieval issues
-
-This integration helped maintain consistent information across systems and reduced duplicate data maintenance.
-
-### AWS Deployment
-
-Deployed backend application updates across the platform’s live AWS environments.
+I deployed application changes across live AWS environments.
 
 My deployment responsibilities included:
 
-* Preparing release builds
+* Preparing releases
 * Managing environment-specific configuration
 * Deploying backend changes
 * Running database and application updates
 * Validating deployed functionality
-* Investigating deployment-related problems
-* Supporting rollback and recovery activities when required
+* Investigating deployment issues
+* Supporting rollback and recovery when required
 * Monitoring the application after release
 
-### App Store and Play Store Support
+### Why It Mattered
 
-Supported the continued availability of the mobile application on both the Apple App Store and Google Play Store.
+My role extended beyond development into production delivery and operational ownership.
 
-This included handling application updates required to comply with changing platform requirements.
+I was responsible for helping ensure that application changes moved safely from development into live environments.
+
+---
+
+### 9. Supported Android and iOS Application Releases
+
+I supported the continued availability of the mobile application across both the Apple App Store and Google Play Store.
+
+This included adapting the application to changing mobile-platform and store requirements.
 
 My responsibilities included:
 
 * Preparing mobile release builds
-* Updating platform configurations
+* Updating platform configuration
 * Addressing compatibility requirements
-* Supporting application-signing and release settings
-* Resolving store-review concerns
+* Supporting signing and release settings
+* Resolving store-review issues
 * Updating dependencies when required
-* Validating Android and iOS application behavior
-* Coordinating the submission of new releases
+* Validating Android behavior
+* Validating iOS behavior
+* Coordinating application submissions
 
-### Production Issue Investigation
+### Why It Mattered
 
-Investigated and resolved production issues across the complete application stack.
+Mobile applications must continue adapting as Apple, Google, operating systems, and platform requirements change.
 
-This required working with:
+Maintaining compatibility ensured that overseas workers could continue accessing the application on supported Android and iOS devices.
+
+---
+
+### 10. Investigated Issues Across the Complete Technology Stack
+
+Production support required working across:
 
 * React Native mobile applications
 * Angular web interfaces
 * Laravel backend services
 * MySQL databases
-* Firebase and Firestore
+* Firebase
+* Firestore
 * Third-party integrations
-* AWS-hosted environments
+* AWS environments
 
-I traced issues across these components to identify root causes and implement appropriate fixes.
+I traced issues between these components to identify their root causes rather than only addressing visible symptoms.
 
-### Stakeholder Collaboration
+### Why It Mattered
 
-Worked directly with stakeholders to understand reported issues, requested changes, and new feature requirements.
+In a multi-platform application, the source of an issue is not always where the user experiences it.
 
-My involvement included:
+A mobile problem could originate in an API, database query, external integration, notification service, cloud environment, or mobile application itself.
+
+---
+
+### 11. Worked Directly with Stakeholders
+
+I collaborated with stakeholders to understand production concerns, requested changes, and new feature requirements.
+
+My work included:
 
 * Clarifying business needs
-* Reviewing proposed changes
-* Translating requests into technical requirements
-* Assessing the impact of changes
-* Recommending implementation approaches
-* Developing and testing requested features
+* Reviewing requested changes
+* Translating requirements into technical work
+* Assessing implementation impact
+* Recommending technical approaches
+* Developing requested functionality
+* Testing completed changes
 * Supporting stakeholder validation
-* Preparing completed changes for release
+* Preparing features for release
 
-This direct collaboration helped ensure that application improvements addressed actual operational needs.
+### Why It Mattered
+
+Direct stakeholder involvement helped ensure that application changes addressed real operational problems rather than being based only on technical assumptions.
+
+---
 
 ## Technical Approach
 
-### Shared Repository with Separated Applications
+For technical readers, the platform combines a Laravel backend, Angular web application, and React Native mobile application.
 
-The backend, web frontend, and mobile application were stored in one repository but organized into separate directories.
+### Application Structure
 
-This provided a shared codebase for the complete platform while keeping each application’s responsibilities distinct.
+The backend, web frontend, and mobile application are maintained within one repository while remaining separated into their own application areas.
 
-### Cross-Platform Mobile Application
+This provides a shared project structure while keeping the responsibilities of each application distinct.
 
-React Native supported the delivery of the worker application across both Android and iOS platforms.
+### Mobile Application
 
-The shared mobile codebase simplified the implementation of communication, survey, announcement, and notification features across the two operating systems.
+React Native supports the cross-platform application used across Android and iOS.
 
-### Web-Based Administration
+The mobile application provides functionality such as:
 
-Angular was used for the agency handler’s web portal, supporting administrative workflows such as survey creation, announcement management, and worker monitoring.
+* Worker communication
+* Surveys
+* Announcements
+* Notifications
+* Mobile access for agency handlers
 
-### Laravel Backend
+### Web Application
 
-Laravel provided the backend services and business logic for:
+Angular supports the agency management portal.
+
+The web application is used for administrative activities including:
+
+* Survey creation
+* Survey monitoring
+* Announcement management
+* Worker monitoring
+
+### Backend
+
+Laravel provides application services and APIs supporting:
 
 * Authentication
 * Communication
-* Survey processing
-* Announcement distribution
+* Surveys
+* Announcements
 * User management
 * Third-party data retrieval
-* Notification handling
-* Web and mobile APIs
+* Notifications
+* Web and mobile applications
 
-### Cloud Infrastructure
+### Mobile and Real-Time Services
 
-The platform’s backend environments were hosted on AWS, supporting production deployment, maintenance, and application availability.
+Firebase and Firestore support mobile and application capabilities including push notifications and related data requirements.
 
-### Mobile Messaging and Data Services
+### Infrastructure
 
-Firebase and Firestore supported mobile and real-time application capabilities, including push notifications and application data requirements.
+The backend application is hosted on AWS, supporting production deployment, maintenance, and availability.
+
+---
 
 ## Key Results
 
+The platform consolidated several fragmented workforce-engagement processes into a centralized web and mobile system.
+
+Key outcomes included:
+
 * Centralized communication between overseas workers and agency handlers
 * Reduced dependence on consumer messaging applications for official concerns
-* Consolidated announcements, surveys, and worker communication into one platform
-* Replaced the manual distribution of external survey links
-* Reduced core-feature loading times from approximately four to five seconds to one to two seconds
-* Delivered an estimated 60% improvement in application loading performance
-* Improved the usability and visual experience of the web and mobile applications
+* Consolidated surveys, announcements, and communication into one platform
+* Replaced manual distribution of external survey links
+* Created a dedicated communication history for worker concerns
+* Enabled official announcement distribution through mobile notifications
+* Reduced core-feature loading times from approximately **4–5 seconds to 1–2 seconds**
+* Delivered an estimated **60% improvement in application loading performance**
+* Improved the usability of web and mobile workflows
 * Maintained application availability across Android and iOS stores
-* Supported backend deployments across live AWS environments
+* Supported production deployments across live AWS environments
 * Integrated worker master data from an external enterprise system
-* Resolved production issues across mobile, web, backend, and cloud components
-* Collaborated directly with stakeholders on feature changes and new releases
+* Resolved production issues across mobile, web, backend, integrations, and cloud infrastructure
+* Collaborated directly with stakeholders on feature changes and releases
+
+---
 
 ## Skills Demonstrated
 
-**Full-Stack Development:** Laravel, PHP, Angular, React Native, MySQL, Firebase, and Firestore
+**Workforce Engagement Systems**
+Worker communication, surveys, announcements, concern management, notifications, and agency-support workflows
 
-**Mobile Development:** Android and iOS deployment, push notifications, cross-platform development, application-store compliance, and mobile troubleshooting
+**Full-Stack Development**
+Laravel, PHP, Angular, React Native, MySQL, Firebase, Firestore, and integrated web/mobile/backend development
 
-**Performance Engineering:** API optimization, query improvement, rendering optimization, and application load-time reduction
+**Mobile Development**
+React Native, Android, iOS, cross-platform development, push notifications, mobile troubleshooting, and store compliance
 
-**Cloud Operations:** AWS deployment, environment configuration, production validation, monitoring, and release support
+**Performance Engineering**
+API optimization, database-query improvement, data-retrieval optimization, frontend rendering, state management, and load-time reduction
 
-**Enterprise Integration:** Third-party master-data retrieval, data mapping, synchronization, and integration troubleshooting
+**Enterprise Integration**
+Third-party master-data retrieval, data mapping, synchronization, validation, and integration troubleshooting
 
-**Production Support:** Root-cause analysis, defect resolution, user support, log investigation, and post-deployment monitoring
+**Cloud Operations**
+AWS deployment, environment configuration, database updates, release validation, rollback support, and post-deployment monitoring
 
-**Stakeholder Collaboration:** Requirements gathering, change assessment, feature delivery, release coordination, and User Acceptance Testing support
+**Production Support**
+Root-cause analysis, log investigation, defect resolution, cross-stack troubleshooting, user support, and production monitoring
+
+**Stakeholder Collaboration**
+Requirements clarification, change assessment, feature development, technical recommendations, validation, and release coordination

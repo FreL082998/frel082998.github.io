@@ -7,649 +7,120 @@
 
 ## Project Overview
 
-An agricultural monitoring and decision-support platform designed to support cassava farmers, agricultural cooperatives, experts, and government agriculture personnel in monitoring cassava farms and managing CPD-related survey activities.
+This is an agricultural monitoring and decision-support platform designed to help farmers, cooperatives, agricultural personnel, and crop experts monitor cassava farms and respond to potential crop-health problems.
 
-The platform combines cassava farm profiling, geographic mapping, drone-survey scheduling, survey-result management, CPD monitoring, projected yield analysis, preventive and mitigation protocols, reporting, alerts, and expert consultation within a centralized web application.
+The platform brings together farm records, geographic mapping, drone-survey coordination, disease-monitoring results, projected yield impact, recommended agricultural actions, reporting, alerts, and expert consultation in one system.
 
-The system enables users to:
+Users can:
 
-* Register and manage cassava farmers
-* Maintain cassava farm and plantation records
-* Record crop varieties and production information
-* Geographically map cassava farms
-* Request and schedule drone-survey activities
-* Record survey results for individual farms
-* Map identified survey locations
-* Monitor CPD counts and status
-* Estimate potential and projected crop yield
-* Assess projected yield loss
-* Access recommended preventive and mitigation protocols
-* Receive survey-result alerts and notifications
-* Monitor results in tabular and graphical formats
-* Generate agricultural reports
-* Communicate directly with agricultural experts
-* Exchange documents and images through chat
-* Support farmers, cooperatives, experts, and agriculture offices through different user roles
+* Register farmers and cassava farms
+* Record crop and production information
+* View farms and survey findings on interactive maps
+* Request and schedule drone surveys
+* Record and review survey results
+* Monitor CPD findings
+* Estimate potential crop and yield impact
+* Receive recommended preventive or mitigation protocols
+* Communicate with agricultural experts
+* Receive alerts and notifications
+* Review farm information through dashboards and reports
 
-**Business Value:** It centralizes cassava farm information, survey activities, disease-monitoring results, yield projections, and expert recommendations so farmers and agricultural stakeholders can make better-informed decisions regarding crop health and disease mitigation.
+### Business Value
+
+Agricultural monitoring often involves information coming from many different people and activities.
+
+This platform connects that information into a single workflow so farmers and agricultural stakeholders can move from:
+
+**Farm Monitoring → Survey → Finding → Impact Assessment → Recommended Action → Expert Consultation**
+
+Instead of keeping farm records, survey results, disease observations, yield estimates, and recommendations in separate places, the platform makes them available through one connected system.
 
 ---
 
 ## The Challenge
 
-Monitoring crop-health conditions across geographically distributed cassava farms requires coordination between several stakeholders.
+Monitoring crop health across geographically distributed farms requires coordination between multiple stakeholders.
 
-Farmers maintain individual plantations, cooperatives coordinate agricultural activities, agricultural personnel oversee farm information, survey teams conduct field assessments, and crop experts provide recommendations for identified problems.
+Farmers manage plantations, cooperatives coordinate agricultural activities, government agriculture personnel oversee local information, field teams conduct surveys, and crop experts provide recommendations.
 
-Without a centralized platform, these activities can become disconnected.
-
-Important information may exist separately across:
+Without a centralized platform, important information can become fragmented across:
 
 * Farmer records
 * Farm locations
-* Crop-production records
-* Survey schedules
-* Drone-survey results
+* Production information
+* Survey requests and schedules
+* Survey results
 * Disease observations
 * Geographic coordinates
 * Yield estimates
-* Expert recommendations
-* Mitigation documents
+* Mitigation guidance
 * Reports
 * Communication channels
 
-The project needed a platform capable of connecting these activities while preserving the relationship between a farmer, farm, production cycle, survey result, geographic location, and recommended response.
+The challenge was to create a system where all of these activities remained connected to the correct farmer, farm, production cycle, and survey.
 
-Key challenges included:
-
-* Maintaining detailed cassava farmer profiles
-* Managing farms across different geographic locations
-* Coordinating survey requests and schedules
-* Recording results from drone-survey activities
-* Mapping surveyed farm areas
-* Tracking CPD findings
-* Estimating potential production and projected losses
-* Providing farmers with recommended mitigation measures
-* Connecting farmers and agricultural personnel with experts
-* Supporting multiple agricultural organizations and administrative levels
-* Providing both graphical and tabular monitoring
-* Maintaining user activity and operational traceability
+The platform also needed to support different organizations and administrative levels while keeping information accessible to the right users.
 
 ---
 
-## The Solution
+## What We Built
 
-I developed a centralized agricultural web platform that combined GIS mapping, cassava farm management, drone-survey workflow management, disease monitoring, yield analysis, expert recommendations, reporting, and communication.
+I developed a centralized web platform that connects farm management, geographic information, survey operations, crop-health monitoring, yield analysis, agricultural recommendations, communication, and reporting.
 
-The application used PHP and CodeIgniter for server-side application logic and MySQL for relational data management.
-
-Bootstrap, JavaScript, and jQuery were used to build the browser-based administrative and monitoring interfaces.
-
-ArcGIS provided the geographic visualization layer for farm and survey information.
-
-Node.js and WebSockets supported real-time communication features within the application.
-
-AWS provided cloud infrastructure for the platform, while Cloudflare supported application delivery and public-facing infrastructure.
-
----
-
-## Platform Workflow
+At a high level, the workflow is:
 
 ```text
-Cassava Farmer Registration
+Farmer and Farm Registration
             ↓
-Cassava Farm / Plantation Registration
-            ↓
-Farm Location and Production Information
+Production Information
             ↓
 GIS Farm Mapping
             ↓
 Drone Survey Request
             ↓
-Survey Schedule Assigned
+Survey Scheduling
             ↓
-Drone Survey Activity Conducted
+Field Survey Conducted
             ↓
-Survey Results Entered
+Survey Results Recorded
             ↓
-CPD Findings and Survey Coordinates Recorded
+CPD Findings Mapped
             ↓
-Projected Yield Impact Calculated / Presented
+Potential Yield Impact Presented
             ↓
 Farmer and Stakeholders Notified
             ↓
-Preventive / Mitigation Protocol Recommended
+Recommended Mitigation Protocol
             ↓
-Expert Consultation Available
+Expert Consultation
             ↓
 Monitoring and Reporting
 ```
 
----
-
-## Cassava Farmer Management
-
-The platform maintains detailed profiles for cassava farmers.
-
-Farmer information includes:
-
-* Farmer identification
-* Name
-* Address information
-* Barangay
-* Municipality
-* Province
-* Region
-* Gender
-* Birth date
-* Contact number
-* Email
-* Profile information
-
-Farmer records can then be associated with one or more cassava farms or plantations.
-
-This creates a structured relationship between agricultural producers and the land being monitored.
+The platform manages the workflow surrounding drone surveys, including requests, schedules, results, and mapped findings. It does not directly control the drone itself.
 
 ---
 
-## Cassava Farm Management
+## Who Uses the Platform
 
-Each registered cassava farm maintains operational and geographic information.
+The platform was designed for several agricultural stakeholders:
 
-Farm records include:
-
-* Farmer
-* Cooperative
-* Landmark
-* Region
-* Province
-* Municipality
-* Barangay
-* Purok
-* Farm area
-* Crop
-* Variety
-* Longitude
-* Latitude
-* Farm photos
-
-The data model supports multiple farms under different farmers while preserving each farm’s geographic and agricultural characteristics.
-
----
-
-## Cassava Production Monitoring
-
-The platform separately maintains production information for agricultural monitoring.
-
-Production records include:
-
-* Farm
-* Crop
-* Variety
-* Number of planted stalks
-* Potential yield
-* Planting date
-* Harvest date
-
-This allows survey results to be interpreted in the context of the farm’s current production cycle.
-
-For example, the platform can associate identified crop problems with the number of planted stalks and expected yield to calculate potential production impact.
-
----
-
-## GIS Farm Mapping
-
-ArcGIS is used to provide geographic visualization of cassava farms and survey information.
-
-Farm records maintain latitude and longitude information, allowing individual plantations to be plotted geographically.
-
-The platform also stores separate geographic coordinates associated with survey-result data.
-
-This allows the system to connect agricultural observations with locations within or around the surveyed farm.
-
-### GIS Information Includes
-
-* Farm locations
-* Farmer-associated plantations
-* Survey-result locations
-* Geographic coordinates
-* Farm areas
-* Regional agricultural information
-
-This provides agricultural personnel with a spatial view of farm and disease-monitoring information rather than relying entirely on tables and addresses.
-
----
-
-## Drone Survey Management
-
-The platform manages the workflow surrounding drone-survey activities.
-
-Farmers or agricultural personnel can have survey requests created for registered cassava farms.
-
-Survey requests maintain:
-
-* Farmer
-* Farm
-* Requested date
-* Scheduled survey date
-* Survey status
-
-The system tracks requests through states such as:
-
-* Not yet completed
-* Scheduled
-* Completed
-
-Notifications can be distributed to relevant users when drone-survey activities are scheduled.
-
-The platform also supports recurring survey activity workflows, allowing farms to be monitored across different periods.
-
-### Survey Request Workflow
-
-```text
-Registered Cassava Farm
-          ↓
-Survey Request Created
-          ↓
-Cooperative / Survey Personnel Notified
-          ↓
-Survey Date Scheduled
-          ↓
-Farmer Notified
-          ↓
-Drone Survey Conducted
-          ↓
-Survey Result Uploaded
-          ↓
-Request Marked as Completed
-```
-
-The platform manages the **survey workflow and results**; the database does not indicate that the web application directly controls the drone itself.
-
----
-
-## Survey Data Entry
-
-After a survey activity is completed, results can be entered into the platform.
-
-Survey-result records are associated with:
-
-* Farm
-* Cooperative
-* Survey service identifier
-* Survey date
-* CPD value
-* Mapping information
-* Supporting survey imagery
-* Result action or status
-
-A unique service relationship connects the survey request to the resulting agricultural data.
-
-This provides traceability between:
-
-```text
-Farmer
-   ↓
-Farm
-   ↓
-Survey Request
-   ↓
-Scheduled Activity
-   ↓
-Survey Result
-   ↓
-Mapped Findings
-```
-
----
-
-## CPD Monitoring
-
-A primary monitoring function of the platform is tracking CPD findings from cassava farm surveys.
-
-Survey results include the number of identified CPD observations and present that information alongside the farm’s production data.
-
-The platform can use this information to present:
-
-* Number of CPD findings
-* Crop age
-* Potential yield per stalk
-* Estimated affected production
-* Projected yield loss
-* Projected remaining yield
-* Percentage of projected yield to gain
-
-This transforms field-survey information into data that can be interpreted in terms of potential agricultural impact.
-
----
-
-## Yield Impact Analysis
-
-Survey information is combined with production records to provide projected yield information.
-
-The platform considers information such as:
-
-* Farm area
-* Crop
-* Variety
-* Number of planted stalks
-* Potential yield per stalk
-* CPD findings
-* Crop age
-
-The survey result can then present estimated information such as:
-
-* Potential total production
-* Projected yield affected
-* Projected yield loss
-* Remaining projected yield
-* Percentage of yield expected to remain
-
-This gives agricultural stakeholders more context than simply displaying the number of affected plants.
-
----
-
-## Survey Result Distribution
-
-Once survey information is processed, the platform generates survey-result alerts for relevant users.
-
-Results can contain:
-
-* Farm information
-* Farmer information
-* Farm location
-* Farm area
-* Crop and variety
-* Planting date
-* Number of planted stalks
-* Potential yield
-* CPD findings
-* Projected yield loss
-* Remaining projected yield
-* Recommended management protocol
-
-This helps communicate survey findings to farmers and agricultural stakeholders without requiring them to manually retrieve each result.
-
----
-
-## Preventive and Mitigation Protocols
-
-The platform maintains a knowledge base of agricultural management protocols.
-
-Experts can provide materials containing:
-
-* Protocol title
-* Description
-* Instructions
-* Supporting files
-* Supporting photographs
-* Creation and update information
-
-Example categories represented in the system include:
-
-* Cassava planting best practices
-* Procedures for mitigating CPD-related losses
-* Uprooting protocols for affected plants
-
-Survey results can recommend a relevant management protocol based on the recorded findings.
-
-Users can then download the associated instructional document.
-
-### Decision-Support Workflow
-
-```text
-Survey Result
-      ↓
-CPD Finding Identified
-      ↓
-Potential Impact Presented
-      ↓
-Relevant Management Protocol Selected
-      ↓
-Farmer Receives Recommendation
-      ↓
-Instructional Material Available
-      ↓
-Expert Consultation Available if Needed
-```
-
----
-
-## Agricultural Expert Management
-
-The platform includes profiles for agricultural and crop experts.
-
-Expert records contain:
-
-* Name
-* Geographic information
-* Contact information
-* Designation
-* Agency
-* Profile information
-
-Represented expert roles include agricultural researchers, project personnel, and plant-health specialists.
-
-Experts can be connected with preventive and mitigation resources and can participate in consultation workflows.
-
----
-
-## Expert Consultation and Messaging
-
-The platform includes direct messaging between users.
-
-The messaging model supports:
-
-* Sender
-* Recipient
-* Message
-* File attachments
-* Read status
-* Timestamp
-
-Users can exchange both text and files such as:
-
-* PDF documents
-* Images
-* Supporting agricultural information
-
-This allows farmers or other stakeholders to consult with cassava experts directly through the platform when predefined recommendations are insufficient.
-
----
-
-## Group Communication
-
-In addition to direct messages, the system supports group communication.
-
-The group-chat structure includes:
-
-* Chat groups
-* Group creators
-* Group members
-* Messages
-* File attachments
-* Message status
-* Message timestamps
-
-This provides a collaboration channel for agricultural personnel and other stakeholders involved in farm monitoring or disease-management activities.
-
----
-
-## Cooperative Management
-
-Agricultural cooperatives are represented as a separate user and organizational entity.
-
-Cooperative information includes:
-
-* Cooperative identity
-* Representative
-* Geographic area
-* Municipality
-* Province
-* Region
-* Contact information
-* Designation
-* Cooperative name
-
-Cooperatives participate in the survey workflow and can coordinate drone-survey activities for registered cassava farms.
-
-The system also associates cooperatives with municipalities, allowing their operational coverage to be represented within the platform.
-
----
-
-## Municipal Agriculture Office Management
-
-The platform contains a dedicated model for Municipal Agriculture Office personnel.
-
-MAO information includes:
-
-* Personnel identity
-* Name
-* Designation
-* Contact details
-* Municipality
-* Province
-* Region
-
-This allows agricultural monitoring to involve local government agriculture personnel rather than limiting the system to farmers and cooperatives.
-
----
-
-## Multi-Level Agricultural Administration
-
-The data model includes user structures for:
-
-* Municipal agriculture personnel
-* Provincial personnel
-* Regional personnel
-* National personnel
-
-This indicates that the platform was designed to support agricultural information across multiple administrative levels.
-
-Combined with farm and geographic information, this allows monitoring and reporting to be organized by location and government jurisdiction.
-
----
-
-## Role-Based User Management
-
-The system maintains a centralized authentication model with several application user types.
-
-Supported user identities include:
-
-* Administrator
-* Agricultural expert
+* Cassava farmers
+* Agricultural cooperatives
+* Crop and agricultural experts
 * Municipal Agriculture Office personnel
-* Cooperative personnel
-* Farmer
-* Other administrative agricultural roles
+* Provincial agricultural personnel
+* Regional agricultural personnel
+* National-level agricultural personnel
+* System administrators
 
-User accounts include:
-
-* Username
-* Secured password
-* PIN
-* User type
-* Linked identity
-* Account status
-* Login status
-
-The account record is separated from the corresponding farmer, expert, cooperative, or agricultural-personnel profile.
-
-This creates a flexible identity model where different application roles can use the same authentication framework.
-
----
-
-## Alerts and Notifications
-
-The platform maintains both alerts and general notifications.
-
-These can be used for events such as:
-
-* New farm registration
-* New planting information
-* Drone-survey requests
-* Survey scheduling
-* Survey completion
-* Survey results
-* CPD findings
-* Recommended mitigation protocols
-* Other agricultural workflow updates
-
-Each record maintains:
-
-* Target user
-* Title
-* Content
-* Date and time
-* Read/unread state
-
-This creates a centralized communication mechanism for important agricultural events.
-
----
-
-## Monitoring Dashboard
-
-The application supports multiple views for monitoring cassava-farm information.
-
-Operational records show both:
-
-* Tabular monitoring
-* Graphical monitoring
-
-The monitoring interface can be used to review CPD and projected-yield information for:
-
-* Individual farms
-* Multiple farms
-* Selected time periods
-
-This provides different ways to analyze agricultural survey results depending on the user’s needs.
-
----
-
-## Reporting
-
-The platform includes reporting functionality for agricultural information.
-
-The reporting workflows support information such as:
-
-* Cassava farmer profiles
-* Farm information
-* Geographic distribution
-* CPD monitoring
-* Projected yields
-* Survey results
-
-The system also contains administrative models for municipal, provincial, regional, and national information, providing a foundation for geographically scoped agricultural reporting.
-
----
-
-## User Activity Logging
-
-The platform maintains detailed activity logs for important application operations.
-
-Logged activities include actions such as:
-
-* User login and logout
-* Dashboard access
-* Farm-management actions
-* Survey-request access
-* Survey-result data entry
-* Monitoring activities
-* Report generation
-* User-management actions
-* Mapping access
-* Alert access
-* Chat access
-
-Activity records can also store information associated with the originating request.
-
-This provides operational traceability across administrative workflows.
+Each group participates in a different part of the monitoring process, so the platform uses role-based identities and permissions to manage access.
 
 ---
 
 ## My Role
 
-As a full-stack developer, I worked across the web application, backend services, frontend interfaces, GIS functionality, database architecture, real-time communication, and cloud deployment.
+As a full-stack developer, I worked across the application architecture, database, backend, frontend, GIS functionality, real-time communication, reporting, and cloud deployment.
 
 My responsibilities included:
 
@@ -658,70 +129,36 @@ My responsibilities included:
 * Database design
 * Backend development
 * Frontend development
-* CodeIgniter application development
-* MySQL data modeling
-* User and role management
-* Farmer-management workflows
-* Cassava farm-management workflows
-* Production-record management
-* Survey-request workflows
-* Survey scheduling
-* Survey-result data entry
-* CPD monitoring functionality
-* Yield-projection workflows
-* GIS integration
-* ArcGIS map development
+* Farmer and farm-management workflows
+* Agricultural production records
+* Survey requests and scheduling
+* Survey-result management
+* CPD monitoring
+* Yield-impact workflows
+* ArcGIS integration
 * Geographic data management
-* Monitoring dashboards
-* Alert and notification workflows
+* Dashboards and reporting
+* Alerts and notifications
 * Expert-management functionality
-* Direct messaging
-* Group communication
+* Direct and group messaging
 * File-sharing workflows
 * Agricultural protocol management
-* Reporting
-* Real-time WebSocket communication
-* Node.js integration
+* Node.js and WebSocket integration
 * AWS deployment
 * Cloudflare configuration
-* Testing and troubleshooting
-* Application maintenance
+* Testing, troubleshooting, and maintenance
+
+My work covered the complete application workflow from farm registration through monitoring, analysis, communication, and reporting.
 
 ---
 
-## My Contributions
+## My Key Contributions
 
-### Full-Stack Application Development
+### 1. Connected Farmers, Farms, Production, and Survey Data
 
-Developed application functionality across agricultural administration, monitoring, reporting, communication, and decision support.
+A major part of the platform was designing the agricultural data so information generated at different stages remained connected.
 
-Core modules included:
-
-* Farmer management
-* Cassava farm management
-* Agricultural production records
-* Cooperative management
-* Agriculture-office management
-* Expert management
-* User management
-* Survey requests
-* Survey-result data entry
-* GIS mapping
-* CPD monitoring
-* Yield-impact monitoring
-* Preventive and mitigation protocols
-* Alerts
-* Notifications
-* Direct messaging
-* Group communication
-* Reporting
-* Activity logging
-
----
-
-### Agricultural Data Architecture
-
-Designed and worked with a relational data model connecting agricultural information across the complete workflow.
+The core relationship followed this structure:
 
 ```text
 Farmer
@@ -734,88 +171,152 @@ Survey Request
   ↓
 Survey Schedule
   ↓
-Survey Data Entry
+Survey Result
   ↓
-GIS Mapping
+Mapped Findings
   ↓
-CPD Result
+CPD Monitoring
   ↓
 Yield Projection
   ↓
-Mitigation Protocol
-  ↓
-Farmer / Stakeholder Notification
+Mitigation Recommendation
 ```
 
-This data structure allowed information generated at different stages of the process to remain connected to the originating farmer and farm.
+This allowed users to trace a survey result back to the farmer, farm, production information, and geographic location that produced it.
+
+### Why It Mattered
+
+Without these relationships, disease findings and survey information would exist as isolated records.
+
+Connecting the data gives agricultural stakeholders the context needed to understand where a problem occurred, what production may be affected, and what actions may be appropriate.
 
 ---
 
-### Drone Survey Workflow
+### 2. Built GIS-Based Farm and Survey Monitoring
 
-Developed workflows for requesting, scheduling, tracking, and recording the results of drone-based cassava surveys.
+I integrated ArcGIS so agricultural information could be viewed geographically rather than only through tables and addresses.
 
-The platform coordinated:
+The mapping functionality supported:
 
-* Survey requests
-* Farmer notifications
-* Cooperative notifications
-* Scheduling
-* Completion status
-* Survey-result entry
-* Geographic mapping
-* Result distribution
+* Cassava farm locations
+* Plantation visualization
+* Farmer-associated farms
+* Survey-result locations
+* Geographic coordinates
+* Farm areas
+* Regional agricultural information
 
-This provided a structured digital process around field-survey operations.
+Survey findings could also be associated with specific geographic coordinates.
 
----
+### Why It Mattered
 
-### GIS Integration
+Agricultural information is inherently location-based.
 
-Integrated ArcGIS into the platform to connect agricultural records with geographic locations.
-
-GIS functionality supported:
-
-* Farm-location visualization
-* Cassava plantation mapping
-* Survey-location mapping
-* Geographic monitoring
-* Location-based farm information
-
-This allowed users to interpret survey and farm information spatially.
+Displaying farms and survey findings on a map helps users understand where monitored farms are located and where important observations were recorded.
 
 ---
 
-### CPD and Yield Monitoring
+### 3. Digitized the Drone-Survey Workflow
 
-Implemented monitoring workflows that combined survey findings and agricultural production information.
+I developed the workflow used to request, schedule, track, and record drone-based cassava surveys.
 
-The application presented CPD findings together with potential production and projected crop impact.
+The platform coordinates:
 
-Users could monitor this information using both tabular and graphical views.
+```text
+Registered Farm
+      ↓
+Survey Request
+      ↓
+Cooperative / Survey Personnel Notification
+      ↓
+Survey Scheduled
+      ↓
+Farmer Notification
+      ↓
+Drone Survey Conducted
+      ↓
+Survey Result Recorded
+      ↓
+Mapped Findings
+      ↓
+Request Completed
+```
+
+The system tracks survey status and preserves the relationship between the survey request and the resulting agricultural information.
+
+It also supports recurring survey activities so farms can be monitored across different periods.
+
+### Why It Mattered
+
+Survey operations involve several people and stages.
+
+Digitizing the workflow gives stakeholders a clearer process for knowing which farms require surveys, when activities are scheduled, whether they have been completed, and where the results belong.
 
 ---
 
-### Agricultural Decision Support
+### 4. Connected Disease Findings with Potential Yield Impact
 
-Connected survey results with preventive and mitigation protocols.
+The platform does more than record CPD observations.
 
-Instead of ending the workflow after identifying a problem, the platform could provide the user with recommended agricultural actions and downloadable reference materials.
+I implemented workflows that combine survey findings with agricultural production information such as:
 
-This created a workflow from:
+* Crop variety
+* Number of planted stalks
+* Farm area
+* Potential yield
+* Crop age
+* CPD findings
+
+The system can then present information such as:
+
+* Number of CPD findings
+* Potential production
+* Estimated affected production
+* Projected yield loss
+* Remaining projected yield
+* Percentage of projected yield expected to remain
+
+### Why It Mattered
+
+A disease count alone does not explain its potential business or agricultural impact.
+
+Connecting survey findings with production information gives farmers and agricultural personnel additional context for understanding what the findings could mean for expected output.
+
+---
+
+### 5. Built an Agricultural Decision-Support Workflow
+
+The platform continues beyond identifying a crop-health problem.
+
+Survey results can be connected to preventive and mitigation protocols containing:
+
+* Recommended procedures
+* Written instructions
+* Supporting documents
+* Supporting photographs
+
+This creates the workflow:
 
 **Detection → Impact Assessment → Recommendation → Expert Consultation**
 
+If predefined guidance is not enough, users can communicate directly with agricultural experts through the platform.
+
+### Why It Mattered
+
+Monitoring is more useful when the system can help users understand what to do next.
+
+By connecting findings with mitigation guidance and expert support, the platform turns collected survey data into actionable agricultural information.
+
 ---
 
-### Communication Platform
+### 6. Developed Expert Consultation and Communication
 
-Implemented communication functionality connecting farmers, agricultural personnel, cooperatives, and experts.
+I implemented communication functionality that connects farmers, cooperatives, agricultural personnel, and experts within the same platform.
 
-The system included:
+The system includes:
 
 * Direct messaging
-* Group chat
+* Group conversations
 * File attachments
 * Image attachments
 * Read/unread states
@@ -824,97 +325,155 @@ The system included:
 
 Node.js and WebSockets were used as part of the real-time communication stack.
 
+Users can also exchange supporting materials such as documents and images during consultation.
+
+### Why It Mattered
+
+Agricultural problems may require discussion that cannot be handled through predefined recommendations alone.
+
+Built-in communication gives users a way to consult experts without moving the conversation outside the platform.
+
 ---
 
-### Reporting and Monitoring
+### 7. Supported Multiple Agricultural Organizations and Administrative Levels
 
-Developed monitoring and reporting functionality for farm and agricultural information.
+The platform was designed for more than individual farmers.
 
-The platform supported:
+It includes organizational structures for:
+
+* Cooperatives
+* Municipal agriculture personnel
+* Provincial personnel
+* Regional personnel
+* National personnel
+* Agricultural experts
+* Administrators
+
+User authentication is separated from the person's agricultural profile, allowing different types of stakeholders to use a common account framework.
+
+### Why It Mattered
+
+Agricultural monitoring can involve both local farm-level activity and broader government or organizational oversight.
+
+Supporting multiple administrative levels allows information to be organized according to geographic and operational responsibilities.
+
+---
+
+### 8. Built Monitoring, Reporting, and Operational Traceability
+
+I developed dashboards and reporting functionality for reviewing agricultural information in different ways.
+
+The platform supports:
 
 * Tabular monitoring
 * Graphical monitoring
-* Farmer profiling
+* Farmer profiles
 * Farm-specific analysis
 * Time-based monitoring
-* CPD reporting
+* CPD monitoring
 * Projected-yield reporting
 * Geographic agricultural information
 
+The system also records important user activity, including actions related to:
+
+* Farm management
+* Survey requests
+* Survey-result entry
+* Mapping
+* Monitoring
+* Reports
+* User management
+* Alerts
+* Communication
+
+### Why It Mattered
+
+Different stakeholders need different levels of visibility.
+
+Farm-level users may need information about an individual plantation, while agricultural administrators may need broader monitoring and reporting across locations.
+
+Activity logging also provides traceability for important administrative and monitoring actions.
+
 ---
 
-### Cloud Deployment
+### 9. Deployed and Supported the Platform in the Cloud
 
-Deployed and operated the platform using AWS infrastructure.
+I deployed and maintained the application using AWS infrastructure.
 
-Cloudflare supported the application's external delivery layer, while the backend application, database, and real-time communication services formed the core hosted architecture.
+Cloudflare supported the application's external delivery layer, while the hosted architecture included the web application, database, and real-time communication services.
+
+My work also included testing, troubleshooting, and ongoing application maintenance.
 
 ---
 
-## Technical Highlights
+## Technical Approach
 
-### GIS-Enabled Agriculture Platform
+For technical readers, the application used a traditional web architecture combined with GIS and real-time communication services.
 
-ArcGIS connects farmer and farm records with geographic information, enabling map-based agricultural monitoring.
+### Backend
 
-### Drone-Survey Workflow Management
+PHP and CodeIgniter handled server-side application logic and business workflows.
 
-The system digitally manages the lifecycle of a survey from request and scheduling through result entry and notification.
+### Database
 
-### Disease Monitoring
+MySQL stored the relational data connecting:
 
-CPD observations are maintained against individual farms and survey activities rather than as isolated records.
+* Farmers
+* Farms
+* Production records
+* Survey requests
+* Survey results
+* GIS information
+* CPD findings
+* Agricultural protocols
+* Users and roles
+* Messages
+* Alerts
+* Reports
 
-### Yield Impact Analysis
+### Frontend
 
-Agricultural survey findings are combined with production information to present projected crop impact.
+Bootstrap, JavaScript, and jQuery were used to build the browser-based administrative and monitoring interfaces.
 
-### Decision-Support Workflow
+### Geographic Information
 
-Survey results connect directly to preventive and mitigation protocols.
-
-### Expert Consultation
-
-Users can communicate with agricultural experts and exchange supporting documents through the application.
-
-### Multi-Stakeholder Architecture
-
-Farmers, cooperatives, agricultural experts, agriculture offices, and administrators are represented through separate profiles and a centralized authentication system.
-
-### Geographic Administrative Structure
-
-Municipal, provincial, regional, and national structures support geographically organized agricultural data.
+ArcGIS provided the mapping layer used to visualize farms, geographic coordinates, and survey findings.
 
 ### Real-Time Communication
 
-Node.js and WebSockets support real-time application communication and collaboration features.
+Node.js and WebSockets supported the application's real-time communication functionality.
 
-### Operational Traceability
+### Infrastructure
 
-Detailed activity logs record important administrative and monitoring actions performed throughout the application.
+AWS hosted the platform, while Cloudflare supported its public-facing delivery infrastructure.
 
 ---
 
 ## Key Results
 
+The platform created a centralized digital workflow for cassava farm health monitoring and agricultural decision support.
+
+Key outcomes included:
+
 * Digitized cassava farmer and plantation management
 * Centralized farm and crop-production information
-* Created GIS-based cassava farm visualization
-* Digitized drone-survey request and scheduling workflows
-* Centralized survey-result data entry
+* Created GIS-based visualization of farms and survey findings
+* Digitized drone-survey requests and scheduling
+* Centralized survey-result management
 * Connected survey results with geographic coordinates
-* Enabled CPD monitoring at the farm level
-* Provided projected-yield and crop-impact information
+* Enabled farm-level CPD monitoring
+* Combined survey findings with projected yield information
+* Provided potential crop-impact information
 * Delivered survey-result alerts to stakeholders
-* Connected detected conditions with mitigation protocols
+* Connected identified conditions with mitigation protocols
 * Provided downloadable agricultural guidance
-* Enabled direct consultation with cassava experts
-* Implemented direct and group messaging
-* Supported file and document exchange
+* Enabled direct consultation with agricultural experts
+* Supported direct and group communication
+* Enabled document and image sharing
 * Provided tabular and graphical monitoring
 * Supported agricultural reporting
-* Established multi-role access for agricultural stakeholders
-* Supported municipal, provincial, regional, and national information structures
+* Supported multiple agricultural stakeholder roles
+* Represented municipal, provincial, regional, and national administrative structures
 * Added detailed application-activity logging
 * Deployed the platform using cloud infrastructure
 
@@ -922,24 +481,32 @@ Detailed activity logs record important administrative and monitoring actions pe
 
 ## Skills Demonstrated
 
-**AgriTech:** Cassava farm management, crop monitoring, agricultural surveys, disease monitoring, yield analysis, and farmer-support systems
+**AgriTech**
+Cassava farm management, crop monitoring, agricultural surveys, disease monitoring, yield analysis, and farmer-support systems
 
-**GIS Development:** ArcGIS, geographic farm mapping, latitude/longitude management, spatial survey data, and location-based agricultural monitoring
+**GIS Development**
+ArcGIS integration, farm mapping, geographic coordinates, spatial survey information, and location-based agricultural monitoring
 
-**Full-Stack Development:** PHP, CodeIgniter, Bootstrap, JavaScript, jQuery, and MySQL
+**Full-Stack Development**
+PHP, CodeIgniter, Bootstrap, JavaScript, jQuery, MySQL, and frontend-backend development
 
-**Agricultural Decision Support:** Survey-result processing, CPD monitoring, yield-impact presentation, mitigation protocols, and expert recommendations
+**Agricultural Decision Support**
+Survey-result processing, CPD monitoring, yield-impact presentation, mitigation protocols, and expert consultation
 
-**Workflow Engineering:** Survey requests, survey scheduling, result entry, stakeholder notifications, and status management
+**Workflow Engineering**
+Survey requests, scheduling, status tracking, result entry, stakeholder notifications, and multi-step agricultural workflows
 
-**Real-Time Systems:** Node.js, WebSockets, real-time messaging, alerts, and communication workflows
+**Data Architecture**
+Relational database design connecting farmers, farms, production information, surveys, GIS data, user identities, communication, and reports
 
-**Data Architecture:** Relational database design, farmer/farm relationships, production data, survey records, GIS data, messaging, and user identity models
+**Real-Time Communication**
+Node.js, WebSockets, direct messaging, group communication, alerts, and notifications
 
-**Communication Systems:** Direct messaging, group chat, document sharing, image sharing, read states, alerts, and notifications
+**Reporting and Monitoring**
+Farm-level monitoring, graphical and tabular views, CPD tracking, geographic information, and projected-yield reporting
 
-**Reporting and Analytics:** Tabular monitoring, graphical monitoring, agricultural profiling, CPD tracking, and projected-yield reporting
+**Security and Access**
+Authentication, role-based identities, account states, user access, and operational activity logging
 
-**Security and Access:** Authentication, role-based identities, account states, session management, and operational activity logging
-
-**Cloud and Infrastructure:** AWS, Cloudflare, Node.js services, web application deployment, and cloud-hosted infrastructure
+**Cloud and Infrastructure**
+AWS, Cloudflare, Node.js services, web application deployment, troubleshooting, and cloud-hosted infrastructure

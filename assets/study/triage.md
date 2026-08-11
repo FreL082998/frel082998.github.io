@@ -7,108 +7,97 @@
 
 ## Project Overview
 
-This project is a web-based healthcare management platform designed to digitize outpatient patient registration, checkup scheduling, triage, vital-sign assessment, doctor assignment, diagnosis, laboratory results, prescriptions, treatments, and medical-record management.
+CareFlow is a web-based healthcare management platform designed to organize outpatient care from patient registration through triage, clinical assessment, treatment, and medical-record access.
 
-The system provides separate workflows for patients, nurses, doctors, and system administrators.
+The system provides separate workflows for:
 
-Patients can maintain their profile, schedule medical checkups, review medical records, and manage their account.
+* Patients
+* Nurses
+* Doctors
+* System administrators
 
-Nurses support the triage process by recording patient vital signs, assessing check-in information, and coordinating assignment of patients to doctors for different clinical activities.
+Patients can manage their information, schedule checkups, and review their medical history.
 
-Doctors can manage assigned patients and record clinical information including diagnoses, laboratory findings, prescriptions, and treatments.
+Nurses handle patient check-in, record vital signs, capture urgency information, and coordinate doctor assignments.
 
-Administrators manage system users, healthcare workflows, policies, and operational activity.
+Doctors record diagnoses, laboratory findings, prescriptions, and treatment recommendations.
 
-The platform also supports healthcare-document workflows including:
+Administrators manage users, system configuration, healthcare policies, and operational activity.
+
+The platform also supports healthcare-administration workflows such as:
 
 * Health certificates
 * Health declarations
 * Referral forms
 
-**Business Value:** The system centralizes outpatient healthcare workflows from patient registration and scheduling through triage, clinical assessment, treatment, and historical medical-record access. This reduces fragmented record keeping and provides healthcare personnel with a structured workflow for managing patient encounters.
+### Business Value
+
+Outpatient care involves several steps that can become fragmented when information is maintained through paper records or disconnected systems.
+
+CareFlow brings those activities into one structured application.
+
+It connects the patient's journey from:
+
+**Registration → Scheduling → Check-In → Triage → Clinical Assessment → Treatment → Medical History**
+
+This gives healthcare personnel a clearer way to coordinate patient encounters while preserving historical clinical information across multiple visits.
 
 ---
 
-# The Challenge
+## The Challenge
 
-Traditional outpatient workflows often involve multiple disconnected steps.
+An outpatient visit can involve several different people, records, and decisions.
 
 A patient may need to:
 
 * Register personal information
 * Schedule a checkup
-* Wait for assessment
-* Provide medical information
+* Check in for an appointment
 * Have vital signs recorded
-* Be evaluated by a healthcare professional
-* Receive laboratory requests
+* Be assessed for urgency
+* Be assigned to a doctor
 * Receive a diagnosis
-* Obtain medication instructions
+* Receive laboratory assessment
+* Receive medication instructions
 * Receive treatment recommendations
 * Return for follow-up care
 
-When these processes rely heavily on paper records or independent systems, information can become difficult to track throughout the patient's care journey.
+When these steps are handled separately, patient information can become difficult to track throughout the care journey.
 
-The system needed to connect several healthcare workflows within one application while maintaining clear responsibilities between patients, nurses, doctors, and administrators.
+The system needed to connect these workflows while maintaining clear responsibilities between patients, nurses, doctors, and administrators.
 
-Key challenges included:
+Key requirements included:
 
-* Managing patient identities and profiles
-* Maintaining healthcare-worker accounts
-* Scheduling patient checkups
-* Recording vital signs consistently
-* Supporting patient-priority or urgency information
-* Assigning healthcare providers to patients
-* Maintaining diagnoses
-* Recording laboratory findings
-* Managing prescriptions
-* Recording treatments
-* Maintaining historical medical records
-* Supporting follow-up care
-* Issuing healthcare documents
-* Maintaining configurable triage thresholds
-* Tracking user and clinical activity
-* Providing secure role-specific application access
-
----
-
-# The Solution
-
-I developed a centralized healthcare web application using PHP and CodeIgniter backed by a MySQL relational database.
-
-The system connected the patient journey from scheduling to treatment through structured application modules.
-
-The solution included:
-
-* Patient registration and profile management
-* Role-based user management
-* Checkup scheduling
+* Patient identity and profile management
+* Healthcare-worker accounts
+* Online checkup scheduling
 * Patient check-in
 * Vital-sign recording
-* Urgency classification
-* Configurable triage policies
+* Urgency information
+* Configurable triage criteria
 * Doctor assignment
-* Diagnosis management
-* Laboratory-result management
-* Prescription management
-* Treatment management
-* Medical-record history
+* Diagnosis records
+* Laboratory findings
+* Prescriptions
+* Treatment records
+* Medical-history access
 * Follow-up information
 * Healthcare-document workflows
-* Activity logging
-* Session management
+* Role-based access
+* Activity tracking
+* Secure session management
 
-Bootstrap, JavaScript, and jQuery were used to build the browser-based interface.
-
-WebSocket technology formed part of the application's real-time communication stack, while SMTP was included for application email delivery.
-
-The system was deployed using a LAMP environment with Cloudflare supporting the web-delivery layer.
+The main challenge was creating a system where each stage remained separate enough to manage properly while still belonging to the same patient encounter.
 
 ---
 
-# Patient Care Workflow
+## What I Built
 
-```text id="l8d8wd"
+I developed a centralized healthcare web application using PHP, CodeIgniter, and MySQL.
+
+The platform connects the main stages of outpatient care:
+
+```text
 Patient Registration
         ↓
 Patient Profile
@@ -138,167 +127,204 @@ Medical Record
 Follow-Up Care
 ```
 
----
+The system also includes:
 
-# User Roles
-
-The platform supports four primary application roles.
-
-## Administrator
-
-Responsible for system administration and healthcare-platform oversight.
-
-Administrative functionality includes:
-
-* System-user management
-* Patient and healthcare-worker account management
-* Triage-policy configuration
-* Clinical-workflow monitoring
-* User activity review
-* Account configuration
-* Medical-workflow oversight
+* Patient self-service
+* User and role management
+* Healthcare-document workflows
+* Configurable triage policies
+* Activity logging
+* Session management
+* Communication infrastructure
+* Administrative controls
 
 ---
 
-## Doctor
+## Who Uses the Platform
 
-Doctors handle the clinical assessment stages of patient encounters.
+### Patients
 
-Doctor workflows include:
+Patients can:
+
+* Maintain personal information
+* Manage additional profile information
+* Schedule checkups
+* Cancel scheduled checkups
+* Review medical records
+* Manage account credentials
+* Review account activity
+
+### Nurses
+
+Nurses support patient intake and care coordination.
+
+Their workflows include:
+
+* Patient check-in
+* Vital-sign recording
+* Patient information review
+* Urgency information
+* Doctor assignment
+* Doctor reassignment
+* Healthcare-document workflows
+
+### Doctors
+
+Doctors manage clinical information for assigned patients.
+
+Their workflows include:
 
 * Reviewing assigned patients
 * Recording diagnoses
 * Recording laboratory findings
-* Providing prescriptions
+* Creating prescriptions
 * Recording treatment recommendations
 * Reviewing patient information
-* Accessing patient-related clinical records
+* Accessing clinical records
+
+### Administrators
+
+Administrators manage:
+
+* Users
+* Patient and healthcare-worker accounts
+* Triage policies
+* System configuration
+* Workflow oversight
+* Activity history
+* Account administration
 
 ---
 
-## Nurse
+## My Role
 
-Nurses support patient intake and triage operations.
+As a Full-Stack Developer, I worked across the application's architecture, backend, frontend, database, clinical workflows, security, communication infrastructure, deployment, and maintenance.
 
-Nursing workflows include:
+My responsibilities included:
 
-* Managing patient check-in
-* Recording vital signs
-* Reviewing patient information
-* Assigning doctors for diagnosis
-* Assigning doctors for laboratory assessment
-* Assigning doctors for prescriptions
-* Assigning doctors for treatment
-* Supporting healthcare-document workflows
+* Requirements analysis
+* Application architecture
+* Database architecture
+* PHP and CodeIgniter development
+* Bootstrap interface development
+* JavaScript and jQuery development
+* MySQL data modeling
+* Patient-management workflows
+* Healthcare-worker management
+* Role-based authentication
+* Checkup scheduling
+* Patient check-in
+* Vital-sign workflows
+* Triage-policy configuration
+* Urgency management
+* Doctor-assignment workflows
+* Diagnosis management
+* Laboratory management
+* Prescription management
+* Treatment management
+* Medical-record workflows
+* Follow-up support
+* Health-certificate workflows
+* Health-declaration workflows
+* Referral-form workflows
+* Activity logging
+* Session management
+* WebSocket integration
+* SMTP integration
+* LAMP deployment
+* Cloudflare configuration
+* Testing
+* Troubleshooting
+* Application maintenance
 
----
-
-## Patient
-
-Patients have access to self-service healthcare functionality.
-
-Patient workflows include:
-
-* Maintaining basic information
-* Maintaining additional personal information
-* Viewing medical records
-* Scheduling checkups
-* Canceling scheduled checkups
-* Reviewing account activity
-* Updating account credentials
-
----
-
-# Patient Profile Management
-
-The platform maintains detailed personal and healthcare-related profile information.
-
-Profile records support information such as:
-
-* First name
-* Middle name
-* Last name
-* Prefix and suffix
-* House number
-* Street
-* Barangay
-* Town
-* Province
-* ZIP code
-* Birth date
-* Sex
-* Gender
-* Contact number
-* Email address
-* Disability information
-* Pregnancy information
-* Employment or professional position
-* SSS information
-* PhilHealth information
-* GSIS information
-* Pag-IBIG information
-
-This provides a centralized profile that can be linked to the patient's clinical activity.
-
-The profile structure is shared across application identities while allowing role-specific information to be maintained.
+My work focused on connecting multiple healthcare workflows while preserving clear relationships between the patient, individual encounter, clinical records, and responsible healthcare personnel.
 
 ---
 
-# Role-Based Identity Management
+## My Key Contributions
 
-Authentication and profile information are separated using unique system identities.
+### 1. Designed the Patient Encounter Architecture
 
-Examples of identity classifications represented by the architecture include:
+One of the most important design decisions was structuring the application around the patient's check-in.
 
-```text id="e9uf4m"
-Administrator
-   └── Admin Identity
+Instead of placing all clinical information into one large record, different areas of care are maintained separately while remaining connected to the same encounter.
 
-Doctor
-   └── Doctor Identity
-
-Nurse
-   └── Nurse Identity
-
-Patient
-   └── Patient Identity
-```
-
-Each account maintains:
-
-* User ID
-* Username
-* Password
-* PIN code
-* User type
-* Linked identity
-* Account status
-* Account timestamp
-
-Separating authentication from profile information makes it possible to use a consistent account model across different healthcare roles.
-
----
-
-# Checkup Scheduling
-
-Patients can schedule checkups through their account.
-
-The patient workflow includes a dedicated **Checkup Schedule** section.
-
-Users can:
-
-* Schedule a new checkup
-* Review scheduled checkups
-* Cancel an existing checkup
-
-Scheduled visits then become part of the clinical workflow used by nursing and medical personnel.
-
-### Scheduling Workflow
-
-```text id="yo21cg"
+```text
 Patient
    ↓
-Checkup Schedule
+Check-In
+   ├── Vital Signs
+   ├── Diagnosis
+   ├── Laboratory
+   ├── Prescription
+   └── Treatment
+```
+
+### Why It Mattered
+
+A diagnosis, prescription, laboratory result, and treatment are related, but they are not the same type of information.
+
+Separating them keeps the data organized while the shared check-in record preserves the complete context of the patient's visit.
+
+This architecture also allows the same patient to have multiple encounters over time without overwriting previous clinical information.
+
+---
+
+### 2. Developed Patient Registration and Profile Management
+
+I developed workflows for managing patient identity and profile information.
+
+The platform maintains information including:
+
+* Name
+* Address
+* Birth date
+* Sex and gender
+* Contact information
+* Disability information
+* Pregnancy information
+* Employment or professional information
+* Government-related identification information represented by the system
+
+Patient information remains connected to clinical activity through the patient's identity.
+
+### Why It Mattered
+
+A centralized patient profile reduces repeated entry of basic information and provides a consistent identity that can be referenced across multiple visits.
+
+---
+
+### 3. Built Patient Self-Service Functionality
+
+I developed patient-facing workflows allowing users to interact directly with the healthcare platform.
+
+Patients can:
+
+* Maintain profile information
+* Schedule checkups
+* Cancel scheduled checkups
+* Review medical records
+* Manage account settings
+* Review account activity
+
+### Why It Mattered
+
+Patients do not need to depend entirely on administrative personnel for routine account and scheduling activities.
+
+The platform gives them direct access to selected parts of their healthcare journey.
+
+---
+
+### 4. Implemented Online Checkup Scheduling
+
+Patients can schedule and review checkups through their account.
+
+The workflow connects scheduling with the later clinical process:
+
+```text
+Patient
+   ↓
+Checkup Scheduled
    ↓
 Visit Created
    ↓
@@ -309,13 +335,21 @@ Nursing Assessment
 Clinical Workflow
 ```
 
+Patients can also cancel scheduled visits.
+
+### Why It Mattered
+
+Scheduling is not treated as an isolated calendar function.
+
+It becomes the entry point into the patient's later clinical encounter.
+
 ---
 
-# Patient Check-In
+### 5. Developed Patient Check-In and Vital-Sign Recording
 
-The check-in model represents an individual patient encounter.
+Each check-in represents one patient encounter.
 
-Each check-in is associated with a patient identity and can maintain:
+The system can maintain:
 
 * Temperature
 * Blood pressure
@@ -325,55 +359,22 @@ Each check-in is associated with a patient identity and can maintain:
 * Weight
 * Urgency
 * Check-in status
-* Date
-* Time of entry
-* Disabled/canceled state
+* Visit date
+* Visit time
 
-This creates a single encounter record that can be referenced throughout the subsequent clinical workflow.
+### Why It Mattered
 
----
+The check-in provides a central record for the patient's visit.
 
-# Vital-Sign Management
-
-Vital signs are recorded as part of the patient-triage process.
-
-The system maintains measurements for:
-
-### Temperature
-
-Used to record the patient's body temperature.
-
-### Blood Pressure
-
-Used to maintain blood-pressure information associated with the visit.
-
-### Heart Rate
-
-Used to maintain the patient's pulse or heart-rate measurement.
-
-### Respiration
-
-Used to record respiratory information.
-
-### Height
-
-Maintained as part of the patient's assessment.
-
-### Weight
-
-Maintained alongside other vital information.
-
-### Urgency
-
-Each check-in also contains an urgency value, allowing the patient encounter to carry prioritization information.
+Clinical information created later can remain associated with the exact encounter in which it occurred.
 
 ---
 
-# Configurable Triage Policy
+### 6. Implemented Configurable Triage Policies
 
-The system maintains a dedicated triage-policy configuration.
+The application maintains triage-related thresholds separately from individual patient records.
 
-Policy settings include thresholds for:
+Configurable values include thresholds for:
 
 * Age
 * Temperature
@@ -382,9 +383,9 @@ Policy settings include thresholds for:
 * Minimum heart rate
 * Maximum heart rate
 
-This separates configurable health thresholds from individual patient records.
+Conceptually:
 
-```text id="3g6p5i"
+```text
 Patient Vital Signs
         ↓
 Configured Triage Thresholds
@@ -394,130 +395,93 @@ Clinical Assessment
 Urgency / Patient Prioritization
 ```
 
-This architecture makes triage criteria configurable rather than permanently embedding all threshold values inside application screens.
+### Why It Mattered
+
+Clinical threshold values are not permanently embedded inside individual patient records or interface logic.
+
+They can be managed separately as policy information, providing a more configurable foundation for triage-related workflows.
 
 ---
 
-# Nurse Triage Workflow
+### 7. Built the Nurse Triage Workflow
 
-The nursing workflow forms the bridge between patient check-in and doctor assessment.
+Nurses act as the bridge between patient check-in and doctor-managed clinical activities.
 
-A nurse can record the patient's vital signs and then coordinate doctor assignments for different areas of care.
+The nursing workflow includes:
 
-The application records workflows for assigning or changing a doctor for:
+* Reviewing patient information
+* Recording vital signs
+* Recording urgency information
+* Assigning doctors
+* Changing doctor assignments when necessary
 
-* Diagnosis
-* Laboratory
-* Prescription
-* Treatment
-
-### Nursing Workflow
-
-```text id="nhpk92"
-Patient Checks In
-       ↓
-Nurse Reviews Patient
-       ↓
-Vital Signs Recorded
-       ↓
-Urgency Information Recorded
-       ↓
-Doctor Assigned
-       ↓
-Diagnosis Assignment
-       ↓
-Laboratory Assignment
-       ↓
-Prescription Assignment
-       ↓
-Treatment Assignment
-```
-
-This allows patient routing and clinical responsibilities to be managed through the application.
-
----
-
-# Doctor Assignment
-
-The application supports assigning doctors to specific clinical tasks.
-
-A doctor can be assigned to a patient for:
+Doctors can be assigned separately for:
 
 * Diagnosis
 * Laboratory assessment
 * Prescription
 * Treatment
 
-The nursing workflow also supports changing the assigned doctor.
+### Why It Mattered
 
-This provides flexibility when clinical assignments need to change during a patient's encounter.
+The system does not assume that one doctor must handle every part of an encounter.
+
+Clinical responsibilities can be assigned independently, giving the workflow more flexibility when different healthcare personnel need to handle different stages.
 
 ---
 
-# Diagnosis Management
+### 8. Developed Structured Diagnosis Management
 
-The system maintains diagnoses separately from patient check-in records.
+Diagnosis information is stored separately from the patient check-in.
 
-Each diagnosis is associated with:
+Each diagnosis remains connected to:
 
-* Patient check-in
+* The patient encounter
 * Diagnosis information
-* Doctor
-* Date
+* The responsible doctor
+* The date
 * Record status
 
-Separating diagnosis data from the check-in record allows clinical information to remain structured around the individual patient encounter.
+### Why It Mattered
 
-### Clinical Relationship
-
-```text id="xgzjzm"
-Patient
-  ↓
-Check-In
-  ↓
-Diagnosis
-  ↓
-Responsible Doctor
-```
-
-This also provides a basis for building longitudinal medical records from multiple patient visits.
+Separating diagnosis data keeps the clinical structure clear while maintaining traceability back to the original encounter.
 
 ---
 
-# Laboratory Management
+### 9. Developed Laboratory Management
 
-Laboratory information is maintained as a separate clinical domain.
+Laboratory information is maintained as its own clinical domain.
 
-Each laboratory record contains:
+Laboratory records remain associated with:
 
 * Patient check-in
-* Laboratory information or findings
+* Laboratory findings
 * Responsible doctor
 * Date
 * Record status
 
-This allows laboratory-related information to remain connected to the corresponding patient encounter without mixing it directly into diagnosis or treatment data.
+### Why It Mattered
+
+Laboratory findings stay connected to the patient encounter without being mixed directly into diagnosis or treatment data.
 
 ---
 
-# Prescription Management
+### 10. Implemented Prescription Management
 
-Doctors can maintain prescription information for individual patient encounters.
+Doctors can maintain prescriptions for specific patient encounters.
 
-A prescription can contain:
+Prescription information can include:
 
 * Medication instructions
-* Dosage or quantity information
+* Dosage or quantity
 * Frequency
 * Responsible doctor
 * Prescription date
 * Follow-up information
 
-Prescriptions remain associated with the patient check-in record.
+The workflow can follow:
 
-### Prescription Workflow
-
-```text id="xrw596"
+```text
 Patient Check-In
       ↓
 Doctor Assessment
@@ -531,13 +495,17 @@ Medication Instructions
 Optional Follow-Up
 ```
 
+### Why It Mattered
+
+Medication information remains traceable to the visit and healthcare professional responsible for it.
+
 ---
 
-# Treatment Management
+### 11. Implemented Treatment Management
 
-Treatment recommendations are also maintained independently.
+Treatment recommendations are stored separately from diagnosis, laboratory, and prescription data.
 
-Treatment records contain:
+Treatment records remain connected to:
 
 * Patient check-in
 * Treatment instructions
@@ -545,19 +513,19 @@ Treatment records contain:
 * Date
 * Record status
 
-This separates treatment planning from diagnoses and medication prescriptions while maintaining their connection through the patient's check-in encounter.
+### Why It Mattered
+
+This preserves separation between different types of clinical information while keeping them connected through the same patient encounter.
 
 ---
 
-# Medical Record Management
+### 12. Built Longitudinal Medical Records
 
-Patients have access to a dedicated Medical Record section.
+The platform allows multiple check-ins to remain associated with the same patient.
 
-The database architecture makes it possible to reconstruct a patient's encounter history through check-in-linked clinical information.
+A patient's history can therefore bring together:
 
-A medical record can bring together:
-
-```text id="s5qgwt"
+```text
 Patient Profile
      ↓
 Check-In History
@@ -568,147 +536,93 @@ Check-In History
      └── Treatment
 ```
 
-This provides a longitudinal view of the patient's previous healthcare encounters.
+### Why It Mattered
+
+Previous healthcare information is preserved rather than being replaced by the patient's latest visit.
+
+This creates a longitudinal view of the patient's history across multiple encounters.
 
 ---
 
-# Follow-Up Care
+### 13. Supported Follow-Up Care
 
-Prescription records contain dedicated follow-up information.
+Prescription information includes dedicated follow-up data.
 
-This provides a foundation for recording whether additional patient care is required after an encounter.
+Combined with scheduling functionality, this provides a foundation for patients returning for additional assessment after an encounter.
 
-Combined with checkup scheduling, this enables a workflow where patients can return for subsequent healthcare assessment.
+### Why It Mattered
 
----
+The patient journey does not necessarily end after the first treatment decision.
 
-# Health Certificate Workflow
-
-The system includes functionality for issuing health certificates.
-
-Nursing and administrative activity records show dedicated access to an **Issuance of Health Certificate** workflow.
-
-This extends the platform beyond clinical records by supporting healthcare documents that may be needed for employment, education, travel, or other administrative purposes.
-
-The database does not store a dedicated health-certificate table in this dump, so the portfolio description should describe this as an application workflow rather than claiming a specific certificate-storage architecture.
+The system can preserve information indicating whether additional care may be required.
 
 ---
 
-# Health Declaration Workflow
+### 14. Developed Healthcare-Document Workflows
 
-The application also contains an **Issuance of Health Declaration** workflow.
+The platform includes workflows for:
 
-This provides healthcare personnel with another patient-document function alongside clinical assessment and medical-record management.
+* Health certificates
+* Health declarations
+* Referral forms
 
----
+These extend the application beyond direct clinical treatment into healthcare-administration activities.
 
-# Referral Form Workflow
+### Why It Mattered
 
-Healthcare personnel can access a dedicated **Issuance of Referral Form** workflow.
+Healthcare systems often need to support documents associated with employment, education, travel, referrals, or other administrative needs.
 
-This supports situations where a patient may need to be referred for additional evaluation or services.
-
-### Extended Patient Workflow
-
-```text id="me56x2"
-Patient Assessment
-      ↓
-Clinical Decision
-      ↓
-Continue Internal Treatment
-          or
-Issue Referral Form
-          or
-Issue Health Certificate
-          or
-Issue Health Declaration
-```
+These workflows allow those activities to remain within the same healthcare application.
 
 ---
 
-# System User Management
+### 15. Implemented Role-Based Identity Management
 
-Administrators have access to dedicated system-user management functionality.
-
-The account architecture supports:
+The platform supports separate identities for:
 
 * Administrators
 * Doctors
 * Nurses
 * Patients
 
-Account management includes:
+Authentication accounts are linked to role-specific profile identities.
 
-* User creation
+### Why It Mattered
+
+The same authentication framework can support different healthcare roles without forcing all users into the same profile structure.
+
+It also makes it possible to restrict functionality according to each user's responsibilities.
+
+---
+
+### 16. Implemented Security and Session Management
+
+I implemented authentication and server-side session-management workflows using CodeIgniter.
+
+The platform includes:
+
+* Password hashing
+* PIN-based account information
 * Account status
-* Username
-* Password
-* PIN
-* Linked profile identity
-* User type
+* Role-based access
+* Server-side session persistence
+* Session IP information
 
-This provides role-specific application access using one centralized authentication model.
+### Why It Mattered
 
----
+Healthcare workflows require authenticated access and clear separation between user roles.
 
-# Account Security
-
-Passwords stored in the user database are represented using password hashes rather than readable plain-text passwords.
-
-The platform also maintains account:
-
-* PIN codes
-* Activation status
-* Role information
-* Session information
-
-CodeIgniter session records are persisted in the database and include client IP-address information.
+The platform's account and session architecture provides the foundation for controlling access across patient, clinical, and administrative workflows.
 
 ---
 
-# Session Management
+### 17. Added Operational Activity Logging
 
-The platform uses server-side CodeIgniter session storage.
+I implemented extensive activity logging across clinical and administrative actions.
 
-Session records include:
+Tracked activities include:
 
-* Session identifier
-* IP address
-* Session timestamp
-* Serialized session data
-
-This supports authenticated sessions across the role-based web application.
-
----
-
-# Email Communication
-
-SMTP formed part of the project's technology stack for application email delivery.
-
-The underlying profile model contains user email addresses, while the authentication model supports account status and PIN-based account information.
-
-The SQL dump alone does not establish every specific email workflow, so the portfolio should describe SMTP as part of the application's communication infrastructure without claiming unsupported notification types.
-
----
-
-# Real-Time Communication
-
-WebSocket technology was also included in the project's application stack.
-
-It provided a real-time communication capability alongside the traditional PHP/CodeIgniter application.
-
-Because the database does not contain a dedicated chat or WebSocket-event table, the portfolio should avoid claiming a specific real-time feature unless additional source code or documentation is available.
-
----
-
-# Activity Logging
-
-The application maintains extensive activity logs for both clinical and administrative operations.
-
-Logged events include:
-
-* User login
-* User logout
+* Login and logout
 * Dashboard access
 * Patient-page access
 * Checkup scheduling
@@ -722,313 +636,118 @@ Logged events include:
 * Treatment entry
 * Medical-record access
 * Account updates
-* Health-certificate workflow access
-* Health-declaration workflow access
-* Referral-form workflow access
-* System-user management
+* Healthcare-document workflows
+* User management
 
-This provides operational traceability across the major application workflows.
+### Why It Mattered
 
----
-
-# My Role
-
-As a full-stack developer, I worked across application architecture, backend development, frontend development, database design, healthcare workflow implementation, security, communication infrastructure, and deployment.
-
-My responsibilities included:
-
-* Requirements analysis
-* Application architecture
-* Database architecture
-* PHP development
-* CodeIgniter development
-* Bootstrap interface development
-* JavaScript development
-* jQuery integration
-* MySQL data modeling
-* Patient-management workflows
-* Healthcare-worker user management
-* Role-based authentication
-* Checkup scheduling
-* Patient check-in
-* Vital-sign workflows
-* Triage-policy configuration
-* Urgency management
-* Doctor-assignment workflows
-* Diagnosis management
-* Laboratory management
-* Prescription management
-* Treatment management
-* Medical-record workflows
-* Follow-up workflow support
-* Health-certificate workflows
-* Health-declaration workflows
-* Referral-form workflows
-* Activity logging
-* Session management
-* WebSocket integration
-* SMTP integration
-* Cloudflare configuration
-* LAMP deployment
-* Testing
-* Troubleshooting
-* Application maintenance
-
----
-
-# My Contributions
-
-## Full-Stack Healthcare Application Development
-
-Developed the major application workflows used by patients and healthcare personnel.
-
-The platform included modules for:
-
-* Patients
-* Doctors
-* Nurses
-* System administrators
-* Checkups
-* Vital signs
-* Diagnosis
-* Laboratory
-* Prescription
-* Treatment
-* Medical records
-* Healthcare documents
-* Policies
-* User administration
-* Activity history
-
-The application connected these areas through shared patient identities and check-in records.
-
----
-
-## Patient Encounter Architecture
-
-Designed the core patient-encounter model around the check-in record.
-
-Instead of storing all clinical information in one large record, the application separates different stages of care.
-
-```text id="iqlu30"
-Patient
-   ↓
-Check-In
-   ├── Vital Signs
-   ├── Diagnosis
-   ├── Laboratory
-   ├── Prescription
-   └── Treatment
-```
-
-This architecture provides clearer separation between clinical domains while preserving their common relationship to the patient encounter.
-
----
-
-## Triage and Vital-Sign Workflow
-
-Implemented patient-intake functionality for capturing vital measurements and urgency information.
-
-The workflow supported:
-
-* Temperature
-* Blood pressure
-* Heart rate
-* Respiration
-* Height
-* Weight
-* Urgency
-
-The application also maintained configurable threshold values separately through its policy model.
-
----
-
-## Healthcare Workflow Coordination
-
-Developed workflows enabling nurses to assign doctors to patients for different clinical responsibilities.
-
-Assignments covered:
-
-* Diagnosis
-* Laboratory
-* Prescription
-* Treatment
-
-The system also allowed healthcare personnel to change assignments when required.
-
-This provided more flexibility than assigning one doctor globally to an entire patient record.
-
----
-
-## Clinical Record Management
-
-Developed structured workflows for recording:
-
-* Diagnoses
-* Laboratory findings
-* Prescriptions
-* Treatments
-
-Each clinical record remains linked to the patient check-in and responsible doctor.
-
-This provides traceability from the original encounter through the resulting healthcare decisions.
-
----
-
-## Patient Self-Service Portal
-
-Developed patient-facing functionality supporting:
-
-* Profile management
-* Additional-information management
-* Checkup scheduling
-* Schedule cancellation
-* Medical-record access
-* Account settings
-* Activity-history access
-
-This allowed patients to interact directly with the healthcare platform rather than relying exclusively on administrative personnel.
-
----
-
-## Healthcare Document Workflows
-
-Implemented application workflows supporting:
-
-* Health certificates
-* Health declarations
-* Referral forms
-
-These features extended the system beyond triage and treatment into broader healthcare-administration workflows.
-
----
-
-## User and Access Management
-
-Implemented role-based user management for administrators, doctors, nurses, and patients.
-
-Authentication accounts were linked to separate profile identities, providing a reusable identity architecture across all user types.
-
----
-
-## Security and Session Management
-
-Implemented authentication and session-management workflows using CodeIgniter and server-side session persistence.
-
-The platform supported:
-
-* Password hashing
-* PIN-based account information
-* Account status
-* Role-specific access
-* Server-side session storage
-* Session IP information
-
----
-
-## Operational Activity Tracking
-
-Developed activity logging around important healthcare and user operations.
-
-This provided a historical view of how the application was being used and helped with:
+Activity history improves:
 
 * Operational monitoring
 * Troubleshooting
 * Administrative oversight
 * Workflow traceability
 
----
-
-## Communication Infrastructure
-
-Integrated WebSocket and SMTP technologies into the application stack.
-
-WebSocket provided real-time communication capabilities, while SMTP supported email delivery requirements.
-
-The specific event and email workflows are not represented in the available SQL dump, so these are best presented as infrastructure capabilities rather than database-backed feature claims.
+It provides a historical view of how important patient and administrative workflows were used.
 
 ---
 
-## LAMP Deployment
+### 18. Integrated Communication Infrastructure
 
-Deployed the PHP and CodeIgniter application using a LAMP environment.
+WebSocket and SMTP technologies were included in the application's technology stack.
 
-The deployment stack included:
+WebSocket provided real-time communication capability, while SMTP supported application email delivery infrastructure.
+
+### Why It Mattered
+
+These technologies provided a foundation for application communication requirements alongside the traditional PHP-based web architecture.
+
+Specific real-time events and email-notification workflows are not documented in the available source, so these are presented as infrastructure capabilities rather than specific product features.
+
+---
+
+### 19. Deployed and Maintained the Application
+
+I deployed the application using a LAMP environment consisting of:
 
 * Linux
 * Apache
 * MySQL
 * PHP
 
-Cloudflare was used as part of the public-facing delivery infrastructure.
+Cloudflare was also used as part of the public-facing delivery infrastructure.
+
+My responsibilities included:
+
+* Deployment
+* Configuration
+* Testing
+* Troubleshooting
+* Ongoing maintenance
 
 ---
 
-# Technical Highlights
+## Technical Approach
 
-## Structured Patient Encounter Model
+For technical readers, the platform is structured around role-specific workflows and a shared patient-encounter model.
 
-Diagnosis, laboratory, prescription, and treatment data are separated into their own records while remaining connected to a shared patient check-in.
+### Patient Encounter Model
 
----
+The check-in acts as the central reference for clinical data.
 
-## Role-Specific Clinical Workflows
+Diagnosis, laboratory, prescription, and treatment information remain separate but share the same encounter.
 
-Patients, nurses, doctors, and administrators use different parts of the system according to their responsibilities.
+### Relational Data Model
 
----
+MySQL maintains structured relationships between:
 
-## Configurable Triage Policy
+* Patient identities
+* Check-ins
+* Vital signs
+* Diagnoses
+* Laboratory records
+* Prescriptions
+* Treatments
+* Healthcare personnel
+* User accounts
+* Sessions
+* Activity records
 
-Health thresholds are stored separately from patient measurements, creating a configurable basis for triage-related rules.
+### Triage Configuration
 
----
+Triage thresholds are stored separately from patient measurements, providing configurable policy data.
 
-## Nurse-to-Doctor Handoff
+### Role-Based Access
 
-The system supports explicit handoff from nursing assessment to doctor-managed clinical workflows.
+Administrators, doctors, nurses, and patients have separate identities and workflows.
 
----
+### Backend
 
-## Multi-Stage Clinical Documentation
+PHP and CodeIgniter provide application logic, authentication, workflow processing, and relational data access.
 
-The patient journey can progress through:
+### Frontend
 
-**Vitals → Diagnosis → Laboratory → Prescription → Treatment**
+Bootstrap, JavaScript, and jQuery provide the browser-based patient, clinical, and administrative interfaces.
 
-while maintaining each stage as a separate data domain.
+### Communication Infrastructure
 
----
+WebSocket and SMTP were integrated as communication technologies within the application stack.
 
-## Longitudinal Medical Records
+### Infrastructure
 
-Multiple check-ins can be associated with the same patient identity, creating a history of encounters rather than overwriting the patient's previous clinical information.
-
----
-
-## Healthcare Document Support
-
-Health certificates, health declarations, and referral forms are integrated into the healthcare workflow.
-
----
-
-## Activity Traceability
-
-Major patient, clinical, account, and administrative operations are recorded through the application activity log.
+The application was deployed using a LAMP environment with Cloudflare supporting the external delivery layer.
 
 ---
 
-## Secure Authentication Architecture
+## Key Results
 
-Password hashes, account statuses, role identities, and CodeIgniter sessions provide the foundation for authenticated role-based access.
+The platform created a centralized outpatient-care workflow connecting patient self-service, nursing assessment, clinical records, and healthcare administration.
 
----
-
-# Key Results
+Key outcomes included:
 
 * Digitized patient registration and profile management
-* Implemented role-based access for administrators, doctors, nurses, and patients
-* Created online checkup-scheduling workflows
+* Implemented role-based access for patients, nurses, doctors, and administrators
+* Added online checkup scheduling
 * Implemented patient check-in
 * Digitized vital-sign recording
 * Added urgency information to patient encounters
@@ -1041,42 +760,45 @@ Password hashes, account statuses, role identities, and CodeIgniter sessions pro
 * Digitized treatment recommendations
 * Created longitudinal patient medical records
 * Supported follow-up information
-* Implemented patient self-service functionality
+* Added patient self-service functionality
 * Added health-certificate workflows
 * Added health-declaration workflows
 * Added referral-form workflows
-* Implemented system-user management
+* Implemented system-user administration
 * Added extensive operational activity logging
-* Implemented server-side CodeIgniter sessions
-* Integrated WebSocket technology
+* Implemented server-side session management
+* Integrated WebSocket communication infrastructure
 * Integrated SMTP email infrastructure
 * Deployed the system using a LAMP environment
 * Integrated Cloudflare into the web-delivery infrastructure
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
-**HealthTech:** Patient triage, outpatient workflows, healthcare records, checkup scheduling, clinical documentation, and patient self-service
+**HealthTech**
+Patient triage, outpatient workflows, healthcare records, checkup scheduling, clinical documentation, and patient self-service
 
-**Full-Stack Development:** PHP, CodeIgniter, Bootstrap, JavaScript, jQuery, and MySQL
+**Healthcare Workflow Engineering**
+Patient intake, nursing assessment, doctor assignment, diagnosis, laboratory workflows, prescription management, treatment, follow-up care, and referrals
 
-**Healthcare Workflow Engineering:** Patient intake, nursing assessment, doctor assignment, diagnosis, laboratory, prescription, treatment, and referrals
+**Full-Stack Development**
+PHP, CodeIgniter, Bootstrap, JavaScript, jQuery, MySQL, and browser-based application development
 
-**Database Architecture:** Patient identities, check-in records, clinical data separation, medical-history relationships, and user-account modeling
+**Database Architecture**
+Patient identities, encounter modeling, clinical-data separation, longitudinal records, healthcare-worker relationships, and user-account architecture
 
-**Triage Systems:** Vital-sign capture, urgency information, configurable thresholds, and clinical-assessment workflows
+**Triage Systems**
+Vital-sign capture, urgency information, configurable thresholds, and patient-prioritization workflows
 
-**Backend Development:** CodeIgniter, PHP, authentication, sessions, role management, clinical workflows, and relational data access
+**Security and Access**
+Password hashing, role-based identities, account status, PIN information, and server-side session management
 
-**Frontend Development:** Bootstrap, JavaScript, jQuery, patient portals, clinical dashboards, and administrative interfaces
+**Auditability**
+Clinical activity logging, workflow tracking, account activity, troubleshooting support, and administrative oversight
 
-**Security:** Password hashing, role-based identities, account states, PINs, and server-side session management
+**Real-Time and Email Infrastructure**
+WebSocket integration and SMTP-based application communication infrastructure
 
-**Real-Time Systems:** WebSocket integration and real-time communication infrastructure
-
-**Email Infrastructure:** SMTP integration and application email-delivery capability
-
-**Auditability:** Activity logging, patient-workflow tracking, account activity, and administrative oversight
-
-**Infrastructure:** LAMP, Linux, Apache, MySQL, PHP, Cloudflare, and web application deployment
+**Infrastructure**
+Linux, Apache, MySQL, PHP, Cloudflare, LAMP deployment, testing, troubleshooting, and application maintenance
