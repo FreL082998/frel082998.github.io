@@ -592,6 +592,7 @@
                 </button>
             </div>
           </article>
+
           <!-- SWIM Irrigation -->
           <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
             <div class="relative w-full h-48 overflow-hidden rounded-xl">
@@ -612,10 +613,10 @@
 
             <div class="p-6">
                 <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold">SWIM — Smart Water Infrastructure</h3>
+                  <h3 class="text-lg font-semibold">SWIM — Smart Irrigation Monitoring and Water Control System</h3>
                   <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 text-emerald-700 dark:text-emerald-300"><i data-lucide="leaf" class="h-3.5 w-3.5"></i> Agri‑Tech</span>
                 </div>
-                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">IoT‑integrated irrigation management with ArcGIS mapping, OTA firmware updates, and analytics.</p>
+                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">IoT‑integrated smart irrigation management with ArcGIS mapping, OTA firmware updates, and analytics.</p>
                 <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
                   <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">PHP</span>
                   <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">CodeIgniter</span>
@@ -627,10 +628,14 @@
                   <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">WebSocket</span>
                   <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Node.js</span>
                   <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
-                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">IIS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
                 </div>
+                <button type="button" onclick="openStudyModal('swim')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
+                  <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
+                </button>
             </div>
           </article>
+
           <!-- Cassava Farm Health Monitoring -->
           <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
             <div class="relative w-full h-48 overflow-hidden rounded-xl">
@@ -645,7 +650,7 @@
             </div>
             <div class="p-6">
               <div class="flex items-center justify-between">
-                <h3 class="text-lg font-semibold">Cassava Farm Health Monitoring & Geospatial Mapping</h3>
+                <h3 class="text-lg font-semibold">Cassava Farm Health Monitoring & Geospatial Mapping Platform</h3>
                 <span class="inline-flex items-center gap-1 text-[11px] rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 text-emerald-700 dark:text-emerald-300"><i data-lucide="leaf" class="h-3.5 w-3.5"></i> Agri-Tech</span>
               </div>
               <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Drone-assisted surveys, disease detection, ArcGIS mapping, and expert collaboration for CPD prevention.</p>
@@ -662,8 +667,12 @@
                 <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
                 <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">AWS</span>
               </div>
+              <button type="button" onclick="openStudyModal('demeters')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
+                <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
+              </button>
             </div>
           </article>
+
           <!-- MLM -->
           <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
               <div class="relative w-full h-48 overflow-hidden rounded-xl">
@@ -700,8 +709,12 @@
                     <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
                     <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">LAMP</span>
                   </div>
+                  <button type="button" onclick="openStudyModal('mlm')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
+                    <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
+                  </button>
               </div>
           </article>
+
           <!-- CareFlow -->
           <article class="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition reveal">
               <div class="relative w-full h-48 overflow-hidden rounded-xl">
@@ -740,6 +753,9 @@
                     <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">Cloudflare</span>
                     <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1">LAMP</span>
                   </div>
+                  <button type="button" onclick="openStudyModal('triage')" class="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-200 dark:border-indigo-700/70 px-4 py-2 text-sm font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/50 transition">
+                    <i data-lucide="book-open" class="h-4 w-4"></i> Case Study
+                  </button>
               </div>
           </article>
         </div>
@@ -947,10 +963,13 @@
                 Slack
               </span>
               <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
-                Metabase
+                Copilot
               </span>
               <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
-                Copilot
+                ChatGPT
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 bg-slate-100 dark:bg-slate-800">
+                Claude Code
               </span>
             </div>
           </div>
@@ -1121,7 +1140,11 @@
           purchasing: { file: './assets/study/purchasing.md' },
           logistic: { file: './assets/study/logistic.md' },
           iot: { file: './assets/study/iot.md' },
-          survey: { file: './assets/study/survey.md' }
+          survey: { file: './assets/study/survey.md' },
+          swim: { file: './assets/study/swim.md' },
+          demeters: { file: './assets/study/demeters.md' },
+          mlm: { file: './assets/study/mlm.md' },
+          triage: { file: './assets/study/triage.md' }
         };
 
         const modal = document.getElementById('case-study-modal');
