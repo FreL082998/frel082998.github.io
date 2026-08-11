@@ -70,9 +70,9 @@ The goal was to create a centralized platform that connected farm information, p
 
 ## What I Built
 
-I developed a web-based irrigation-management platform that connected GIS mapping, IoT monitoring, real-time communication, historical data, and automated irrigation control.
+I developed a web-based irrigation-management platform that connected GIS mapping, IoT monitoring, real-time communication, historical data, and automated irrigation control. The system helped field teams and farm operators monitor water conditions and respond to changing irrigation needs from a central application.
 
-At a high level, the platform works like this:
+At a high level, the platform worked like this:
 
 ```text
 Farm and Crop Configuration
@@ -85,8 +85,6 @@ Measurements Sent to the Platform
             ↓
 Current Water Conditions Evaluated
             ↓
-Condition Compared with Operational Baseline
-            ↓
 Alert Generated
             ↓
 Associated Irrigation Gate Opened or Closed
@@ -96,9 +94,7 @@ Gate Activity Recorded
 Users Monitor Current and Historical Information
 ```
 
-This means the platform goes beyond displaying field information.
-
-It can connect a detected water condition with an automated irrigation response.
+This gave the organization a more connected way to manage irrigation activity rather than relying on separate monitoring and control steps.
 
 ---
 

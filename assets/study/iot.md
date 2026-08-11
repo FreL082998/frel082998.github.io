@@ -69,19 +69,7 @@ The solution also had to remain reliable in a factory environment where connecti
 
 ## What I Built
 
-As the sole developer and solution architect, I designed and developed the complete system connecting the physical weighing equipment to the cloud-based monitoring platform.
-
-The solution automatically:
-
-1. Reads continuous weight values from the industrial scale
-2. Determines when a manufactured component has actually been placed on the scale
-3. Identifies its stable weight
-4. Prevents the same component from being counted more than once
-5. Determines whether its weight is within the configured specification
-6. Classifies the component as accepted or defective
-7. Records the production event locally
-8. Synchronizes the information with cloud services
-9. Updates back-office users in real time
+I designed and delivered an end-to-end industrial monitoring platform that connected physical weighing equipment to a real-time production dashboard. The system automated component weighing, validation, counting, and reporting while keeping operations reliable even when connectivity was intermittent.
 
 At a high level:
 
@@ -92,9 +80,7 @@ Scale Sends Weight Reading
                     ↓
 Edge Device Collects Raw Data
                     ↓
-System Determines Stable Component Weight
-                    ↓
-Accepted or Defective Classification
+Stable Weight and Quality Classification Determined
                     ↓
 Production Count Recorded Locally
                     ↓
@@ -102,6 +88,8 @@ Data Synchronized to Cloud
                     ↓
 Back-Office Dashboard Updated in Real Time
 ```
+
+The result was a more visible, data-driven production process that reduced reliance on manual counting and gave operations teams better insight into performance.
 
 ---
 

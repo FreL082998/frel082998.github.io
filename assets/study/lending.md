@@ -76,9 +76,9 @@ The organization needed a more structured platform that could automate repeatabl
 
 ## What We Built
 
-The platform centralized the loan-origination process from customer application through internal review, approval, booking, and release.
+The platform brought the loan-origination process into a single digital workflow, from application intake through internal review, approval, booking, and release. It replaced a heavily manual process with a more structured path for customers and lending teams.
 
-At a high level, the workflow follows:
+At a high level, the workflow followed:
 
 ```text
 Customer Registration
@@ -102,11 +102,7 @@ Loan Booking
 Loan Release
 ```
 
-Different parts of the process are handled by independent backend services.
-
-Transactions between those services are processed through queues, with retry and failure-handling mechanisms used when a transaction cannot complete successfully.
-
-This allows the platform to continue processing lending activities while giving internal teams a way to investigate exceptions when necessary.
+The design also included service-based processing and retry handling so exceptions could be managed without blocking the broader lending workflow.
 
 ---
 

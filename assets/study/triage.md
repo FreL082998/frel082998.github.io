@@ -93,9 +93,9 @@ The main challenge was creating a system where each stage remained separate enou
 
 ## What I Built
 
-I developed a centralized healthcare web application using PHP, CodeIgniter, and MySQL.
+I developed a centralized healthcare web application that connected the main stages of outpatient care into one workflow. It helped patients, nurses, doctors, and administrators work from a shared system instead of a collection of disconnected steps.
 
-The platform connects the main stages of outpatient care:
+The platform connected the care journey from registration through follow-up:
 
 ```text
 Patient Registration
@@ -108,35 +108,16 @@ Patient Check-In
         ↓
 Nurse Triage
         ↓
-Vital Signs Recorded
-        ↓
-Urgency Assessment
-        ↓
 Doctor Assignment
         ↓
-Diagnosis
-        ↓
-Laboratory Assessment
-        ↓
-Prescription
-        ↓
-Treatment
+Diagnosis and Treatment
         ↓
 Medical Record
         ↓
 Follow-Up Care
 ```
 
-The system also includes:
-
-* Patient self-service
-* User and role management
-* Healthcare-document workflows
-* Configurable triage policies
-* Activity logging
-* Session management
-* Communication infrastructure
-* Administrative controls
+The system also included role-based access, configurable triage policies, activity tracking, and document workflows so care operations remained organized and auditable.
 
 ---
 

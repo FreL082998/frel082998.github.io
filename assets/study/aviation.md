@@ -52,23 +52,17 @@ The goal was not simply to replace old technology. The platform needed to become
 
 ## What We Improved
 
-I contributed to a broad modernization initiative covering payments, security, backend architecture, frontend dependencies, API documentation, and internal engineering workflows.
+I helped modernize the platform in ways that reduced operational risk while preserving the aviation workflows that customers and internal teams depended on. The work focused on payment modernization, stronger access controls, more maintainable architecture, and a better engineering foundation for future releases.
 
-The work included:
+The effort included:
 
-* Replacing the legacy payment provider
-* Redesigning payment and billing workflows
-* Improving customer onboarding and account synchronization
-* Introducing platform-wide audit logging
-* Securing administrator impersonation
-* Strengthening authentication and session handling
-* Upgrading PHP and Laravel
-* Modernizing the frontend with Bootstrap 5
-* Separating business logic from controllers
-* Standardizing request validation
-* Improving REST API documentation
-* Developing OpenAPI specifications
-* Creating reusable AI-assisted engineering workflows
+* Replacing an outdated payment provider
+* Improving billing and customer-account workflows
+* Strengthening admin security and auditability
+* Refactoring legacy business logic into more maintainable services
+* Upgrading the stack and improving API documentation
+
+This made the platform easier to support and evolve without disrupting the operational processes it already served.
 
 ---
 

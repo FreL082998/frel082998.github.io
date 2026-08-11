@@ -65,9 +65,9 @@ The platform also needed to support different organizations and administrative l
 
 ## What We Built
 
-I developed a centralized web platform that connects farm management, geographic information, survey operations, crop-health monitoring, yield analysis, agricultural recommendations, communication, and reporting.
+I developed a centralized web platform that connected farm management, geographic information, survey operations, crop-health monitoring, yield analysis, agricultural recommendations, communication, and reporting. It gave agricultural stakeholders a more connected way to move from field observation to action.
 
-At a high level, the workflow is:
+At a high level, the workflow was:
 
 ```text
 Farmer and Farm Registration
@@ -97,7 +97,7 @@ Expert Consultation
 Monitoring and Reporting
 ```
 
-The platform manages the workflow surrounding drone surveys, including requests, schedules, results, and mapped findings. It does not directly control the drone itself.
+The platform helped turn scattered field observations into a more structured response process for farmers, cooperatives, and agricultural experts.
 
 ---
 

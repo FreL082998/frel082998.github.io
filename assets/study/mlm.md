@@ -108,9 +108,9 @@ The system also needed to keep the network structure separate from financial eve
 
 ## What I Built
 
-I developed a centralized web application using PHP, CodeIgniter, and MySQL.
+I developed a centralized web application that brought membership management, genealogy tracking, bonuses, payouts, and administration into one workflow. It gave members and admins a more structured way to work with a complex binary network without relying on manual recordkeeping.
 
-The system combines:
+The system combined:
 
 * Member management
 * Multiple network accounts
@@ -122,14 +122,10 @@ The system combines:
 * Activation-code management
 * Code-request approvals
 * Payout requests
-* Payout processing
 * Member notifications
-* Administrative dashboards
-* User-activity logging
+* Administrative oversight
 
-Bootstrap, JavaScript, and jQuery were used for the browser-based interface.
-
-The application was deployed using a LAMP environment, with Cloudflare supporting its external delivery layer.
+This made the network easier to manage as it grew and helped preserve a clear record of account relationships and compensation activity.
 
 ---
 

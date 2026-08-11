@@ -76,9 +76,9 @@ The organization needed one platform where official communication, announcements
 
 ## What the Platform Does
 
-The platform combines mobile communication with web-based administration.
+The platform combined mobile communication with web-based administration so official workforce engagement could happen in one place instead of across personal messaging apps and separate survey tools. It gave agency handlers a more reliable way to reach workers and gave workers a consistent channel for updates, concerns, and feedback.
 
-For announcements and surveys, the workflow follows:
+For announcements and surveys, the workflow followed:
 
 ```text id="ofw01"
 Agency Handler Creates Announcement or Survey
@@ -96,20 +96,7 @@ Response Stored in the Platform
 Agency Handler Reviews Results or Follows Up
 ```
 
-For worker concerns:
-
-```text id="ofw02"
-Overseas Worker Sends a Concern
-              ↓
-Assigned Agency Handler Receives It
-              ↓
-Handler Reviews and Responds
-              ↓
-Conversation Remains Available
-in the Platform
-```
-
-This keeps communication and engagement history within the organization's application rather than distributing it across unrelated external services.
+For worker concerns, the platform kept each conversation visible and traceable so issues could be reviewed and followed up more consistently.
 
 ---
 

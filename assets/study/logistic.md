@@ -98,9 +98,7 @@ The platform needed a more modular architecture that could support future servic
 
 ## What We Improved
 
-The platform was gradually transformed from a shared-server environment into a more modular architecture.
-
-Backend services were separated according to business responsibilities so applications could be maintained and deployed more independently.
+The platform was gradually transformed from a shared-server environment into a more modular architecture that was easier to scale, secure, and support. The work focused on separating business capabilities, improving reliability for field teams, and reducing the duplication of master data across multiple systems.
 
 The modernization included:
 
@@ -110,8 +108,8 @@ The modernization included:
 * Adding local mobile storage and synchronization
 * Remediating security vulnerabilities
 * Integrating with existing CRM and ERP systems
-* Supporting independently deployed services
-* Improving production support and maintainability
+
+These improvements made the platform more dependable for both enterprise users and teams operating in the field.
 
 ---
 

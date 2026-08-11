@@ -84,9 +84,9 @@ The organization needed a system that could automatically apply procurement poli
 
 ## What We Built
 
-The Purchasing Support System replaced the manual process with a structured digital workflow covering the complete purchasing lifecycle.
+The Purchasing Support System replaced paper-based purchasing with a structured digital workflow that covered request submission, review, approvals, and purchase-order creation. It gave employees, procurement teams, and approvers a shared path for handling purchasing activity with less manual coordination.
 
-The process follows:
+The process followed a clear sequence:
 
 1. An employee creates a purchase request.
 2. Procurement reviews the request.
@@ -99,7 +99,7 @@ The process follows:
 9. Procurement creates a purchase order after final approval.
 10. Approved purchase-order information is transmitted to the existing ERP system.
 
-The platform also uses role-based access so users only see the information and actions relevant to their responsibilities.
+Role-based access helped ensure that each stakeholder saw the information and actions relevant to their responsibilities.
 
 ---
 

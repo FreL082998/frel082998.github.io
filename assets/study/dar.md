@@ -54,21 +54,18 @@ Because the platform stores documentation used in aviation operations and compli
 
 ## What We Improved
 
-I contributed to a modernization initiative focused on strengthening the platform's technical foundation rather than changing its core document-management purpose.
+I contributed to a modernization effort focused on making the platform more reliable, easier to deploy, and simpler to support in production. The work strengthened the technical foundation behind an important aviation document workflow without changing the core purpose of the system.
 
-The work included:
+The effort included:
 
-* Migrating the application to PHP 8.2
+* Migrating the application to a newer PHP runtime
 * Modernizing outdated dependencies
-* Improving AWS deployment workflows
-* Centralizing application logs
-* Strengthening deployment automation
+* Improving deployment and release consistency
+* Centralizing application logs for troubleshooting
 * Standardizing local development with Docker
-* Improving technical and onboarding documentation
-* Automating recurring engineering activities
-* Introducing consistent AI-assisted engineering standards
+* Improving technical documentation and onboarding
 
-The goal was to make the application easier to develop, deploy, monitor, and support in production.
+The goal was to make the application easier to maintain and more dependable for teams that depended on timely access to aircraft records.
 
 ---
 
