@@ -3,7 +3,7 @@
 **Industry:** Logistics
 **Role:** Support Full-Stack Developer
 **Project Type:** Enterprise Logistics, Workforce, and Mobile Operations Platform
-**Primary Technologies:** React Native, Angular, React, Laravel, MySQL, SQLite, Firebase, Firestore, Android, iOS, AWS
+**Primary Technologies:** React Native, Angular, React, Laravel, MySQL, SQLite, Firebase, Firestore, Android, iOS, AWS, REST API
 
 ## Project Overview
 

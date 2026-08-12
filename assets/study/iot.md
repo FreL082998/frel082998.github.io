@@ -3,7 +3,7 @@
 **Industry:** Manufacturing
 **Role:** Solo Developer / Solution Architect
 **Project Type:** Industrial IoT and Real-Time Production Monitoring Platform
-**Primary Technologies:** Laravel, PHP, React, Next.js, TypeScript, Tailwind CSS, C#/.NET, MySQL, SQLite, Redis, Docker, AWS, WebSockets
+**Primary Technologies:** Laravel, PHP, React, Next.js, TypeScript, Tailwind CSS, C#/.NET, MySQL, SQLite, Redis, Docker, AWS, WebSockets, REST API
 
 ## Project Overview
 

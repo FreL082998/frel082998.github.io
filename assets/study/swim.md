@@ -3,7 +3,7 @@
 **Industry:** Agriculture / AgriTech
 **Role:** Full-Stack Developer
 **Project Type:** IoT-Enabled Irrigation Monitoring, GIS Farm Management, and Automated Water-Control Platform
-**Primary Technologies:** PHP, CodeIgniter, Bootstrap, ArcGIS JavaScript API, JavaScript, jQuery, MySQL, WebSocket, Node.js, Cloudflare, AWS
+**Primary Technologies:** PHP, CodeIgniter, Bootstrap, ArcGIS JavaScript API, JavaScript, jQuery, MySQL, WebSocket, Node.js, Cloudflare, AWS, REST API
 
 ## Project Overview
 

@@ -3,7 +3,7 @@
 **Industry:** Aviation
 **Role:** Full-Stack Developer / Software Engineer
 **Project Type:** Digital Aircraft Records Management and Archiving SaaS Platform
-**Primary Technologies:** Laravel, PHP, Vue.js, Bootstrap, MySQL, Docker, CI/CD, AWS
+**Primary Technologies:** Laravel, PHP, Vue.js, Bootstrap, MySQL, Docker, CI/CD, AWS, REST API
 
 ## Project Overview
 

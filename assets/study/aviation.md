@@ -3,7 +3,7 @@
 **Industry:** Aviation
 **Role:** Full-Stack Developer / Software Engineer
 **Project Type:** Aviation Maintenance Tracking and Operations SaaS Platform
-**Primary Technologies:** Laravel, PHP, Blade, Bootstrap, MySQL, Docker, REST APIs, OAuth, OpenAPI, CI/CD, AWS
+**Primary Technologies:** Laravel, PHP, Blade, Bootstrap, MySQL, Docker, REST APIs, OAuth, OpenAPI, CI/CD, AWS, REST API
 
 ## Project Overview
 

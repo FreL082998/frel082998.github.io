@@ -3,7 +3,7 @@
 **Industry:** Financial Services / FinTech
 **Role:** Programmer Analyst III / Full-Stack Developer
 **Project Type:** Enterprise Loan Origination and Approval Platform
-**Primary Technologies:** Laravel, PHP, React, TypeScript, Bootstrap, MySQL, Docker, AWS
+**Primary Technologies:** Laravel, PHP, React, TypeScript, Bootstrap, MySQL, Docker, AWS, REST API
 
 ## Project Overview
 

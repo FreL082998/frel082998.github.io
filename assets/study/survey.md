@@ -3,7 +3,7 @@
 **Industry:** Overseas Workforce Services
 **Role:** Full-Stack Developer
 **Project Type:** Cross-Platform Workforce Engagement and Communication System
-**Primary Technologies:** React Native, Angular, Laravel, MySQL, Firebase, Firestore, Android, iOS, AWS
+**Primary Technologies:** React Native, Angular, Laravel, MySQL, Firebase, Firestore, Android, iOS, AWS, REST API
 
 ## Project Overview
 

@@ -3,7 +3,7 @@
 **Industry:** Manufacturing
 **Role:** Technical Lead / Full-Stack Developer
 **Project Type:** Enterprise Procurement and Approval Workflow System
-**Primary Technologies:** Laravel, PHP, Next.js, TypeScript, Tailwind CSS, MySQL, Docker, AWS
+**Primary Technologies:** Laravel, PHP, Next.js, TypeScript, Tailwind CSS, MySQL, Docker, AWS, REST API
 
 ## Project Overview
 
